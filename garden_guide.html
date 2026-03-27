@@ -1,0 +1,1883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zone 6b New Jersey Garden Guide — Year-Round Planner</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f1a0f;
+    --bg2: #162016;
+    --bg3: #1c2a1c;
+    --card: #1e2d1e;
+    --card2: #243324;
+    --cream: #f2ead8;
+    --cream2: #e8dfc8;
+    --gold: #c9a84c;
+    --gold2: #a8893d;
+    --terra: #b85c30;
+    --sage: #6a8c6a;
+    --sage2: #4a6a4a;
+    --red: #c94040;
+    --blue: #4a7aac;
+    --purple: #7a5a9c;
+    --berry: #8b3060;
+    --border: rgba(255,255,255,0.07);
+    --text: #e8e0cc;
+    --text2: #a8a090;
+    --shadow: 0 4px 24px rgba(0,0,0,0.5);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Lora', Georgia, serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* HEADER */
+  .site-header {
+    background: linear-gradient(135deg, #0a1208 0%, #162318 50%, #0e1c10 100%);
+    border-bottom: 1px solid var(--gold2);
+    padding: 32px 24px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .site-header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .header-ornament { color: var(--gold); font-size: 20px; letter-spacing: 12px; opacity: 0.6; margin-bottom: 8px; }
+  .header-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 800;
+    color: var(--cream);
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+  }
+  .header-sub {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(13px, 2vw, 16px);
+    color: var(--gold);
+    font-style: italic;
+    margin-top: 6px;
+    letter-spacing: 0.5px;
+  }
+  .header-meta {
+    margin-top: 14px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .meta-pill {
+    background: rgba(201,168,76,0.12);
+    border: 1px solid rgba(201,168,76,0.3);
+    color: var(--gold);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-family: 'Courier Prime', monospace;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+  }
+
+  /* QUICK NAV */
+  .quick-nav {
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .quick-nav-label {
+    font-family: 'Courier Prime', monospace;
+    font-size: 10px;
+    color: var(--text2);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-right: 4px;
+  }
+  .nav-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text2);
+    padding: 4px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Courier Prime', monospace;
+    font-size: 11px;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .nav-btn:hover, .nav-btn.active {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--bg);
+    font-weight: 700;
+  }
+  .nav-sep { width: 1px; height: 20px; background: var(--border); margin: 0 4px; }
+
+  /* MAIN LAYOUT */
+  .main-container { max-width: 1200px; margin: 0 auto; padding: 0 16px 60px; }
+
+  /* SECTION HEADERS */
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: 700;
+    color: var(--cream);
+    padding: 32px 0 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--gold2), transparent);
+  }
+  .section-sub {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--gold);
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+
+  /* MONTH PANELS */
+  .month-panel { display: none; }
+  .month-panel.active { display: block; }
+
+  .month-header {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    padding: 28px 0 12px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 20px;
+  }
+  .month-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    font-weight: 800;
+    color: rgba(201,168,76,0.08);
+    line-height: 1;
+    letter-spacing: -4px;
+    min-width: 90px;
+  }
+  .month-info { flex: 1; }
+  .month-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(24px, 4vw, 36px);
+    font-weight: 700;
+    color: var(--cream);
+  }
+  .month-tagline {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--gold);
+    font-size: 14px;
+    margin-top: 2px;
+  }
+  .month-season {
+    font-family: 'Courier Prime', monospace;
+    font-size: 11px;
+    color: var(--text2);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  /* TASK GRID */
+  .task-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+  .task-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .task-card:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+  .task-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .task-icon { font-size: 18px; }
+  .task-label {
+    font-family: 'Courier Prime', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .task-bed {
+    margin-left: auto;
+    font-family: 'Courier Prime', monospace;
+    font-size: 9px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+  }
+  .task-body { padding: 12px 14px; }
+  .task-body ul { list-style: none; }
+  .task-body ul li {
+    padding: 3px 0 3px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    font-size: 13px;
+    position: relative;
+    hyphens: none;
+    -webkit-hyphens: none;
+  }
+  .task-body ul li:last-child { border-bottom: none; }
+  .task-body ul li::before {
+    content: '→';
+    color: var(--gold);
+    font-size: 11px;
+    position: absolute;
+    left: 0;
+    top: 5px;
+  }
+
+  /* CARD COLOR THEMES */
+  .card-seed .task-card-header { background: rgba(74,122,76,0.2); }
+  .card-seed .task-label { color: #7bcf7b; }
+  .card-seed .task-bed { background: rgba(74,122,76,0.3); color: #7bcf7b; }
+
+  .card-fert .task-card-header { background: rgba(201,168,76,0.15); }
+  .card-fert .task-label { color: var(--gold); }
+  .card-fert .task-bed { background: rgba(201,168,76,0.2); color: var(--gold); }
+
+  .card-spray .task-card-header { background: rgba(74,122,172,0.2); }
+  .card-spray .task-label { color: #7abadf; }
+  .card-spray .task-bed { background: rgba(74,122,172,0.3); color: #7abadf; }
+
+  .card-prune .task-card-header { background: rgba(184,92,48,0.2); }
+  .card-prune .task-label { color: #e0906a; }
+  .card-prune .task-bed { background: rgba(184,92,48,0.3); color: #e0906a; }
+
+  .card-harvest .task-card-header { background: rgba(139,48,96,0.25); }
+  .card-harvest .task-label { color: #e088b8; }
+  .card-harvest .task-bed { background: rgba(139,48,96,0.35); color: #e088b8; }
+
+  .card-soil .task-card-header { background: rgba(120,80,40,0.3); }
+  .card-soil .task-label { color: #c4a06a; }
+  .card-soil .task-bed { background: rgba(120,80,40,0.4); color: #c4a06a; }
+
+  .card-pest .task-card-header { background: rgba(180,40,40,0.2); }
+  .card-pest .task-label { color: #e08080; }
+  .card-pest .task-bed { background: rgba(180,40,40,0.3); color: #e08080; }
+
+  .card-maintain .task-card-header { background: rgba(100,90,140,0.2); }
+  .card-maintain .task-label { color: #b0a0e0; }
+  .card-maintain .task-bed { background: rgba(100,90,140,0.3); color: #b0a0e0; }
+
+  /* ALERT BOXES */
+  .alert {
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin: 8px 0;
+    font-size: 13px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .alert-icon { flex-shrink: 0; font-size: 16px; }
+  .alert-warn { background: rgba(201,100,40,0.15); border-left: 3px solid var(--terra); }
+  .alert-info { background: rgba(74,122,172,0.15); border-left: 3px solid var(--blue); }
+  .alert-success { background: rgba(74,122,76,0.15); border-left: 3px solid var(--sage); }
+  .alert-title { font-weight: 600; margin-bottom: 2px; }
+  .alert-warn .alert-title { color: #e0906a; }
+  .alert-info .alert-title { color: #7abadf; }
+  .alert-success .alert-title { color: #7bcf7b; }
+
+  /* SPRAY / CHEMICAL SECTIONS */
+  .ref-section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px 0;
+  }
+  .ref-header {
+    background: var(--card2);
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .ref-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--cream);
+  }
+  .ref-body { padding: 16px 20px; }
+
+  /* TABLES */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+  }
+  .data-table th {
+    font-family: 'Courier Prime', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text2);
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(255,255,255,0.02);
+  }
+  .data-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    vertical-align: top;
+  }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+  /* BED LEGEND */
+  .bed-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 14px 0;
+  }
+  .bed-chip {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-family: 'Courier Prime', monospace;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    border: 1px solid;
+  }
+  .bed1 { background: rgba(180,60,60,0.15); border-color: rgba(180,60,60,0.4); color: #e08888; }
+  .bed2 { background: rgba(60,120,180,0.15); border-color: rgba(60,120,180,0.4); color: #88b8e0; }
+  .bed3 { background: rgba(80,140,80,0.15); border-color: rgba(80,140,80,0.4); color: #88cf88; }
+  .bed4 { background: rgba(180,140,60,0.15); border-color: rgba(180,140,60,0.4); color: #e0c888; }
+  .bed-peony { background: rgba(200,100,150,0.15); border-color: rgba(200,100,150,0.4); color: #e8a0c0; }
+  .bed-rose  { background: rgba(220,80,80,0.15);  border-color: rgba(220,80,80,0.4);  color: #e8a0a0; }
+  .bed-peren { background: rgba(120,160,100,0.15);border-color: rgba(120,160,100,0.4);color: #a8d890; }
+
+  .pots { background: rgba(140,80,160,0.15); border-color: rgba(140,80,160,0.4); color: #c0a0e0; }
+
+  /* CHEM NOTES */
+  .chem-badge {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-family: 'Courier Prime', monospace;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  .badge-best { background: rgba(74,180,74,0.25); color: #7bcf7b; border: 1px solid rgba(74,180,74,0.4); }
+  .badge-good { background: rgba(201,168,76,0.25); color: var(--gold); border: 1px solid rgba(201,168,76,0.4); }
+  .badge-caution { background: rgba(180,90,40,0.25); color: #e0906a; border: 1px solid rgba(180,90,40,0.4); }
+  .badge-dupe { background: rgba(180,40,40,0.25); color: #e08080; border: 1px solid rgba(180,40,40,0.4); }
+  .badge-buy { background: rgba(74,122,172,0.25); color: #7abadf; border: 1px solid rgba(74,122,172,0.4); }
+
+  /* TIMELINE BAR */
+  .timeline-bar {
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    gap: 2px;
+    margin: 20px 0;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .tl-month {
+    padding: 6px 4px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .tl-month .tl-abbr {
+    font-family: 'Courier Prime', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    display: block;
+  }
+  .tl-winter { background: rgba(100,120,160,0.2); }
+  .tl-spring { background: rgba(74,140,74,0.25); }
+  .tl-summer { background: rgba(180,140,40,0.25); }
+  .tl-fall { background: rgba(180,100,40,0.25); }
+  .tl-month:hover { filter: brightness(1.4); }
+
+  /* SPRAY SCHED COLORS */
+  .spray-row-stop { background: rgba(180,40,40,0.08); }
+  .spray-row-light { background: rgba(74,122,172,0.08); }
+  .spray-row-active { background: rgba(74,140,74,0.08); }
+
+  em { color: var(--gold); font-style: normal; }
+  strong { color: var(--cream2); }
+
+  .note {
+    background: rgba(201,168,76,0.08);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 12.5px;
+    color: var(--text2);
+    margin: 10px 0;
+  }
+  .note strong { color: var(--gold); }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  @media (max-width: 600px) {
+    .two-col { grid-template-columns: 1fr; }
+    .month-number { display: none; }
+  }
+
+  .footer {
+    border-top: 1px solid var(--border);
+    padding: 24px 16px;
+    text-align: center;
+    font-family: 'Courier Prime', monospace;
+    font-size: 11px;
+    color: var(--text2);
+    letter-spacing: 0.5px;
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="site-header">
+  <div class="header-ornament">❧ ✦ ❧</div>
+  <div class="header-title">Zone 6b New Jersey Garden Guide</div>
+  <div class="header-sub">A Complete A Complete Year-Round Planner for Zone 6b New Jersey Gardens</div>
+  <div class="header-meta">
+    <span class="meta-pill">USDA Zone 6b</span>
+    <span class="meta-pill">Last Frost: April 15</span>
+    <span class="meta-pill">First Frost: Oct 15–20</span>
+    <span class="meta-pill">Growing Season: ~183 Days</span>
+  </div>
+</div>
+
+<!-- STICKY NAV -->
+<div class="quick-nav">
+  <span class="quick-nav-label">Month →</span>
+  <button class="nav-btn active" onclick="showMonth('jan','this')">Jan</button>
+  <button class="nav-btn" onclick="showMonth('feb','this')">Feb</button>
+  <button class="nav-btn" onclick="showMonth('mar','this')">Mar</button>
+  <button class="nav-btn" onclick="showMonth('apr','this')">Apr</button>
+  <button class="nav-btn" onclick="showMonth('may','this')">May</button>
+  <button class="nav-btn" onclick="showMonth('jun','this')">Jun</button>
+  <button class="nav-btn" onclick="showMonth('jul','this')">Jul</button>
+  <button class="nav-btn" onclick="showMonth('aug','this')">Aug</button>
+  <button class="nav-btn" onclick="showMonth('sep','this')">Sep</button>
+  <button class="nav-btn" onclick="showMonth('oct','this')">Oct</button>
+  <button class="nav-btn" onclick="showMonth('nov','this')">Nov</button>
+  <button class="nav-btn" onclick="showMonth('dec','this')">Dec</button>
+  <div class="nav-sep"></div>
+  <button class="nav-btn" onclick="showMonth('spray','this')">💊 Spray Guide</button>
+  <button class="nav-btn" onclick="showMonth('fert','this')">🌱 Fertilizer Guide</button>
+  <button class="nav-btn" onclick="showMonth('chem','this')">⚗️ Chemical Notes</button>
+</div>
+
+<div class="main-container">
+
+<!-- BED LEGEND -->
+<div class="bed-legend" style="margin-top:20px">
+  <span class="bed-chip bed1">🍅 Bed 1 — Tomatoes, Eggplant, Peppers</span>
+  <span class="bed-chip bed2">🫐 Bed 2 — Currants, Berries, Gooseberries, Strawberries</span>
+  <span class="bed-chip bed3">🌿 Bed 3 — Shaded/Wet (Near Woods): Garlic, Cucumbers on Trellis, Carrots</span>
+  <span class="bed-chip bed4">🥬 Bed 4 — Lettuce, Bunching Onions, Swiss Chard</span>
+  <span class="bed-chip pots">🪴 Pots — Herbs, Cucumbers, Peppers, Lettuce, Tomatoes</span>
+  <span class="bed-chip" style="background:rgba(200,100,150,0.15);border-color:rgba(200,100,150,0.4);color:#e8a0c0;">🌸 Peony Bed — Peonies (separate location)</span>
+  <span class="bed-chip" style="background:rgba(220,80,80,0.15);border-color:rgba(220,80,80,0.4);color:#e8a0a0;">🌹 Rose Bed — Roses (separate location)</span>
+  <span class="bed-chip" style="background:rgba(120,160,100,0.15);border-color:rgba(120,160,100,0.4);color:#a8d890;">🌼 Perennial Bed — Perennial Flowers (separate location)</span>
+</div>
+
+<!-- ===== JANUARY ===== -->
+<div class="month-panel active" id="panel-jan">
+  <div class="month-header">
+    <div class="month-number">01</div>
+    <div class="month-info">
+      <div class="month-name">January</div>
+      <div class="month-tagline">Rest, reflect, and plan the season ahead</div>
+      <div class="month-season">DEEP WINTER — Dormancy</div>
+    </div>
+  </div>
+
+  <div class="alert alert-info">
+    <div class="alert-icon">ℹ️</div>
+    <div><div class="alert-title">January Overview</div>This is your planning month. No planting yet, but critical groundwork happens on paper. The garden is dormant; garlic sleeps under mulch in Bed 3, berry canes rest in Bed 2.</div>
+  </div>
+
+  <div class="task-grid">
+    <div class="task-card card-seed">
+      <div class="task-card-header">
+        <span class="task-icon">📋</span>
+        <span class="task-label">Planning & Seeds</span>
+        <span class="task-bed">ALL BEDS</span>
+      </div>
+      <div class="task-body"><ul>
+        <li>Order seeds now — popular varieties sell out. Prioritize tomatoes, peppers, eggplant, parsley, dill, cucumbers, lettuce, Swiss chard, carrots.</li>
+        <li>Order gynoecious/parthenocarpic cucumber seeds for Bed 3 trellis (e.g., Diva, Straight Eight, or Marketmore 76). <strong>Also consider wilt-resistant varieties</strong> — Saladin and Marketmore 76 have some tolerance to bacterial wilt; Diva (parthenocarpic) is also relatively resistant. This matters given the cucumber beetle pressure you're experiencing.</li>
+        <li>Catalog your current seed inventory; note germination dates on packets.</li>
+        <li>Sketch/revise your bed layout; plan crop rotation (don't repeat nightshades in Bed 1 year after year — but you may have limited options with fixed beds).</li>
+        <li>Order any new strawberry plants or garlic varieties now for spring/fall planting.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-soil">
+      <div class="task-card-header">
+        <span class="task-icon">🔧</span>
+        <span class="task-label">Tools & Equipment</span>
+        <span class="task-bed">ALL BEDS</span>
+      </div>
+      <div class="task-body"><ul>
+        <li>Clean, sharpen, and oil all hand tools (hoes, trowels, pruners, loppers).</li>
+        <li>Disinfect pruners and loppers with 70% isopropyl or 10% bleach solution — critical to avoid spreading disease between plants in Bed 2.</li>
+        <li>Inspect and replace drip lines, stakes, cages, or trellises as needed.</li>
+        <li><strong>Bed 1 drip tape:</strong> Inspect the tape if you dug it up last fall — check for cracks, splits, or clogged emitters. Hold sections up to a light to spot blocked emitters. Replace any damaged sections now; drip tape is inexpensive and easier to fix on a workbench than in the ground in April.</li>
+        <li>Order grow lights or check lamps for the seed-starting setup.</li>
+        <li>Inventory your chemicals; note expiration dates. Dispose of expired products properly.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-pest">
+      <div class="task-card-header">
+        <span class="task-icon">👁️</span>
+        <span class="task-label">Winter Inspection</span>
+        <span class="task-bed">BED 2 + BED 3 + ROSE BED</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Bed 3 Garlic:</strong> Check mulch cover (should be 4–6" straw/shredded leaves). Add more if thin; heavy freeze without mulch can heave cloves.</li>
+        <li><strong>Bed 2 Berries:</strong> After a thaw, inspect dormant canes for scale insects (look for waxy bumps on canes) — treat in February with dormant oil.</li>
+        <li>Look for any cankers or blackened cane tips on raspberries/blackberries — note for pruning in February.</li>
+        <li>Check rose canes for winter dieback; mounding should still be in place.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-maintain">
+      <div class="task-card-header">
+        <span class="task-icon">📚</span>
+        <span class="task-label">Learning & Prep</span>
+        <span class="task-bed">ALL BEDS</span>
+      </div>
+      <div class="task-body"><ul>
+        <li>Look into blueberries as a possible Bed 2 addition (they thrive with currants; Holly‑Tone works for both).</li>
+        <li>Consider ordering floating row cover for frost protection in spring/fall.</li>
+        <li><strong>Seed soaking reference — plan ahead:</strong> Several seeds in this garden germinate faster and more uniformly with a pre-sow soak. Note which seeds to soak when organizing: Swiss chard (overnight, 8–12 hrs), parsley (24 hrs in warm water), melons and watermelons (4–6 hrs warm water), cucumbers (2–4 hrs optional but helpful), carrots (2–4 hrs — drain and surface-dry before direct sowing so they don't clump), bunching onions (overnight). Tomatoes, peppers, eggplant, and lettuce do not benefit from soaking and may have reduced germination if soaked. Herbs generally do not need soaking.</li>
+        <li>Review last year's notes: what varieties underperformed? Which tasted the best? What disease pressure was highest?</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <div class="note"><strong>💡 No spraying needed in January.</strong> Save the chemicals for when the plants need them. All beds are dormant and exposure is wasted.</div>
+</div>
+
+<!-- ===== FEBRUARY ===== -->
+<div class="month-panel" id="panel-feb">
+  <div class="month-header">
+    <div class="month-number">02</div>
+    <div class="month-info">
+      <div class="month-name">February</div>
+      <div class="month-tagline">First seeds indoors — peppers and eggplant need a head start</div>
+      <div class="month-season">LATE WINTER — Pre-Season Begins</div>
+    </div>
+  </div>
+
+  <div class="alert alert-warn">
+    <div class="alert-icon">⚠️</div>
+    <div><div class="alert-title">Key Timing Window</div>Start peppers and eggplant indoors <strong>Feb 5–15</strong> (10 weeks before last frost, April 15). These are slow germinators and need the lead time. Use a heat mat if possible — they want 80–85°F soil temp to germinate.</div>
+  </div>
+
+  <div class="task-grid">
+    <div class="task-card card-seed">
+      <div class="task-card-header">
+        <span class="task-icon">🌱</span>
+        <span class="task-label">Seed Starting — Indoors</span>
+        <span class="task-bed">BED 1 + POTS</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Start now (Feb 5–15):</strong> All peppers (Bed 1 + pots) and all eggplant. Use sterile seed-starting mix — do NOT use garden soil indoors.</li>
+        <li>Sow 2–3 seeds per cell; thin to 1 after germination. Bottom-water only.</li>
+        <li><strong>Peppers do not benefit from soaking</strong> — sow dry. Eggplant also sow dry. Focus heat mat attention on these two; they are the slowest germinators in the garden and need consistent 80–85°F soil temperature more than any other treatment.</li>
+        <li>Provide 14–16 hrs of light with grow lights 2–3" above seedlings.</li>
+        <li>Fertilize weekly with diluted fish emulsion or liquid Plant‑Tone once first true leaves appear.</li>
+        <li>Aim for 65–70°F air temperature during the day; slightly cooler at night.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-prune">
+      <div class="task-card-header">
+        <span class="task-icon">✂️</span>
+        <span class="task-label">Dormant Pruning — Berries</span>
+        <span class="task-bed">BED 2</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Currants (red, black, white, pink champagne):</strong> Remove dead/crossing/weak wood. For black currants: prune out all wood 3+ years old (darker bark). For others: keep best 3–5 canes. Open up the center.</li>
+        <li><strong>Gooseberries:</strong> Remove dead and oldest canes; keep 3–4 each of 1-, 2-, and 3-year wood.</li>
+        <li><strong>Black raspberries & blackberries:</strong> Remove all dead canes. On blackberries, cut last year's floricanes (canes that fruited) to the ground. Leave vigorous new primocanes.</li>
+        <li><strong>Japanese wineberries:</strong> Remove 2-year-old (fruited) canes to ground; tie in new 1-year canes.</li>
+        <li>Disinfect pruners between plants with 70% isopropyl to prevent spreading cane blight.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-spray">
+      <div class="task-card-header">
+        <span class="task-icon">💊</span>
+        <span class="task-label">Dormant Oil Spray</span>
+        <span class="task-bed">BED 2</span>
+      </div>
+      <div class="task-body"><ul>
+        <li>Apply <strong>Bonide All Seasons Spray Oil</strong> to all berry canes and currant bushes on a mild day (above 40°F) before buds swell — kills overwintering scale, mites, and insect eggs.</li>
+        <li>This is your BEST preventive spray of the year for Bed 2. Don't skip it.</li>
+        <li>Apply at dormant rate (2–4% oil/water solution per label). Coat all canes thoroughly including undersides.</li>
+        <li>Do NOT apply if temps will drop below 32°F within 24 hrs or if buds are already open — risk of damage.</li>
+        <li>Also apply to roses if still dormant (before bud swell).</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-soil">
+      <div class="task-card-header">
+        <span class="task-icon">🌍</span>
+        <span class="task-label">Soil Prep & Planning</span>
+        <span class="task-bed">ALL BEDS</span>
+      </div>
+      <div class="task-body"><ul>
+        <li>If not done in fall: pull back mulch from Bed 3 (Bed 3 garlic is waking up under straw — leave 2" of loose straw, don't compact).</li>
+        <li>Test soil pH if possible — NJ soils often trend slightly acidic (6.0–6.5 is ideal for most plants in this zone). Bed 2 currants prefer 5.5–6.5.</li>
+      </ul></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== MARCH ===== -->
+<div class="month-panel" id="panel-mar">
+  <div class="month-header">
+    <div class="month-number">03</div>
+    <div class="month-info">
+      <div class="month-name">March</div>
+      <div class="month-tagline">Tomatoes go in the lights; the garden starts waking up</div>
+      <div class="month-season">EARLY SPRING — Indoor Season Ramps Up</div>
+    </div>
+  </div>
+
+  <div class="alert alert-warn">
+    <div class="alert-icon">⚠️</div>
+    <div><div class="alert-title">Start Tomatoes March 1–15</div>That's 6–8 weeks before last frost (April 15). Tomatoes grow faster than peppers — don't start too early or you'll have leggy, pot-bound seedlings by transplant time.</div>
+  </div>
+
+  <div class="task-grid">
+    <div class="task-card card-seed">
+      <div class="task-card-header">
+        <span class="task-icon">🌱</span>
+        <span class="task-label">Seed Starting — Indoors</span>
+        <span class="task-bed">ALL BEDS + POTS</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Start March 1–10:</strong> All tomatoes (Bed 1 + pots, cherry and regular). Sow ¼" deep; germinate at 70–80°F. Thin to 1 per cell.</li>
+        <li><strong>Start March 1–10:</strong> Parsley (Pots). Parsley is slow to germinate (2–3 weeks); soak seeds 24 hrs in warm water first — this is one of the seeds where soaking makes a noticeable difference.</li>
+        <li><strong>Start March 1–15:</strong> Lettuce (Bed 4 and pots). Use a shallow tray; barely cover seeds. No heat mat needed — lettuce prefers 60–65°F.</li>
+        <li><strong>Start March 10–20:</strong> Swiss chard (Bed 4). Soak seeds overnight (8–12 hrs) in warm water — chard seeds have a thick, corky coat that slows germination significantly without soaking. Drain, blot lightly, and sow while damp. Germinate at 65–70°F.</li>
+        <li>Up-pot peppers and eggplant from February into 3–4" pots if they've developed true leaves and roots are showing.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-soil">
+      <div class="task-card-header">
+        <span class="task-icon">🌍</span>
+        <span class="task-label">Bed Soil Prep</span>
+        <span class="task-bed">BEDS 1, 4</span>
+      </div>
+      <div class="task-body"><ul>
+        <li>When soil is workable (not soggy, doesn't clump tightly — mid-to-late March), work 2–3" of compost into Beds 1 and 4.</li>
+        <li><strong>Bed 1:</strong> Work in bone meal (phosphorus for roots) plus blood meal (nitrogen) — or substitute Plant‑Tone as a gentler all-in-one organic alternative. Do not combine Plant‑Tone and blood meal; pick one nitrogen source. <strong>Till before reinstalling drip tape</strong> — complete all soil amendments and tilling first, then lay tape into position.</li>
+        <li><strong>Bed 4:</strong> Lighter prep — compost + Plant‑Tone. Lettuce and greens don't need heavy fertilization.</li>
+        <li>Avoid tilling Bed 3 (near woods, wetter) until fully workable — wet soil tilling destroys structure.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-maintain">
+      <div class="task-card-header">
+        <span class="task-icon">💧</span>
+        <span class="task-label">Bed 1 — Drip Tape Install</span>
+        <span class="task-bed">BED 1</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Reinstall drip tape after tilling is complete</strong> (late March to mid-April, before transplanting). Lay tape with emitters facing up or at a 45° angle — facing down clogs faster with sediment. Bury 1–2" deep or pin flat on the surface under mulch; burying reduces evaporation and UV degradation.</li>
+        <li><strong>Runtime to deliver 1" of water:</strong> Your emitters are 0.25 GPH at 12" spacing = 0.25 gallons per foot of tape per hour. To deliver 1" of water over a 4"-wide raised bed zone, each square foot needs ~0.62 gallons. At 0.25 GPH that's roughly <strong>2.5 hours per irrigation event</strong> to deliver a full inch. For tomatoes needing 1–1.5" per week in summer, split across 3 sessions: ~50 minutes per session, 3×/week is a reasonable starting point — adjust based on rainfall and plant response.</li>
+        <li><strong>Soil moisture check:</strong> Before trusting the ESP32 schedule blindly, check soil moisture manually 2–3" down 1–2 hours after a run. The soil should be moist but not waterlogged at root depth. Calibrate your runtime against actual conditions early in the season.</li>
+        <li><strong>Flush the lines</strong> before burying — run water through to clear any debris from storage. Open the end caps, run for 2–3 minutes, then cap.</li>
+        <li>After burying, run a test cycle and walk the bed looking for any emitters that aren't wetting the soil surface — these may be clogged and need replacement.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-maintain">
+      <div class="task-card-header">
+        <span class="task-icon">⚗️</span>
+        <span class="task-label">Bed 1 — Fertigation Options</span>
+        <span class="task-bed">BED 1</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Cheapest reliable option: Venturi injector</strong> (~$15–30, e.g., Mazzei or generic). A Venturi injector installs inline on the supply line — the pressure differential sucks liquid fertilizer from a bucket into the water stream at a fixed ratio (typically 1:100 to 1:200). No power needed, no moving parts, works automatically every time the solenoid opens. This is the most practical fertigation add-on for a drip system. Also consider a peristaltic pump due to low flow rate.</li>
+        <li><strong>What to fertigate with:</strong> Use only water-soluble fertilizers — granular organics like Plant‑Tone or blood meal will clog emitters. Best options: Jack's Classic 20-20-20 (early season), Jack's Classic 12-15-30 or Tomato Feed (at flowering/fruiting). These dissolve completely and won't clog 0.25 GPH emitters. Fish emulsion works but can foul lines over time — flush with clean water after every fertigation run.</li>
+        <li><strong>Fertigation schedule suggestion:</strong> Fertigate 1×/week during active growth (June–August), plain water on other irrigation days. Reduce to every 2 weeks in September as plants wind down. Always end a fertigation cycle with 5–10 minutes of plain water to flush the tape and prevent salt/residue buildup at the emitters.</li>
+        <li><strong>ESP32 automation tip:</strong> Program a "fertigation cycle" in the firmware — same runtime as a normal irrigation event but with the fertigation solenoid pin also pulled HIGH. A simple flag in the schedule (e.g., every 7th day) keeps it clean without manual intervention.</li>
+        <li><strong>Do not fertigate right before heavy rain</strong> — same principle as foliar feeding. The fertilizer solution will be diluted and flushed past the root zone before uptake. Check forecasts before scheduling fertigation events.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-fert">
+      <div class="task-card-header">
+        <span class="task-icon">💊</span>
+        <span class="task-label">Fertilize — Garlic</span>
+        <span class="task-bed">BED 3</span>
+      </div>
+      <div class="task-body"><ul>
+        <li>When garlic shoots emerge 2–3" above soil (usually late March in NJ), partially remove the straw mulch — leave a thin layer.</li>
+        <li><strong>Blood meal</strong> (high nitrogen): side-dress at 2 lbs per 100 sq ft. Scratch lightly into the surface; water in well. This powers the rapid spring growth phase.</li>
+        <li>Alternatively: diluted liquid fertilizer (fish emulsion 5-1-1) works faster but needs more frequent application.</li>
+        <li><strong>Coffee grounds as a nitrogen supplement:</strong> scratch ¼–½ cup of used grounds per plant into the soil around garlic — they add a gentle, slow-release nitrogen boost that complements blood meal or stands in for part of the dose if blood meal is running low. Mix into the top inch; don't leave a thick surface layer (especially with Turkish grind — it crusts).</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-prune">
+      <div class="task-card-header">
+        <span class="task-icon">✂️</span>
+        <span class="task-label">Rose Pruning</span>
+        <span class="task-bed bed-rose">ROSE BED</span>
+      </div>
+      <div class="task-body"><ul>
+        <li>Prune roses <strong>when forsythia blooms</strong> in Zone 6b — typically late March to early April in Zone 6b. This is nature's signal that the frost window is narrowing.</li>
+        <li>Remove mounding mulch first. Cut out all dead, diseased, or crossing canes. Cut back to outward-facing buds. Remove any canes thinner than a pencil.</li>
+        <li>Hybrid teas: cut back to 12–18" with 3–5 healthy canes. Shrub roses: lighter pruning — remove ~⅓.</li>
+        <li>Dispose of all prunings — do NOT compost rose debris (harbors black spot spores).</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-spray">
+      <div class="task-card-header">
+        <span class="task-icon">💊</span>
+        <span class="task-label">First Spray — Roses & Berries</span>
+        <span class="task-bed">BEDS 2 + 3</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Roses:</strong> After pruning, apply first protective fungicide. Use <strong>Captain Jack's Copper</strong> or <strong>Myclobutanil (Immunox)</strong> — Immunox is better systemic protection for black spot. Start early; prevention beats cure with roses.</li>
+        <li><strong>Bed 2 berries:</strong> If dormant oil was missed in Feb, apply now before buds swell (Bonide All Seasons Oil). Once buds crack open, switch to summer-rate oil or skip to next tool.</li>
+        <li>Apply copper to currants as leaves emerge — prevents anthracnose and leaf spot.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-pest">
+      <div class="task-card-header">
+        <span class="task-icon">👁️</span>
+        <span class="task-label">Early Pest Watch</span>
+        <span class="task-bed">BED 2 + BED 3</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Aphids</strong> often appear early on currant leaves — blast with water or apply insecticidal soap at first sign.</li>
+        <li><strong>Currant sawfly larvae:</strong> Small green caterpillars on underside of currant leaves — check weekly once leafed out. Treat with Sevin or insecticidal soap.</li>
+        <li><strong>Strawberries (Bed 2):</strong> Do NOT remove winter mulch yet — wait for mid-April. Crowns are still vulnerable to late freezes.</li>
+        <li><strong>Slugs — first emergence:</strong> Slugs become active as soon as soil warms above 40°F and spring rains arrive — often March or early April in NJ. This is your first treatment window. Scatter <strong>Slug Magic granules</strong> (iron phosphate) around Bed 2 strawberries and Bed 3 as soon as soil is workable. Iron phosphate is safe around pets, wildlife, and edibles — it breaks down into iron and phosphate in the soil. Apply in the evening; slugs feed at night. Reapply after rain.</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <div class="note"><strong>Preen note:</strong> You can apply Preen pre‑emergent to Beds 1 and 3 once soil is workable — but only in areas where you are NOT direct sowing seeds. Preen prevents all seed germination, including yours. Wait until after any direct-sow areas are up and established before applying Preen nearby.</div>
+</div>
+
+<!-- ===== APRIL ===== -->
+<div class="month-panel" id="panel-apr">
+  <div class="month-header">
+    <div class="month-number">04</div>
+    <div class="month-info">
+      <div class="month-name">April</div>
+      <div class="month-tagline">Direct sowing begins; the garden comes alive</div>
+      <div class="month-season">SPRING — Soil Activity Begins</div>
+    </div>
+  </div>
+
+  <div class="alert alert-warn">
+    <div class="alert-icon">⚠️</div>
+    <div><div class="alert-title">Last Frost April 15 — Watch Forecasts</div>Hardened-off cool-season transplants (lettuce, Swiss chard) can go out but cover if temps drop below 28°F. Warm-season crops (tomatoes, peppers, eggplant, cucumbers) stay inside until after May 15.</div>
+  </div>
+
+  <div class="task-grid">
+    <div class="task-card card-seed">
+      <div class="task-card-header">
+        <span class="task-icon">🌱</span>
+        <span class="task-label">Direct Sow Outdoors</span>
+        <span class="task-bed">BEDS 3 + 4</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Bed 4 (April 1–15):</strong> Direct sow bunching onions ¼" deep, rows 6" apart. <strong>Pre-soak overnight</strong> in cool water before sowing — onion seeds have a short viability window and soaking improves germination rate noticeably. Drain and sow while damp. Also direct-sow lettuce (Bed 4). Soil temps need to be at least 45°F.</li>
+        <li><strong>Bed 3 (April 15+):</strong> Direct sow carrots ½" deep. Carrots do NOT transplant well — always direct sow. <strong>Optional pre-soak:</strong> soak carrot seeds in warm water 2–4 hours before sowing, then drain and spread on a paper towel to surface-dry for 20–30 minutes so they don't clump in the packet. This softens the seed coat and can cut germination time from 2–3 weeks to 10–14 days. Keep soil consistently moist through germination (cover with burlap to retain moisture). Thin to 2–3" spacing once 2" tall.</li>
+        <li><strong>Pots:</strong> Direct sow dill — dill does not transplant well. Re-sow every 3–4 weeks for continuous supply.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-seed">
+      <div class="task-card-header">
+        <span class="task-icon">🥒</span>
+        <span class="task-label">Start Cucumbers Indoors</span>
+        <span class="task-bed">BED 3 + POTS</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Start cucumbers indoors April 15–20</strong> (transplant outdoors after May 15 — only 3–4 weeks ahead). Starting indoors is the right call — direct-sown seedlings are extremely vulnerable to cucumber beetle feeding before they establish.</li>
+        <li>Cucumbers hate root disturbance — use biodegradable peat pots or cells; transplant pot and all.</li>
+        <li><strong>Optional seed soak:</strong> Soaking cucumber seeds in warm water for 2–4 hours before sowing speeds germination, especially in cooler conditions. Drain and sow while damp. Unlike parsley and chard where soaking is strongly recommended, cucumbers germinate reasonably well without it — but it doesn't hurt.</li>
+        <li>Germinate at 70–85°F. They grow fast — don't start too early or they'll be overgrown and stressed at transplant.</li>
+        <li><strong>Beetle-proofing strategy:</strong> Have floating row cover ready at transplant time. Covering transplants immediately with row cover is the single most effective way to prevent cucumber beetle feeding — and since your parthenocarpic/gynoecious varieties don't need pollination, you can keep the cover on much longer (remove only once plants are large and established, or remove briefly at flowering if any open-pollinated varieties are included).</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-seed">
+      <div class="task-card-header">
+        <span class="task-icon">🌿</span>
+        <span class="task-label">Transplant — Cool Season Crops</span>
+        <span class="task-bed">BED 4 + POTS</span>
+      </div>
+      <div class="task-body"><ul>
+        <li>After hardening off (1–2 weeks of outdoor exposure, increasing daily), transplant lettuce and Swiss chard to Bed 4 (early-to-mid April). They tolerate light frost (28–32°F).</li>
+        <li>Move parsley outdoors to pots — it handles light frost.</li>
+        <li>Space lettuce 8–10" apart (or 6" for baby leaf harvest). Swiss chard 6–9" apart.</li>
+        <li>Keep a frost cloth or old bedsheet handy for late freezes.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-fert">
+      <div class="task-card-header">
+        <span class="task-icon">🌱</span>
+        <span class="task-label">Fertilize — Berries & Strawberries</span>
+        <span class="task-bed">BED 2</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Mid-April:</strong> Remove winter straw mulch from strawberry crowns. Rake off gently — don't disturb roots.</li>
+        <li>Apply <strong>Plant‑Tone</strong> (5-3-3) around all strawberry plants. Work lightly into soil; water in well. Plant‑Tone is the preferred organic option for strawberries.</li>
+        <li><strong>Currants, gooseberries, wineberries, raspberries, blackberries:</strong> Apply <strong>Holly‑Tone</strong> (4-3-4) around drip line of each plant — these all prefer slightly acidic soil (5.5–6.5 pH). Holly‑Tone encourages that.</li>
+        <li>Do NOT over-fertilize nitrogen on berries — you'll get lush leaves but poor fruit set.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-spray">
+      <div class="task-card-header">
+        <span class="task-icon">💊</span>
+        <span class="task-label">Spray Schedule — April</span>
+        <span class="task-bed">BED 2 + ROSE BED</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Currants & Gooseberries:</strong> Apply copper (Captain Jack's Copper) as leaves emerge — excellent prevention of anthracnose, white pine blister rust (if white pines are nearby), and leaf spot. Reapply after heavy rain.</li>
+        <li><strong>Roses:</strong> Begin biweekly <strong>Myclobutanil (Immunox)</strong> spray — best systemic protection for black spot and powdery mildew in roses. Superior to copper or Daconil for roses. Start preventively.</li>
+        <li><strong>All Bed 2 canes:</strong> Insecticidal soap for early aphid colonies forming on new growth.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-maintain">
+      <div class="task-card-header">
+        <span class="task-icon">🌸</span>
+        <span class="task-label">Peonies & Perennials</span>
+        <span class="task-bed">BED 3</span>
+      </div>
+      <div class="task-body"><ul>
+        <li>Remove any remaining winter mulch from peony crowns — expose the red "eyes" (emerging shoots). Do NOT cover the shoots; peonies need cold exposure to bloom.</li>
+        <li><strong>Bone meal:</strong> apply a light ring around each peony — phosphorus supports flower development.</li>
+        <li>Perennial flowers: pull back dead stems/mulch, let emerging growth breathe.</li>
+        <li>Keep an eye on garlic: shoots should be 4–6" now. Apply a second nitrogen side-dressing (blood meal or Plant‑Tone) if growth seems slow.</li>
+      </ul></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== MAY ===== -->
+<div class="month-panel" id="panel-may">
+  <div class="month-header">
+    <div class="month-number">05</div>
+    <div class="month-info">
+      <div class="month-name">May</div>
+      <div class="month-tagline">The big transplant month — garden goes full throttle after May 15</div>
+      <div class="month-season">SPRING → EARLY SUMMER — Last Frost Behind Us</div>
+    </div>
+  </div>
+
+  <div class="alert alert-success">
+    <div class="alert-icon">✅</div>
+    <div><div class="alert-title">After May 15: Transplant Warm-Season Crops</div>Tomatoes, peppers, eggplant, cucumbers, and all tender herbs go out after the last frost date. Harden off for 7–10 days before planting (set outside in shade, gradually increase sun and time outdoors).</div>
+  </div>
+
+  <div class="task-grid">
+    <div class="task-card card-seed">
+      <div class="task-card-header">
+        <span class="task-icon">🍅</span>
+        <span class="task-label">Transplant — Warm Season</span>
+        <span class="task-bed">BED 1 + POTS</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>After May 15:</strong> Transplant tomatoes (Bed 1 and pots) — bury deeply (up to 2/3 of the stem; roots form on buried stem). Space 18–24" for determinate, 24–36" for indeterminate.</li>
+        <li>Transplant peppers (Bed 1 and pots) and eggplant (Bed 1). Space 18" apart. Add a stake at planting time to avoid disturbing roots later.</li>
+        <li>Transplant cucumbers (Bed 3 trellis and pots) — gently, do not disturb roots. Space 12" on trellis. <strong>Immediately cover with floating row cover</strong> after planting — don't wait to see beetles first. Cucumber beetles find plants within hours of transplanting and the bacterial wilt they carry has no cure.</li>
+        <li>Set out rosemary, thyme, mint (pot separately — mint is invasive), and remaining parsley.</li>
+        <li><strong>Melon & watermelon transplants (after May 15 — soil temp 65°F minimum, 70°F+ preferred):</strong> Transplant into the melon patch in full sun. Space cantaloupes 18–24" apart in rows at least 4–5 ft apart; watermelons 24–36" with 6 ft between rows. For small-space growing, bush watermelon varieties (Sugar Baby, Bush Sugar Baby) and small cantaloupes can be trellised vertically — support developing fruits in mesh slings tied to the trellis. Plant on slight mounds for drainage. <strong>Cover immediately with floating row cover</strong> — melons are targeted by the same cucumber beetles that devastate cucumbers. Remove row cover once female flowers open (flowers with a tiny fruit at the base) since melons require bee pollination to set fruit.</li>
+        <li><strong>Black plastic mulch for melons:</strong> Laying black plastic mulch over the melon patch before transplanting significantly warms soil, conserves moisture, and suppresses weeds. It can add 1–2 weeks of effective growing season in Zone 6b — genuinely useful for marginal-length varieties. Transplant through slits cut in the plastic.</li>
+        <li>Water well at transplant with diluted fish emulsion or Plant‑Tone liquid to reduce transplant shock.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-fert">
+      <div class="task-card-header">
+        <span class="task-icon">🌱</span>
+        <span class="task-label">Fertilize at Transplant</span>
+        <span class="task-bed">BED 1 + POTS</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Bed 1 (pre-planting if not done in April): Plant‑Tone</strong> or <strong>10-10-10</strong> worked into soil at label rates. Plant‑Tone preferred (organic, slow‑release, less risk of burn). Use 10-10-10 sparingly — fast‑release fertilizers can stress transplants.</li>
+        <li><strong>Bone meal</strong> in the planting hole: add a tablespoon at the bottom of each tomato/pepper/eggplant hole — phosphorus supports root establishment.</li>
+        <li>For pots: use a quality potting mix, then work <strong>Osmocote 14-14-14</strong> into the top inch at planting — this is the best slow-release base for containers (feeds ~3 months). Top-dress with Plant‑Tone monthly and supplement with liquid feed every 10–14 days through the season. See June fertilizer notes for full pot strategy.</li>
+        <li><strong>Melon Patch — at transplant:</strong> Work compost and Plant&#8209;Tone into the soil before planting. Add bone meal to each planting hole for root establishment. Melons are heavy feeders — similar nutritional demands to tomatoes. Avoid over-applying nitrogen early; focus on phosphorus and balanced feeding. Once vines are running (June), switch to a lower-nitrogen feed to encourage fruit set over leaf growth.</li>
+        <li><strong>Garlic (Bed 3):</strong> Last nitrogen boost — blood meal or liquid fertilizer. After mid-May, reduce nitrogen or you'll push leaves at the expense of bulb development.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-prune">
+      <div class="task-card-header">
+        <span class="task-icon">✂️</span>
+        <span class="task-label">Training & Pruning</span>
+        <span class="task-bed">BED 1 + BED 2</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Tomatoes (indeterminate):</strong> Begin suckering — remove side shoots that emerge in the crotch between stem and branch. Single-stem or 2-stem training for caged/staked indeterminate types. Determinate types need less suckering.</li>
+        <li><strong>Cucumbers (Bed 3):</strong> Begin training vines onto trellis. Tie gently with soft twine at regular intervals as they grow.</li>
+        <li><strong>Melons & watermelons — vine training:</strong> Once row cover is removed at flower set, begin training vines. For trellised varieties, guide the main vine upward and tie loosely every 12". Pinch lateral shoots beyond the first 2–3 female flowers on each lateral to concentrate energy into fruit. On the ground, train vines in the same direction to reduce foot traffic damage. Place a piece of tile, wood, or straw under developing fruits to prevent rot from soil contact.</li>
+        <li><strong>Black raspberries (Bed 2):</strong> When primocanes (new shoots) reach 3.5–4 ft, pinch (tip) the top 3–4". This forces laterals to develop — dramatically increases next year's yield.</li>
+        <li><strong>Strawberries (Bed 2):</strong> Remove runners (runners divert energy from fruit; allow just 2–3 runners to root per plant if you want to expand the bed).</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-spray">
+      <div class="task-card-header">
+        <span class="task-icon">💊</span>
+        <span class="task-label">Spray Schedule — May</span>
+        <span class="task-bed">BED 2 + ROSE BED</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Roses:</strong> Continue biweekly <strong>Myclobutanil (Immunox)</strong>. Add an insecticide if aphids are present — <strong>insecticidal soap</strong> first (gentler), or <strong>bifenthrin</strong> if heavy infestation.</li>
+        <li><strong>Strawberries (Bed 2):</strong> Before bloom: apply <strong>copper</strong> for gray mold (Botrytis) prevention — critical in wet springs. Do NOT use Daconil/chlorothalonil on strawberries near harvest — long PHI (pre‑harvest interval).</li>
+        <li><strong>Currants/Gooseberries:</strong> Continue copper spray every 10–14 days or after rain. Watch for aphid colonies — apply insecticidal soap as needed.</li>
+        <li><strong>Bed 1 (tomatoes etc.):</strong> Begin prophylactic copper spray biweekly — early blight prevention starts now, not after you see symptoms.</li>
+        <li><strong>🪲 Cucumber beetles (Bed 3 + Pots) — START NOW:</strong> Before placing row cover, spray soil surface and base of transplants with <strong>bifenthrin 7.9%</strong> to kill any beetles already at ground level. If row cover is not in place, begin foliar bifenthrin sprays every 7 days immediately — do not wait for visual confirmation. By the time you see beetles, wilt inoculation may have already occurred.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-pest">
+      <div class="task-card-header">
+        <span class="task-icon">👁️</span>
+        <span class="task-label">Pest Watch — May</span>
+        <span class="task-bed">ALL BEDS</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Flea beetles:</strong> Tiny jumping beetles that pepper holes in eggplant and pepper leaves. Apply <strong>insecticidal soap</strong> or <strong>neem oil</strong> — or use floating row cover on eggplant until established. Kaolin clay is also very effective — worth adding if not already on hand.</li>
+        <li><strong>Strawberry blossom weevil (clipper):</strong> Tiny snout beetle that clips flower buds. Inspect daily at bloom; use <strong>Sevin</strong> or <strong>bifenthrin</strong> at first sign — timing is critical (before eggs are laid in buds).</li>
+        <li><strong>Currant sawfly larvae:</strong> Inspect undersides of currant leaves. Green caterpillars defoliate quickly. Spray <strong>insecticidal soap</strong> or <strong>Sevin</strong> if present.</li>
+        <li>Set up Japanese beetle traps AWAY from the garden (they attract more beetles to an area — don't put traps in the garden).</li>
+        <li><strong>Slugs — peak spring activity:</strong> May is often your worst slug month — cool nights, frequent rain, and tender new transplants everywhere. Seedlings and young transplants of tomatoes, peppers, eggplant, and lettuce are extremely vulnerable; a single night of slug feeding can destroy a transplant. Apply <strong>Slug Magic granules</strong> in a ring around each bed edge and around individual transplants in Beds 1, 2, and 3 (especially Bed 3 near woods — chronically worse). Reapply every 7–14 days and after any significant rain. Also scatter around strawberry plants — slugs hide under the leaves and feed on developing fruit from below, leaving ragged holes that are easy to miss until the damage is done.</li>
+        <li><strong>🪲 Cucumber beetles — melons equally vulnerable:</strong> Cucumber beetles attack melons just as aggressively as cucumbers and transmit the same bacterial wilt. Keep row cover on melon transplants until female flowers open. If beetles are found before cover goes on, spray the soil surface and plant bases with bifenthrin.</li>
+        <li><strong>🪲 Cucumber beetles — inspect at transplant:</strong> Check the soil around cucumber transplants for striped (3 black stripes) and spotted (12 black dots) beetles within the first few days of planting. They find new transplants within hours. If row cover is not in place and you see even one beetle, spray bifenthrin immediately — a single striped beetle feeding is enough to transmit bacterial wilt. This pest caused your previous plant losses and deserves zero tolerance.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-maintain">
+      <div class="task-card-header">
+        <span class="task-icon">🌱</span>
+        <span class="task-label">Bed Maintenance</span>
+        <span class="task-bed">ALL BEDS</span>
+      </div>
+      <div class="task-body"><ul>
+        <li>Apply <strong>Preen</strong> pre‑emergent around transplants in Beds 1, 3, 4 (not over direct-sown areas still germinating). Apply when soil is moist; water in lightly. Do NOT apply near strawberries or any areas where runners will root.</li>
+        <li>Mulch all beds (2–3" wood chips or straw) once transplants are in — reduces weeds, retains moisture, moderates soil temp. Critical for tomatoes (prevents soil splash-up that spreads blight).</li>
+        <li>Begin consistent watering schedule — tomatoes, peppers, and eggplant want even moisture. Inconsistent watering causes blossom end rot and blossom drop.</li>
+        <li>Install tomato cages or stake-and-weave system before plants get too large.</li>
+      </ul></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== JUNE ===== -->
+<div class="month-panel" id="panel-jun">
+  <div class="month-header">
+    <div class="month-number">06</div>
+    <div class="month-info">
+      <div class="month-name">June</div>
+      <div class="month-tagline">First harvests arrive; spray vigilance peaks with humidity</div>
+      <div class="month-season">EARLY SUMMER — Growth Explosion</div>
+    </div>
+  </div>
+
+  <div class="alert alert-warn">
+    <div class="alert-icon">🪲</div>
+    <div><div class="alert-title">Japanese Beetles Arrive Late June</div>They emerge around June 20–July 10 in NJ and will hit your roses, raspberries, blackberries, wineberries, and even peppers hard. Have your spray ready. They're most active mid-morning on warm sunny days.</div>
+  </div>
+
+  <div class="task-grid">
+    <div class="task-card card-harvest">
+      <div class="task-card-header">
+        <span class="task-icon">🍓</span>
+        <span class="task-label">First Harvests</span>
+        <span class="task-bed">BEDS 2 + 4 + POTS</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Strawberries (Bed 2):</strong> Peak harvest June 1–20. Pick when fully red — don't let overripe fruit sit (attracts spotted wing drosophila and invites disease). Check daily at peak.</li>
+        <li><strong>Lettuce & Swiss chard (Bed 4 + Pots):</strong> Begin cut-and-come-again harvest. Cut outer leaves; leave inner growth.</li>
+        <li><strong>Herbs (Pots):</strong> Parsley, thyme, chives — harvest regularly to encourage bushy growth. Don't let dill flower unless you want seeds.</li>
+        <li><strong>Bed 4 bunching onions:</strong> Harvest when tops are 8–10" and base is ¼–½" diameter.</li>
+        <li><strong>Peonies:</strong> Cut blooms in bud stage for longest vase life. Deadhead spent flowers immediately — prevents botrytis (gray mold).</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-fert">
+      <div class="task-card-header">
+        <span class="task-icon">🌱</span>
+        <span class="task-label">Fertilize — June</span>
+        <span class="task-bed">ALL BEDS</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Bed 1 — Tomatoes:</strong> Once first flowers appear, switch to a lower-nitrogen fertilizer. High nitrogen now pushes leaves at the expense of fruit. Use <strong>Plant‑Tone</strong> bimonthly OR a tomato-specific fertilizer (3-4-6 ratio preferred at flowering).</li>
+        <li><strong>Bed 1 — Peppers & Eggplant:</strong> Plant‑Tone monthly. Both are moderate feeders.</li>
+        <li><strong>Pots — fertilizing strategy:</strong> Containers leach nutrients with every watering, so they need more attention than in-ground beds. Use a three-layer approach: (1) <strong>Osmocote 14-14-14</strong> (slow-release granules, ~3 months) worked into the top inch of potting mix at planting — this is your baseline feed and the most efficient option for containers; (2) a monthly top-dress of Plant‑Tone scratched into the surface for organic supplement; (3) liquid fish emulsion or water-soluble fertilizer every 10–14 days as your main active feed. Blood meal is not recommended for pots — it leaches out almost immediately and containers lack the microbial activity needed to break down organics effectively. <strong>Rain timing:</strong> avoid liquid fertilizing within 24 hours of forecast heavy rain (over ½ inch) — it will flush through before roots can absorb it. Light rain after fertilizing is fine and actually helps water it in. Best practice: apply on a dry morning with no heavy rain forecast for at least a day.</li>
+        <li><strong>Bed 3 — Garlic:</strong> Stop all fertilizing by June 1. Focus shifts to bulb development; excess nitrogen now creates loose, poorly wrapped bulbs.</li>
+        <li><strong>Roses:</strong> Apply <strong>Plant‑Tone</strong> or a rose-specific fertilizer around the drip line after first flush of bloom. Water in well.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-spray">
+      <div class="task-card-header">
+        <span class="task-icon">💊</span>
+        <span class="task-label">Spray Schedule — June</span>
+        <span class="task-bed">ALL BEDS</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Bed 1 — Tomatoes/Eggplant/Peppers:</strong> Biweekly copper (<strong>Captain Jack's Copper</strong>) OR rotate with <strong>Mancozeb</strong> for early blight/septoria prevention. Spray in the evening — copper phytotoxicity risk in heat of day. Mancozeb has no PHI concerns at this stage.</li>
+        <li><strong>Bed 3 — Cucumbers:</strong> Begin copper or neem oil spray to prevent downy mildew and angular leaf spot. Biweekly.</li>
+        <li><strong>Melon Patch:</strong> Begin the same copper/neem biweekly rotation used for cucumbers — melons are susceptible to the same fungal diseases (downy mildew, powdery mildew, angular leaf spot). Spray in evening. Once fruits are sizing up, observe all label pre-harvest intervals.</li>
+        <li><strong>🪲 Cucumber beetles (Bed 3 + Pots) — ACTIVE SEASON BEGINS:</strong> If row cover has been removed, begin <strong>bifenthrin 7.9%</strong> foliar sprays every 7 days — this is non-negotiable given how quickly cucumber beetles spread bacterial wilt. Apply in early morning when beetles are sluggish and less likely to flee before spray contact. Focus on the base of plants, undersides of lower leaves, and soil surface around stems. If row cover is still on, leave it — every day under cover is a day without wilt exposure.</li>
+        <li><strong>Roses:</strong> Continue biweekly <strong>Myclobutanil (Immunox)</strong>. In late June, add a pyrethroid (<strong>bifenthrin</strong> or <strong>Sevin</strong>) for Japanese beetle control. Spray in early morning.</li>
+        <li><strong>Bed 2 Raspberries/Blackberries: Sevin</strong> or <strong>bifenthrin</strong> for Japanese beetles at first sighting. Apply to foliage; avoid spraying open flowers (bee harm).</li>
+        <li><strong>Strawberries (Bed 2 — post-harvest):</strong> After the last pick, apply copper for crown rot and leaf spot. Also neem oil for spider mites if warm/dry spell.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-prune">
+      <div class="task-card-header">
+        <span class="task-icon">✂️</span>
+        <span class="task-label">Training & Pruning</span>
+        <span class="task-bed">BEDS 1 + 2 + 3</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Tomatoes (Bed 1 + Pots):</strong> Continue weekly suckering of indeterminate types. Train to stakes/cages. Remove lower leaves touching the soil (prevents soil-splash blight transmission).</li>
+        <li><strong>Cucumbers (Bed 3 + Pots):</strong> Continue tying to trellis. Remove any yellow or diseased leaves promptly. If row cover is still on, check underneath weekly — once plants are vigorous and past the vulnerable seedling stage (4–6 true leaves, actively climbing) you can remove it if beetle pressure seems low, or leave it on entirely if varieties are parthenocarpic.</li>
+        <li><strong>Black raspberries (Bed 2):</strong> If you missed tipping in May, tip now (any canes under 3.5–4 ft that haven't been tipped yet).</li>
+        <li><strong>Roses:</strong> Deadhead spent blooms to encourage rebloom on remontant varieties. Cut back to a 5-leaflet leaf with an outward-facing bud.</li>
+        <li>Thin lettuce (Bed 4) if direct-sown areas are crowded — thin to 6–8".</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-pest">
+      <div class="task-card-header">
+        <span class="task-icon">👁️</span>
+        <span class="task-label">Pest & Disease Watch</span>
+        <span class="task-bed">ALL BEDS</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Slugs on strawberries (Bed 2) — CRITICAL:</strong> Peak strawberry slug damage coincides with ripening fruit in June. Slugs rasp irregular holes into ripe and near-ripe berries from the underside — the damage is often hidden under the fruit and looks like rot at first glance. Inspect fruit daily by lifting and turning it. Maintain an active ring of <strong>Slug Magic granules</strong> around the entire strawberry bed edge and between rows. Reduce mulch depth temporarily if slug pressure is high — dense straw is prime daytime slug shelter. Also check under any boards, pots, or debris near Bed 2 and remove them. Beer traps (shallow dish of cheap beer sunk to soil level) are a useful supplement — slugs are attracted to the yeast, fall in, and drown. Check and refill every 2–3 days.</li>
+        <li><strong>Tomato hornworms:</strong> Large green caterpillars — hand-pick; they're surprisingly hard to spot. Check weekly; look for defoliated branches and dark frass (droppings).</li>
+        <li><strong>Aphids on pepper tips:</strong> Spray with insecticidal soap or strong water jet.</li>
+        <li><strong>Yellow spots on cucumber leaves — know the difference:</strong> Angular leaf spot produces angular yellow patches bounded by leaf veins, with a water-soaked look — caused by bacteria, spread by cucumber beetles and splashing water. Downy mildew produces larger irregular yellow patches on the upper surface with gray-purple fuzzy growth on the underside. Both spread fast. Copper spray addresses both; improve airflow by training vertically. Downy mildew: also use Myclobutanil. Angular leaf spot: copper is your best tool — no cure once established, remove affected leaves immediately.</li>
+        <li><strong>Powdery mildew on cucumbers:</strong> White-gray powdery coating (different from the yellow spots above — this sits on top of leaves). Apply neem oil or Myclobutanil. Improve airflow if dense planting.</li>
+        <li><strong>Peonies — Botrytis:</strong> Gray mold on buds or petals — remove infected plant material immediately. Apply copper spray. Ensure good airflow.</li>
+        <li><strong>Carrot rust fly (Bed 3):</strong> Yellowing tops, tunneled roots — apply row cover over carrot bed to prevent egg laying; difficult to spray once established.</li>
+        <li>Scattered Preen touch-up in high-weed areas of beds.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-soil">
+      <div class="task-card-header">
+        <span class="task-icon">💧</span>
+        <span class="task-label">Watering & Mulch</span>
+        <span class="task-bed">ALL BEDS</span>
+      </div>
+      <div class="task-body"><ul>
+        <li>Tomatoes need 1–2" of water per week. Deep, infrequent watering (at soil level, not overhead) is far superior to shallow daily watering. Overhead watering promotes fungal disease.</li>
+        <li>Replenish mulch if it has broken down or been displaced. Aim for 2–3" consistently — especially in Bed 1 around tomatoes.</li>
+        <li>Begin succession sowing of lettuce and dill every 3 weeks (as summer heat bolts older plantings).</li>
+        <li><strong>Coffee grounds — ongoing compost addition:</strong> Keep adding daily grounds to your compost pile through the season. In summer heat, a compost pile with regular coffee ground additions (balanced with dry brown material — dried leaves, cardboard) can reach 130–160°F and break down in 6–8 weeks. Turn the pile weekly for fastest results. Avoid adding grounds directly around acid-sensitive plants mid-season as a soil drench — at this time of year the nitrogen benefit is modest and the crusting risk in dry weather is real.</li>
+      </ul></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== JULY ===== -->
+<div class="month-panel" id="panel-jul">
+  <div class="month-header">
+    <div class="month-number">07</div>
+    <div class="month-info">
+      <div class="month-name">July</div>
+      <div class="month-tagline">Peak harvest season — abundance and vigilance</div>
+      <div class="month-season">MID SUMMER — Full Production</div>
+    </div>
+  </div>
+
+  <div class="alert alert-warn">
+    <div class="alert-icon">🍅</div>
+    <div><div class="alert-title">Late Blight Alert — Act Preventively</div>Late blight (Phytophthora infestans) devastates tomatoes rapidly in NJ's humid July nights. Once you see greasy dark spots on leaves, it spreads fast. Your best tools: Mancozeb and copper on a weekly schedule during wet periods.</div>
+  </div>
+
+  <div class="task-grid">
+    <div class="task-card card-harvest">
+      <div class="task-card-header">
+        <span class="task-icon">🍇</span>
+        <span class="task-label">Peak Harvest</span>
+        <span class="task-bed">ALL BEDS</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Tomatoes (Bed 1 + Pots):</strong> Cherry tomatoes ripen first (July 1–15 often). Regular tomatoes typically July 15–August. Check daily — don't let over-ripe fruit attract pests.</li>
+        <li><strong>Peppers (Bed 1 + Pots):</strong> Green peppers ready at full size. Let ripen to red/yellow/orange for sweetness and higher vitamin C.</li>
+        <li><strong>Eggplant (Bed 1):</strong> Harvest when skin is glossy and slightly soft to the touch. Don't let them over-ripen (seeds become bitter).</li>
+        <li><strong>Melons — harvest timing (critical to get right):</strong> Unlike tomatoes, melons do NOT continue to ripen or sweeten after harvest — they must be picked at peak ripeness on the vine. <strong>Cantaloupe/muskmelon:</strong> "Full slip" is the gold standard — press gently at the stem attachment; a ripe melon detaches with almost no resistance and leaves a clean circular scar. Also look for: fully developed tan netting, strong sweet fragrance at the blossom end, and a color change from green to gold-tan between the netting. A slight give at the blossom end is acceptable; a soft blossom end with fermenting smell means overripe. <strong>Watermelon:</strong> The tendril closest to the fruit dries and turns brown when ripe. The ground spot (underside where fruit rests) turns from white to creamy yellow. The thump test (hollow vs. dull thud) requires experience — use it alongside the tendril test, not alone. Do not rely on size alone — check multiple indicators.</li>
+        <li><strong>Cucumbers (Bed 3 + Pots):</strong> Check DAILY — they grow incredibly fast. Overgrown cucumbers reduce the plant's productivity. Parthenocarpic types will set without pollination.</li>
+        <li><strong>Currants (Bed 2):</strong> Black currants first (late June/early July), then red/white/pink champagne (July 1–20). Harvest when fully colored and slightly soft. Taste test — they should be sweet-tart.</li>
+        <li><strong>Black raspberries (Bed 2):</strong> July harvest — they separate easily from the core when ripe (unlike blackberries).</li>
+        <li><strong>Wineberries (Bed 2):</strong> Mid-to-late July. Visually striking orange-red; sweet/tart. Pick when fully colored.</li>
+        <li><strong>Garlic (Bed 3):</strong> Harvest when 5–6 of the lower leaves turn brown (typically mid-July in NJ). Cure in a warm, shaded, ventilated area for 3–4 weeks.</li>
+        <li><strong>Swiss chard (Bed 4):</strong> Continue outer-leaf harvest.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-spray">
+      <div class="task-card-header">
+        <span class="task-icon">💊</span>
+        <span class="task-label">Spray Schedule — July</span>
+        <span class="task-bed">ALL BEDS</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Bed 1 — Tomatoes (CRITICAL):</strong> Increase to weekly spray during warm/humid periods. Rotate: <strong>Mancozeb</strong> (week 1) → <strong>Captain Jack's Copper</strong> (week 2). Mancozeb is the superior contact fungicide for late blight. Note: Mancozeb has a 5-day pre‑harvest interval — plan accordingly.</li>
+        <li><strong>Bed 3 — Cucumbers &amp; Melon Patch:</strong> Weekly neem oil or copper for powdery mildew. If severe: <strong>Myclobutanil (Immunox)</strong> is the most effective systemic option for cucurbits — read label for rates.</li>
+        <li><strong>🪲 Cucumber beetles (Bed 3 + Pots) — PEAK PRESSURE:</strong> July is peak cucumber beetle season in NJ. Maintain <strong>bifenthrin 7.9%</strong> every 7 days without fail if plants are uncovered. Do NOT extend the spray interval during hot humid spells — beetle populations are at maximum and bacterial wilt transmission risk is highest. If a plant suddenly wilts despite adequate water, perform the stem-pull test immediately (cut stem, pull apart slowly — white stringy threads = bacterial wilt). Remove and bag wilted plants the same day; do not compost.</li>
+        <li><strong>Japanese beetles (Beds 2 + 3):</strong> <strong>Bifenthrin 7.9%</strong> is your most effective and persistent option. Sevin (lambda-cyhalothrin formulation) is also effective. Apply early morning when beetles are sluggish. Reapply every 7–10 days as long as beetles are present.</li>
+        <li><strong>Roses:</strong> Continue biweekly Immunox + add bifenthrin for beetles if not already included.</li>
+        <li><strong>STOP spraying berries (Bed 2)</strong> during active fruit harvest — observe label pre‑harvest intervals. Copper: 0 days PHI. Sevin: check label (varies by formulation). Bifenthrin: 1–3 days PHI. Insecticidal soap: 0 days PHI.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-fert">
+      <div class="task-card-header">
+        <span class="task-icon">🌱</span>
+        <span class="task-label">Fertilize — July</span>
+        <span class="task-bed">BEDS 1 + POTS</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Melons at fruit set — fertilizer shift:</strong> Once fruits are marble-size and sizing rapidly, reduce nitrogen and increase potassium. A fertilizer with a ratio like 5-10-15 or similar (low N, moderate P, high K) supports fruit sweetness and size. Consistent watering is critical at this stage — irregular moisture causes cracking, bland flavor, and blossom end rot. Reduce watering slightly as fruits approach full maturity (2 weeks before expected harvest) to concentrate sugars.</li>
+        <li><strong>Tomatoes showing blossom end rot?</strong> This is calcium deficiency compounded by irregular watering — NOT a soil calcium shortage in most NJ soils. Solution: consistent deep watering. Ground eggshells are too slow to help mid-season. A foliar calcium spray (calcium chloride solution) works faster if needed.</li>
+        <li><strong>Pots (ALL):</strong> Continue liquid feed every 10–14 days — this is critical for potted plants in July heat. They're at peak growth and leach nutrients rapidly.</li>
+        <li><strong>Bed 1 tomatoes:</strong> If you're fertigating, a weekly dose of Jack's 12-15-30 or Tomato Feed through the drip tape replaces mid-season side-dressing. If not yet fertigating, surface-apply Plant‑Tone or 10-10-10 lightly (1 cup per plant) mid-July and water in manually — the buried tape won't distribute surface-applied granules effectively on its own.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-prune">
+      <div class="task-card-header">
+        <span class="task-icon">✂️</span>
+        <span class="task-label">Post-Harvest Cane Management</span>
+        <span class="task-bed">BED 2</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Wineberries:</strong> After harvest, remove the fruited (2nd-year) canes to the ground. Leave the vigorous new green primocanes — these will fruit next year. Tie new canes to supports.</li>
+        <li><strong>Black raspberries:</strong> Remove all floricanes (fruited canes — they're woody and have short brown stubs). Leave the green primocanes you tipped in May/June.</li>
+        <li><strong>Currants/Gooseberries:</strong> Remove any exhausted old canes (4+ years old) now if missed in February. Thin crowded centers.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-pest">
+      <div class="task-card-header">
+        <span class="task-icon">👁️</span>
+        <span class="task-label">Pest & Disease Watch</span>
+        <span class="task-bed">ALL BEDS</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Spider mites (Bed 1 + Pots):</strong> Stippled leaves, fine webbing on underside in hot/dry weather. Apply <strong>insecticidal soap</strong> or <strong>neem oil</strong> — get undersides of leaves. Bonide All Seasons Oil at summer rate also works. Mites develop resistance to pyrethroids — don't use bifenthrin for mites.</li>
+        <li><strong>Slugs in summer:</strong> Activity drops during hot dry weather but surges again during rainy stretches or after irrigation. After any period of several rainy days, do an evening inspection with a flashlight — go out 1–2 hours after dark when slugs are actively feeding. Reapply <strong>Slug Magic granules</strong> after heavy rain (iron phosphate dissolves slowly but heavy rain speeds breakdown). Keep granules active around tomato plant bases — slugs target lower fruit and will climb stems at night.</li>
+        <li><strong>Spotted wing drosophila (Bed 2):</strong> Small fly that lays eggs in ripening fruit. Pick fruit promptly (daily). Refrigerate harvested fruit immediately. Spinosad (Captain Jack's Deadbug — worth buying if not already on hand) is the best control.</li>
+        <li><strong>Bacterial wilt — your #1 cucumber killer:</strong> Caused by the bacterium Erwinia tracheiphila, spread exclusively by striped and spotted cucumber beetles feeding on plants. Symptoms: one or more vines wilt suddenly and completely despite adequate water, then the whole plant collapses and dies within days. <strong>There is no cure</strong> — once wilting appears, the plant is lost. Diagnostic test: cut a wilted stem and slowly pull the two ends apart — if you see thin white stringy threads bridging the gap, it's bacterial wilt. Remove and bag the plant immediately (don't compost). <strong>Prevention is everything:</strong> row cover from day one, plus bifenthrin or Sevin sprayed on the soil and base of plants before cover goes on. If you remove the cover, spray foliage with bifenthrin every 7 days during peak beetle season (June–August).</li>
+        <li>Check rose hips: if roses are setting hips instead of reblooming, deadhead more aggressively.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-maintain">
+      <div class="task-card-header">
+        <span class="task-icon">🌿</span>
+        <span class="task-label">Herb Maintenance (Pots)</span>
+        <span class="task-bed">POTS</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Mint:</strong> Harvest aggressively to prevent flowering. Once mint flowers, flavor declines.</li>
+        <li><strong>Basil (if applicable):</strong> Pinch flowers constantly.</li>
+        <li><strong>Dill:</strong> Allow one plant to flower and go to seed if you want dill seed for pickling. Otherwise deadhead to extend leaf production.</li>
+        <li><strong>Rosemary:</strong> Drought-tolerant — don't overwater in summer heat. Let dry between waterings.</li>
+        <li>Pot lettuce: likely bolting in July heat. Replace with new starts or wait until late August for fall planting.</li>
+      </ul></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== AUGUST ===== -->
+<div class="month-panel" id="panel-aug">
+  <div class="month-header">
+    <div class="month-number">08</div>
+    <div class="month-info">
+      <div class="month-name">August</div>
+      <div class="month-tagline">Late summer push — plan fall plantings while harvesting hard</div>
+      <div class="month-season">LATE SUMMER — Transition Begins</div>
+    </div>
+  </div>
+
+  <div class="task-grid">
+    <div class="task-card card-harvest">
+      <div class="task-card-header">
+        <span class="task-icon">🫐</span>
+        <span class="task-label">Harvest Continues</span>
+        <span class="task-bed">ALL BEDS</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Blackberries (Bed 2):</strong> Late July through August. Pick when fully black AND soft — if they're still firm, wait another day or two. They should separate easily with no resistance.</li>
+        <li><strong>Tomatoes, peppers, eggplant, cucumbers:</strong> Peak production. Don't let anything over-ripen on the vine — that signals the plant to stop producing.</li>
+        <li><strong>Peppers:</strong> Harvest at green if you need them; leaving on vine to ripen red takes another 2–3 weeks but dramatically improves flavor and nutrition.</li>
+        <li><strong>Swiss chard (Bed 4):</strong> Can take light frost — will produce into October if not cut to the ground.</li>
+        <li><strong>Melons & watermelons — final harvest push:</strong> All melons must be harvested before first frost (Oct 15). With a Sept 1–Oct 1 ripening window for most Zone 6b varieties, late August is critical — check all developing fruits every other day. If a cold forecast threatens before fruits are ripe, cut the vine a few inches from the melon and bring indoors — cantaloupes will continue to soften (though not sweeten) off the vine for a few days. Watermelons will not improve off the vine at all. For very late-season plants, removing all but the 2–3 largest fruits now forces the plant to ripen what it has rather than starting new ones that won't finish.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-seed">
+      <div class="task-card-header">
+        <span class="task-icon">🌱</span>
+        <span class="task-label">Fall Planting Starts — Indoors & Direct</span>
+        <span class="task-bed">BED 4 + POTS</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Aug 1–10:</strong> Start fall lettuce indoors (or direct sow Aug 10–20 outdoors). Lettuce needs to be in the ground 6–8 weeks before first frost (Oct 15). Direct sow is fine with consistent moisture.</li>
+        <li><strong>Aug 1–10:</strong> Direct sow fall Swiss chard and bunching onions (Bed 4). They're faster to establish and tolerate light frost.</li>
+        <li><strong>Garlic bed prep (Bed 3):</strong> After garlic harvest, clean the area, pull weeds, and incorporate compost + bone meal. Let soil rest. You'll replant garlic here in September.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-prune">
+      <div class="task-card-header">
+        <span class="task-icon">✂️</span>
+        <span class="task-label">Strawberry Bed Renovation</span>
+        <span class="task-bed">BED 2</span>
+      </div>
+      <div class="task-body"><ul>
+        <li>Renovate strawberry bed <strong>within 2 weeks of last harvest</strong> (by late July or early August). This allows the plant maximum time to rebuild before winter.</li>
+        <li>Mow or cut foliage to 1–2" above the crown. Thin plants to 6–8" apart, removing old or weakly-rooted plants. Till narrow rows between plant rows.</li>
+        <li>Apply <strong>Plant‑Tone</strong> or 10-10-10 after renovation and water in. This critical feed sets up next year's crop.</li>
+        <li>Apply copper spray after renovation to reduce leaf spot and crown rot going into fall.</li>
+        <li>Allow runners selected for bed expansion to root in place.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-spray">
+      <div class="task-card-header">
+        <span class="task-icon">💊</span>
+        <span class="task-label">Spray Schedule — August</span>
+        <span class="task-bed">BEDS 1 + 3</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Bed 1 — Tomatoes (CRITICAL):</strong> Late blight is most destructive in August warm, humid nights. Maintain weekly fungicide rotation: <strong>Mancozeb</strong> alternating with <strong>Captain Jack's Copper</strong>. If late blight is confirmed (look for olive-colored lesions on leaves, white fuzzy growth on leaf undersides), apply Mancozeb immediately — it's your best contact tool. Observe 5-day pre‑harvest interval.</li>
+        <li><strong>Bed 3 — Cucumbers &amp; Melon Patch:</strong> Powdery mildew is almost universal in August. Neem oil biweekly as a minimum. <strong>Myclobutanil (Immunox)</strong> if the infestation is ahead of you — systemic action works from inside the plant.</li>
+        <li><strong>🪲 Cucumber beetles (Bed 3 + Pots) — SECOND WAVE:</strong> A second generation of cucumber beetles hatches in August. Continue <strong>bifenthrin 7.9%</strong> every 7–10 days. If plants have survived to this point without wilt, they are more resistant to sudden collapse — but beetles will still cause feeding damage and spread disease to any remaining healthy vines. Maintain spray schedule through end of harvest.</li>
+        <li><strong>Roses:</strong> Continue biweekly Immunox. Japanese beetles should be winding down in late August — reduce pyrethroid sprays accordingly.</li>
+        <li><strong>Blackberries (Bed 2 — after harvest):</strong> Once harvest is complete, apply copper spray to prevent cane blight and rust.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-pest">
+      <div class="task-card-header">
+        <span class="task-icon">👁️</span>
+        <span class="task-label">Pest Watch — August</span>
+        <span class="task-bed">ALL BEDS</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Cucumber beetles (striped and spotted):</strong> Second wave intensifies in August. Striped beetle (yellow with 3 black stripes) is the primary bacterial wilt vector — even a few feeding punctures can infect a plant. Spotted beetle (yellow with 12 black spots) also transmits wilt but less efficiently. Both chew ragged holes in leaves and flowers. Use bifenthrin every 7–10 days on foliage; apply in early morning. If plants were lost earlier in the season to sudden wilt, cucumber beetles are established in the area — row cover from day one next year is essential.</li>
+        <li><strong>Hornworms:</strong> Second-generation tomato hornworms appear. Look for defoliated branches and large green caterpillars. Hand-pick or spray <strong>Sevin</strong> for heavy infestations.</li>
+        <li><strong>Pepper maggot fly:</strong> Causes pitted, prematurely red peppers. Bifenthrin as a preventive spray in early August.</li>
+        <li><strong>Blackberry leaf spot:</strong> Yellow-orange spots, early defoliation on blackberries. Apply copper after harvest.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-fert">
+      <div class="task-card-header">
+        <span class="task-icon">🌱</span>
+        <span class="task-label">Fertilize — August</span>
+        <span class="task-bed">BED 2 + ROSE BED</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Bed 2 berries (post-harvest):</strong> After all fruiting is done, apply a final <strong>Holly‑Tone</strong> feeding. This fall feed supports root development and cane hardening before winter. Do not use high-nitrogen fertilizers this late — you don't want soft new growth that won't harden before frost.</li>
+        <li><strong>Roses:</strong> Stop heavy fertilizing after Aug 15 — you want new growth to harden off, not push soft shoots into fall. A light Plant‑Tone is fine through Aug 1; then stop.</li>
+        <li><strong>Bed 1 pots:</strong> Continue liquid feeding through August — containers need it. Reduce frequency after Sept 1.</li>
+      </ul></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SEPTEMBER ===== -->
+<div class="month-panel" id="panel-sep">
+  <div class="month-header">
+    <div class="month-number">09</div>
+    <div class="month-info">
+      <div class="month-name">September</div>
+      <div class="month-tagline">Garlic goes in; fall greens emerge; closing out the season</div>
+      <div class="month-season">EARLY FALL — Wind-Down & Plant</div>
+    </div>
+  </div>
+
+  <div class="task-grid">
+    <div class="task-card card-seed">
+      <div class="task-card-header">
+        <span class="task-icon">🧄</span>
+        <span class="task-label">Plant Garlic — Bed 3</span>
+        <span class="task-bed">BED 3</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Plant garlic Sept 15 – Oct 10</strong> in NJ (after first light frost but while soil is still workable — typically late Sept/early Oct in Zone 6b).</li>
+        <li>Plant hardneck varieties (Rocambole, Porcelain, Purple Stripe, Music) for NJ's climate — they're better suited to cold winters and have superior flavor.</li>
+        <li>Plant cloves 2" deep, 6" apart, pointed end up. Add bone meal at bottom of each hole.</li>
+        <li>Bed 3 being wetter/shadier: ensure garlic placement has best drainage within that bed. Garlic rots in waterlogged soil. Consider raised rows if drainage is problematic.</li>
+        <li>Mulch after planting with 2–3" of straw (increase to 4–6" after hard freeze in November).</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-harvest">
+      <div class="task-card-header">
+        <span class="task-icon">🥬</span>
+        <span class="task-label">Fall Harvests</span>
+        <span class="task-bed">BEDS 1 + 4 + POTS</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Fall lettuce and Swiss chard (Bed 4):</strong> Begin harvesting as outer leaves reach size. Swiss chard improves after light frost.</li>
+        <li><strong>Melons & watermelons:</strong> All remaining fruits must be harvested before first frost (Oct 15). Don't leave any on the vine past the first light frost warning — cover with old bedsheets if a surprise frost threatens and fruits are still ripening. After final harvest, pull vines immediately and dispose of (do not compost if powdery mildew or disease was present). Let the melon patch soil rest; add compost and till lightly.</li>
+        <li><strong>Tomatoes (Bed 1 + Pots):</strong> Harvest all mature fruit before expected frost. Green tomatoes can ripen indoors at room temperature (NOT in the refrigerator — cold ruins flavor).</li>
+        <li><strong>Peppers:</strong> Harvest all before first frost — they don't survive freezing. Can roast and freeze in quantity for winter use.</li>
+        <li><strong>Eggplant:</strong> Same as peppers — harvest before frost.</li>
+        <li><strong>Carrots (Bed 3):</strong> Can be harvested through October. A light frost actually sweetens them. Dig before hard ground freezes.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-prune">
+      <div class="task-card-header">
+        <span class="task-icon">✂️</span>
+        <span class="task-label">Berry Cane Management</span>
+        <span class="task-bed">BED 2</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Blackberries:</strong> Remove any remaining fruited floricanes that weren't cut after harvest. Tie in new primocanes for winter support.</li>
+        <li><strong>Raspberries/Wineberries:</strong> Ensure all fruited canes are removed. New canes should be secured to trellis or wire.</li>
+        <li><strong>Slugs — fall resurgence:</strong> September brings cooler temps and autumn rains — slug activity surges again, often as bad as spring. This is your second critical treatment window. Fall lettuce, Swiss chard, and newly planted garlic are all vulnerable. Apply <strong>Slug Magic granules</strong> across all active beds, especially Bed 3 (garlic just planted) and Bed 4 (fall greens). Maintain through October until first hard frost. Also a good time to do an evening flashlight inspection to gauge the local slug population — knowing how bad it is helps you calibrate how often to reapply.</li>
+        <li><strong>Roses:</strong> <strong>Stop deadheading</strong> by Sept 1. Allowing rose hips to form signals the plant to harden off for winter. Continued deadheading pushes tender late growth that won't harden before frost.</li>
+        <li><strong>Perennial Bed:</strong> Cut back most spent perennial stems. Leave some seed heads for overwintering birds (coneflowers, black-eyed susans are especially good). Leave grasses standing.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-spray">
+      <div class="task-card-header">
+        <span class="task-icon">💊</span>
+        <span class="task-label">Spray Schedule — September</span>
+        <span class="task-bed">BED 2 + ROSE BED</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Roses:</strong> You can reduce or stop Immunox sprays by mid-September as the season winds down. A final copper spray can help harden off canes.</li>
+        <li><strong>Bed 2 — Fall disease prevention:</strong> Apply a final copper spray to all cane fruits and currants as leaves begin to turn — reduces disease overwintering on canes. This is a cleanup spray, not a growing-season application.</li>
+        <li><strong>Bed 1 tomatoes:</strong> If plants are still productive, continue Mancozeb/copper rotation through harvest.</li>
+        <li><strong>🪲 Cucumber beetles (Bed 3 + Pots) — TAPERING BUT PRESENT:</strong> Beetle activity drops in September as temps cool but adults remain active until the first hard frost, especially on warm days. Continue <strong>bifenthrin</strong> every 10–14 days as long as cucumbers are still producing. Once you pull the plants for the season, adult beetles will disperse to overwinter in nearby leaf litter and wood edges — this is why cleaning up bed debris promptly in fall slightly reduces next year's population.</li>
+        <li>Other spray programs wind down significantly in September — cool nights reduce fungal pressure on most crops.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-soil">
+      <div class="task-card-header">
+        <span class="task-icon">🌍</span>
+        <span class="task-label">Soil Prep & Amendments</span>
+        <span class="task-bed">BEDS 1 + 4</span>
+      </div>
+      <div class="task-body"><ul>
+        <li>As Bed 1 plants finish, remove spent plants and debris — don't leave diseased tomato plants to overwinter in the bed.</li>
+        <li>Apply 2–3" of compost to cleared Bed 1 areas. Work in lightly. Bed can rest over winter with compost mulching and breaking down.</li>
+        <li>Apply ground <strong>eggshells</strong> (calcium supplement) to Bed 1 now — they take months to break down, so fall application feeds the soil by spring. Good use for this slow‑release amendment.</li>
+        <li>Soil test now if you haven't — results inform your fall lime/amendment decisions. NJ Cooperative Extension can test for pH and nutrients inexpensively.</li>
+        <li>If pH is low: apply agricultural lime in fall so it has time to integrate before spring.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-maintain">
+      <div class="task-card-header">
+        <span class="task-icon">🍓</span>
+        <span class="task-label">Strawberry Bed — Fall Care</span>
+        <span class="task-bed">BED 2</span>
+      </div>
+      <div class="task-body"><ul>
+        <li>If planting new strawberries this fall: plant now (Sept 1–30) for establishment before winter.</li>
+        <li>Renovated plants from August should now have fresh new foliage — keep beds weeded. Apply light Plant‑Tone if not done in August.</li>
+        <li>Apply Preen around strawberry plants for weed suppression if you've been managing runners manually. Don't apply where you want runners to root.</li>
+      </ul></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== OCTOBER ===== -->
+<div class="month-panel" id="panel-oct">
+  <div class="month-header">
+    <div class="month-number">10</div>
+    <div class="month-info">
+      <div class="month-name">October</div>
+      <div class="month-tagline">First frost around Oct 15 — protect, harvest, put the garden to bed</div>
+      <div class="month-season">FALL — Frost Season</div>
+    </div>
+  </div>
+
+  <div class="alert alert-warn">
+    <div class="alert-icon">❄️</div>
+    <div><div class="alert-title">First Frost ~Oct 15–20</div>Keep row cover or old bedsheets ready. A light frost (28–32°F) can damage tomatoes and peppers but often a single frost is followed by a week of warmth. Cover for light frosts; harvest everything before a hard frost (below 28°F for multiple hours).</div>
+  </div>
+
+  <div class="task-grid">
+    <div class="task-card card-harvest">
+      <div class="task-card-header">
+        <span class="task-icon">🍂</span>
+        <span class="task-label">Final Harvests</span>
+        <span class="task-bed">ALL BEDS</span>
+      </div>
+      <div class="task-body"><ul>
+        <li>Before first hard frost: harvest ALL remaining tomatoes, peppers, and eggplant. Peppers can be frozen (cut and freeze raw). Green tomatoes ripen on the countertop.</li>
+        <li><strong>Carrots (Bed 3):</strong> Harvest before ground freezes hard (late October/early November). The light frosts of October actually sweeten them — leave until you need the space or frost risk is serious.</li>
+        <li><strong>Swiss chard and lettuce (Bed 4):</strong> Continue harvesting; both handle light frost. Swiss chard can go until hard freeze. Cover with row cover for extended harvest into November.</li>
+        <li><strong>Herbs (Pots):</strong> Bring tender rosemary indoors before frost — it's marginally hardy in Zone 6b but safer to overwinter inside (sunny window or grow lights). Thyme and mint can stay out; mint dies back but returns. Parsley can handle a frost or two.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-prune">
+      <div class="task-card-header">
+        <span class="task-icon">✂️</span>
+        <span class="task-label">Cut-Back & Cleanup</span>
+        <span class="task-bed">BEDS 1 + 3 + 4</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Peonies:</strong> After first hard frost, cut stems to 1" above soil level. Remove ALL foliage from the bed — peony botrytis overwinters in old leaves. Do NOT compost peony debris.</li>
+        <li><strong>Beds 1 and 4:</strong> Remove all spent annual plants after harvest/frost kills them. Pull roots where possible (disease reduction). Add to compost if disease-free; bag and dispose if diseased (tomato blight, powdery mildew).</li>
+        <li><strong>Perennial Bed:</strong> Leave ornamental grasses and seed heads standing through winter for bird habitat. Cut back the rest to 4–6".</li>
+        <li><strong>Roses:</strong> Do NOT prune roses in fall in Zone 6b — this stimulates tender growth that winterkills. Wait for spring. After 2–3 hard frosts, mound 8–12" of soil and/or compost around the base of each rose for winter protection.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-soil">
+      <div class="task-card-header">
+        <span class="task-icon">🌍</span>
+        <span class="task-label">Soil Amendment & Mulch</span>
+        <span class="task-bed">ALL BEDS</span>
+      </div>
+      <div class="task-body"><ul>
+        <li>Add 2–3" of compost to all cleared beds. This is the most important thing you can do for next year's garden — winter decomposition incorporates organic matter deep into the soil.</li>
+        <li>Lightly till or fork compost into the top 4–6" of empty beds — or just lay it on top (no-till approach). Both work; no-till preserves soil structure and biology better.</li>
+        <li><strong>Ground eggshells:</strong> Apply to beds now (slow‑release calcium; it takes months to break down and be available).</li>
+        <li>Apply lime if pH is below 6.0 (based on soil test). Fall application allows winter rains to work it in.</li>
+        <li><strong>Garlic (Bed 3):</strong> After mulching in October, add more straw (total 4–6") once hard freezes arrive (late Oct/Nov). Don't over-mulch too early — wait for the ground to begin freezing.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-maintain">
+      <div class="task-card-header">
+        <span class="task-icon">🫐</span>
+        <span class="task-label">Berry Bed Winterizing</span>
+        <span class="task-bed">BED 2</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Strawberries:</strong> Mulch with 2–3" of straw AFTER the first hard frost (late October or early November). Mulching too early insulates soil warmth and delays dormancy — wait for the plants to truly go dormant.</li>
+        <li><strong>All cane fruits:</strong> Ensure all fruited canes are removed. Tie remaining primocanes to trellis for wind support.</li>
+        <li><strong>Currants/Gooseberries:</strong> No special winterizing needed — they're cold-hardy. Ensure mulch around the base is 2–3" of wood chips to protect the root zone.</li>
+      </ul></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== NOVEMBER ===== -->
+<div class="month-panel" id="panel-nov">
+  <div class="month-header">
+    <div class="month-number">11</div>
+    <div class="month-info">
+      <div class="month-name">November</div>
+      <div class="month-tagline">Closing time — clean up, put the garden to bed, give thanks</div>
+      <div class="month-season">LATE FALL — Garden Sleeps</div>
+    </div>
+  </div>
+
+  <div class="task-grid">
+    <div class="task-card card-soil">
+      <div class="task-card-header">
+        <span class="task-icon">🌍</span>
+        <span class="task-label">Final Soil & Mulch Work</span>
+        <span class="task-bed">ALL BEDS</span>
+      </div>
+      <div class="task-body"><ul>
+        <li>Top-dress all beds with a final 2" of shredded leaves or wood chips if compost application wasn't enough. Bare soil is vulnerable to erosion and nutrient loss over winter.</li>
+        <li>Work any remaining blood meal or bone meal into empty beds now — they'll break down slowly over winter and be available in spring.</li>
+        <li>Increase garlic straw mulch to 4–6" as ground begins to freeze (typically mid-November in NJ).</li>
+        <li>Mound rose bases with 10–12" of soil/compost (a "rose cone" of soil). Burlap wrapping is optional; soil mounding is essential in Zone 6b.</li>
+        <li>Final strawberry straw mulch increase if not done in October.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-maintain">
+      <div class="task-card-header">
+        <span class="task-icon">🔧</span>
+        <span class="task-label">Equipment Winterization</span>
+        <span class="task-bed">ALL BEDS</span>
+      </div>
+      <div class="task-body"><ul>
+        <li><strong>Bed 1 drip tape dig-up:</strong> Before the ground freezes, flush the entire tape system with plain water for 10+ minutes — this clears any fertilizer salts or residue left in the lines from fertigation, which would otherwise dry and clog emitters in storage. Then dig up the tape, coil loosely, and store indoors above freezing. Label which rows are which if you have multiple lines. Inspect for cracks or damage while it's clean and on the bench — replace sections now rather than discovering failures in April.</li>
+        <li>Drain and store all hoses and irrigation fittings — frozen water expands and cracks couplings and solenoid valves. If the solenoid valve is exposed, bring it inside or insulate it.</li>
+        <li>Clean all spray equipment thoroughly — residual chemicals damage seals and pumps. Flush with clean water 2–3 times, then run clean water through the wand. Store sprayers empty and slightly open.</li>
+        <li>Oil all metal tool surfaces; store in a dry location (rust destroys tools quickly).</li>
+        <li>Store chemicals above freezing — freezing temperatures degrade many liquid formulations. A basement or garage that stays above 35°F is ideal.</li>
+        <li>Store remaining liquid fertilizers (fish emulsion, Plant‑Tone liquid) where they won't freeze.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-spray">
+      <div class="task-card-header">
+        <span class="task-icon">💊</span>
+        <span class="task-label">Final Spray — Cane Fruits</span>
+        <span class="task-bed">BED 2</span>
+      </div>
+      <div class="task-body"><ul>
+        <li>Apply a final dormant-season copper spray to cane fruits before full dormancy (before leaves completely drop). This reduces disease inoculum overwintering on canes.</li>
+        <li>You can also apply a diluted lime-sulfur spray (lime-sulfur is a powerful dormant fungicide) at this stage. However, copper alone will serve you well.</li>
+        <li>No more insecticide sprays needed until spring.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-maintain">
+      <div class="task-card-header">
+        <span class="task-icon">♻️</span>
+        <span class="task-label">Compost & Cleanup</span>
+        <span class="task-bed">ALL BEDS</span>
+      </div>
+      <div class="task-body"><ul>
+        <li>Add all disease-free plant debris to your compost pile (turn and add to center where heat will be greatest). Your daily coffee grounds should be going in here year-round — in November, add a big batch if you've been stockpiling. Coffee grounds are "green" (nitrogen-rich) material; balance with plenty of dried leaves or shredded cardboard.</li>
+        <li>Bag and remove diseased plant material (especially tomato blight, powdery mildew, rose cuttings). Do NOT compost these.</li>
+        <li>Shred fallen leaves with the lawn mower — shredded leaves break down faster in compost and are excellent as bed mulch.</li>
+        <li>Cover compost pile with a tarp to prevent leaching of nutrients over wet winter months.</li>
+      </ul></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== DECEMBER ===== -->
+<div class="month-panel" id="panel-dec">
+  <div class="month-header">
+    <div class="month-number">12</div>
+    <div class="month-info">
+      <div class="month-name">December</div>
+      <div class="month-tagline">Rest, review, and dream of next season</div>
+      <div class="month-season">WINTER — Full Dormancy</div>
+    </div>
+  </div>
+
+  <div class="task-grid">
+    <div class="task-card card-maintain">
+      <div class="task-card-header">
+        <span class="task-icon">📖</span>
+        <span class="task-label">Review & Plan</span>
+        <span class="task-bed">ALL BEDS</span>
+      </div>
+      <div class="task-body"><ul>
+        <li>Document this year's results: what varieties were most productive/flavorful, what disease and pest pressures were worst, what new plants you want to add.</li>
+        <li>Write notes on spray timings that worked or didn't — refine the spray schedule for next year.</li>
+        <li>Explore adding <strong>Captain Jack's Deadbug Brew (Spinosad)</strong> to your inventory — it's excellent for spotted wing drosophila on cane fruits, and is OMRI-listed organic. A meaningful addition to any spray arsenal.</li>
+        <li>Order seed catalogs.</li>
+        <li>Check garlic mulch after major storms or freezes.</li>
+      </ul></div>
+    </div>
+
+    <div class="task-card card-pest">
+      <div class="task-card-header">
+        <span class="task-icon">👁️</span>
+        <span class="task-label">December Garden Check</span>
+        <span class="task-bed">BED 2 + ROSE BED</span>
+      </div>
+      <div class="task-body"><ul>
+        <li>After heavy snow loads, check cane fruits in Bed 2 — snow weight can snap canes. Brush off heavy snow if accessible.</li>
+        <li>Check rose mounds — if frost heave has pushed soil mounds apart, re-mound after a mild day.</li>
+        <li>Garlic mulch check after major storms.</li>
+        <li>Deer browse: in NJ's suburban woods areas, deer will browse rose canes and any emerging perennial growth. Install deer netting around roses and perennial beds if deer pressure is high in the area.</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <div class="note"><strong>What to order for next year:</strong> <strong>Floating row cover (Agribon AG-19 or similar) is your highest priority purchase</strong> given the cucumber beetle and bacterial wilt history. Also: <strong>Osmocote 14-14-14</strong> for all container plants (far more effective than organics alone in pots); Captain Jack's Deadbug Brew (Spinosad) for spotted wing drosophila on berries; and wilt-resistant cucumber varieties (Diva, Marketmore 76, Saladin).</div>
+</div>
+
+<!-- ===== SPRAY GUIDE ===== -->
+<div class="month-panel" id="panel-spray">
+  <div class="section-title">💊 Simplified Spray Schedule</div>
+  <div class="section-sub">A practical, bed-by-bed spray calendar — simplified for manageability</div>
+
+  <div class="alert alert-info">
+    <div class="alert-icon">ℹ️</div>
+    <div><div class="alert-title">Philosophy: Prevent, Don't Chase</div>Spray on a schedule before problems appear, not after. Rotate fungicide modes of action (copper vs. mancozeb vs. systemic) to prevent resistance. Keep spray records with dates and products used.</div>
+  </div>
+
+  <div class="ref-section">
+    <div class="ref-header"><h3>🍅 Bed 1 — Tomatoes, Eggplant, Peppers</h3></div>
+    <div class="ref-body">
+      <table class="data-table">
+        <thead><tr><th>Timing</th><th>What</th><th>Best Product</th><th>Alternative</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr class="spray-row-light"><td>At transplant (May)</td><td>Soil drench — transplant stress, fungal roots</td><td>Neem oil soil drench</td><td>—</td><td>Optional but good start</td></tr>
+          <tr class="spray-row-active"><td>Every 10–14 days (May–Sept)</td><td>Early blight, Septoria leaf spot</td><td><strong>Captain Jack's Copper</strong> <span class="chem-badge badge-best">BEST EDIBLES</span></td><td>Mancozeb (5-day PHI)</td><td>Alternate copper and mancozeb for best coverage</td></tr>
+          <tr class="spray-row-active"><td>Weekly during wet weather (July–Aug)</td><td>Late blight prevention/control</td><td><strong>Mancozeb</strong> <span class="chem-badge badge-best">BEST BLIGHT</span></td><td>Copper (less effective on late blight)</td><td>Observe 5-day pre‑harvest interval</td></tr>
+          <tr class="spray-row-light"><td>As needed</td><td>Aphids, mites, whitefly</td><td><strong>Insecticidal Soap</strong> <span class="chem-badge badge-best">SAFEST</span></td><td>Neem oil</td><td>Contact only; must hit the pest</td></tr>
+          <tr class="spray-row-light"><td>As needed</td><td>Hornworms, heavy infestations</td><td><strong>Sevin</strong> (modern lambda-cyhalothrin)</td><td>Bifenthrin 7.9%</td><td>Avoid spraying open flowers — bee risk</td></tr>
+          <tr class="spray-row-light"><td>As needed (hot/dry weather)</td><td>Spider mites</td><td><strong>Insecticidal Soap</strong> or <strong>Neem</strong></td><td>Bonide All Seasons Oil (summer rate)</td><td>Do NOT use bifenthrin — mites resist pyrethroids</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="ref-section">
+    <div class="ref-header"><h3>🫐 Bed 2 — Currants, Berries, Gooseberries, Strawberries</h3></div>
+    <div class="ref-body">
+      <table class="data-table">
+        <thead><tr><th>Timing</th><th>What</th><th>Best Product</th><th>Alternative</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr class="spray-row-active"><td>Feb–early March (dormant)</td><td>Scale, mite eggs, overwintering insects</td><td><strong>Bonide All Seasons Oil</strong> <span class="chem-badge badge-best">BEST DORMANT</span></td><td>—</td><td>Above 40°F, before bud swell only</td></tr>
+          <tr class="spray-row-active"><td>At leaf-out, every 10–14 days (April–June)</td><td>Anthracnose, leaf spot, powdery mildew</td><td><strong>Captain Jack's Copper</strong></td><td>Neem oil (weaker but dual action)</td><td>Reapply after rain. Stop at harvest.</td></tr>
+          <tr class="spray-row-light"><td>Before bloom (strawberries, April–May)</td><td>Botrytis gray mold</td><td><strong>Captain Jack's Copper</strong></td><td>Neem oil</td><td>Avoid Daconil — long PHI on strawberries</td></tr>
+          <tr class="spray-row-active"><td>Late June–August (as needed)</td><td>Japanese beetles</td><td><strong>Bifenthrin 7.9%</strong> <span class="chem-badge badge-best">MOST PERSISTENT</span></td><td>Sevin (lambda-cyhalothrin)</td><td>Early morning; avoid open flowers. 1–3 day PHI.</td></tr>
+          <tr class="spray-row-light"><td>As needed (aphids)</td><td>Aphids on new growth</td><td><strong>Insecticidal Soap</strong></td><td>Neem oil</td><td>Hit undersides of leaves; multiple applications</td></tr>
+          <tr class="spray-row-light"><td>After harvest (Aug–Sept)</td><td>Cane diseases, rust, overwintering cleanup</td><td><strong>Captain Jack's Copper</strong></td><td>Mancozeb</td><td>Full coverage of canes and leaves</td></tr>
+          <tr class="spray-row-stop"><td>🛑 During harvest</td><td>Minimize all sprays</td><td>Insecticidal Soap (0-day PHI) if necessary</td><td>—</td><td>Observe all PHIs strictly</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="ref-section">
+    <div class="ref-header"><h3>🍈 Melon Patch — Cantaloupes, Muskmelons, Watermelons</h3></div>
+    <div class="ref-body">
+      <table class="data-table">
+        <thead><tr><th>Timing</th><th>Problem</th><th>Best Product</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr class="spray-row-active"><td>Every 10–14 days (June–Sept)</td><td>Powdery mildew, downy mildew, angular leaf spot</td><td><strong>Captain Jack's Copper</strong> alternating with <strong>Neem oil</strong></td><td>Same rotation as cucumbers. If powdery mildew gets ahead: Myclobutanil (Immunox) as a systemic rescue. Spray evenings.</td></tr>
+          <tr class="spray-row-active"><td>As needed — June–August</td><td>Cucumber beetles (bacterial wilt vector)</td><td><strong>Bifenthrin 7.9%</strong></td><td>Apply before removing row cover and immediately after. Melons require pollination — remove cover at female flower set; spray in late evening to protect bees.</td></tr>
+          <tr class="spray-row-light"><td>As needed</td><td>Aphids, spider mites</td><td><strong>Insecticidal soap</strong> or <strong>Neem oil</strong></td><td>Hit undersides of leaves. Mites increase in hot/dry spells.</td></tr>
+          <tr class="spray-row-light"><td>At fruit set, biweekly</td><td>Blossom end rot prevention</td><td><strong>Calcium nitrate</strong> soil drench or <strong>Cal-Mag</strong></td><td>Consistent moisture is the primary fix; calcium supplement helps. Avoid overhead watering.</td></tr>
+          <tr class="spray-row-stop"><td>🛑 2 weeks before harvest</td><td>Pre-harvest wind-down</td><td>Minimal — insecticidal soap only if needed</td><td>Observe all PHIs. Reducing irrigation slightly at this stage concentrates sugars.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="ref-section">
+    <div class="ref-header"><h3>🌿 Bed 3 / Rose Bed / Peony Bed / Perennial Bed — Cucumbers, Roses, Peonies, Perennials</h3></div>
+    <div class="ref-body">
+      <table class="data-table">
+        <thead><tr><th>Crop</th><th>Timing</th><th>Problem</th><th>Best Product</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr class="spray-row-active"><td><strong>Rose Bed</strong></td><td>Late March through Sept (biweekly)</td><td>Black spot, powdery mildew</td><td><strong>Myclobutanil / Immunox</strong> <span class="chem-badge badge-best">BEST SYSTEMIC</span></td><td>Far superior to copper or Daconil for roses. Works from inside the plant.</td></tr>
+          <tr class="spray-row-active"><td><strong>Rose Bed</strong></td><td>Late June–August (as needed)</td><td>Japanese beetles, aphids</td><td><strong>Bifenthrin 7.9%</strong></td><td>Early morning application; most persistent option</td></tr>
+          <tr class="spray-row-light"><td><strong>Bed 3 — Cucumbers</strong></td><td>Every 10–14 days (June–Sept)</td><td>Powdery mildew, downy mildew</td><td><strong>Captain Jack's Copper</strong> + <strong>Neem</strong> (alternating)</td><td>Copper for downy; neem for powdery. If severe: Myclobutanil (Immunox).</td></tr>
+          <tr class="spray-row-light"><td><strong>Bed 3 — Cucumbers</strong></td><td>As needed</td><td>Cucumber beetles, squash bugs</td><td><strong>Sevin</strong> or <strong>Bifenthrin</strong></td><td>Critical — beetles spread bacterial wilt</td></tr>
+          <tr class="spray-row-light"><td><strong>Peony Bed</strong></td><td>April–June</td><td>Botrytis blight (gray mold)</td><td><strong>Captain Jack's Copper</strong></td><td>Also: improve airflow, remove all infected material</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="ref-section">
+    <div class="ref-header"><h3>🪴 Pots — Herbs, Cucumbers, Peppers, Lettuce, Tomatoes</h3></div>
+    <div class="ref-body">
+      <table class="data-table">
+        <thead><tr><th>Timing</th><th>Problem</th><th>Best Product</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>As needed (weekly inspection)</td><td>Aphids, mites, whitefly</td><td><strong>Insecticidal Soap</strong></td><td>Easiest and safest for herbs near harvest</td></tr>
+          <tr><td>Biweekly (tomatoes/cucumbers in pots)</td><td>Early blight, powdery mildew</td><td><strong>Copper</strong> (Captain Jack's)</td><td>Same rotation as Bed 1 tomatoes</td></tr>
+          <tr><td>As needed (eggplant/pepper)</td><td>Flea beetles</td><td><strong>Neem oil</strong> or <strong>Insecticidal Soap</strong></td><td>Repeat every 5–7 days; these are persistent</td></tr>
+          <tr><td>Herbs — generally</td><td>Aphids only primarily</td><td>Strong water jet → Insecticidal Soap</td><td>Minimize chemical use on herbs you're eating</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FERTILIZER GUIDE ===== -->
+<div class="month-panel" id="panel-fert">
+  <div class="section-title">🌱 Fertilizer Guide</div>
+  <div class="section-sub">When to use what, and when to skip it</div>
+
+  <div class="ref-section">
+    <div class="ref-header"><h3>Your Fertilizer Inventory — Roles &amp; Best Uses</h3></div>
+    <div class="ref-body">
+      <table class="data-table">
+        <thead><tr><th>Product</th><th>Analysis</th><th>Type</th><th>Best For</th><th>When to Apply</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Plant&#8209;Tone</strong> <span class="chem-badge badge-best">PRIMARY</span></td><td>5-3-3</td><td>Organic, slow&#8209;release</td><td>General use: Beds 1, 4, pots. All vegetables, herbs, perennials.</td><td>At planting + monthly through Aug 1. Work into soil; water in.</td></tr>
+          <tr><td><strong>Holly&#8209;Tone</strong> <span class="chem-badge badge-best">BED 2</span></td><td>4-3-4</td><td>Organic, acidifying</td><td>Currants, gooseberries, wineberries, raspberries, blackberries, strawberries. All prefer acidic soil.</td><td>Early spring (April) + after harvest (Aug). Around drip line, don't pile on crown.</td></tr>
+          <tr><td><strong>Blood Meal</strong> <span class="chem-badge badge-good">HIGH-N</span></td><td>12-0-0</td><td>Organic, fast-ish release</td><td>Garlic (spring), leafy greens (spring push), nitrogen boost in-ground. Not recommended for pots — leaches out before roots can use it.</td><td>Early spring as booster. Do NOT use after mid-June on fruiting plants — pushes leaves over fruit.</td></tr>
+          <tr><td><strong>Bone Meal</strong> <span class="chem-badge badge-good">ROOTS/FLOWERS</span></td><td>3-15-0</td><td>Organic, slow&#8209;release</td><td>Planting holes for tomatoes/peppers/eggplant. Peonies. Garlic. Root establishment.</td><td>At planting; at fall soil prep. Works slowly so apply well ahead.</td></tr>
+          <tr><td><strong>10-10-10 (Groundwork)</strong> <span class="chem-badge badge-good">BEST IN-GROUND</span></td><td>10-10-10</td><td>Synthetic, fast&#8209;release</td><td><strong>In-ground beds: excellent value</strong> — pre-season broadcast across Beds 1 and 4 before tilling is its best use. <strong>In pots: half the label rate only</strong> — fast-release salts burn easily in containers and leach out rapidly. Acceptable as a monthly supplement between liquid feedings once plants are fully established, but not a primary pot fertilizer. Never apply to freshly transplanted or stressed plants.</td><td>Pre-plant spring broadcast in beds. In pots: half rate, once a month max, on established actively growing plants only.</td></tr>
+          <tr><td><strong>Osmocote 14-14-14</strong> <span class="chem-badge badge-best">BEST — POTS</span></td><td>14-14-14</td><td>Synthetic, slow&#8209;release (3–4 months)</td><td>Best baseline fertilizer for all containers. Controlled-release coating releases nutrients gradually with each watering — no burn risk, no rapid leaching. Far superior to 10-10-10 or blood meal as a pot foundation. Work into top inch of potting mix at planting.</td><td>At planting (mix into top inch). Reapply after ~4 months if pots run into a second feeding period.</td></tr>
+          <tr><td><strong>Used Coffee Grounds</strong> <span class="chem-badge badge-good">FREE RESOURCE</span></td><td>~2-0.3-0.3 (approx)</td><td>Organic, slow&#8209;release nitrogen</td><td>Mild nitrogen supplement for Beds 1, 3, 4 and compost. Best used mixed into the top inch of soil (not as a surface layer) or as up to 25% of compost volume by weight. <strong>NOT acidic</strong> — used grounds are nearly pH neutral (6.5–6.8); the acid stays in the brewed coffee. Do not rely on them to acidify Bed 2 for berries. <strong>Turkish grind is extremely fine</strong> — forms a water-repelling crust faster than coarser grinds; always mix into soil, never pile on surface. Slug deterrence from grounds is weak — don't rely on it; keep using Slug Magic. Earthworms love them, which is a genuine soil biology benefit.</td><td>Year-round into compost. Spring soil incorporation before tilling. Small amounts scratched around garlic, tomatoes, leafy greens as a slow N supplement. No more than ½ cup per sq ft worked into top inch.</td></tr>
+          <tr><td><strong>Ground Eggshells</strong></td><td>~38% calcium</td><td>Organic, very slow&#8209;release</td><td>Long-term calcium supplement for Bed 1. Too slow for mid-season BER correction — fall application only.</td><td>Apply in FALL to beds — takes 3–6 months to break down.</td></tr>
+          <tr><td><strong>Jobe's Tree Spikes</strong></td><td>Varies</td><td>Synthetic, slow&#8209;release</td><td>Established currant/gooseberry shrubs. Roses. Perennials.</td><td>Push into soil at drip line in early spring or fall.</td></tr>
+          <tr><td><strong>Cal&#8209;Mag</strong> <span class="chem-badge badge-caution">TEST BEFORE USING</span></td><td>Ca + Mg liquid</td><td>Liquid supplement</td><td>Calcium and magnesium for tomatoes and peppers — helps with interveinal yellowing (mag deficiency) and blossom end rot (calcium). <strong>Yours spent a winter in an unheated garage — test it first:</strong> shake vigorously. If you see chunky sediment that won't re-dissolve, or a separated oily layer, the emulsion has broken and the ratios are unreliable. Replace it — cal-mag is inexpensive. If it looks fully uniform after shaking, it's likely still good.</td><td>Dilute per label; foliar spray or soil drench every 2 weeks during active growth. Fully water&#8209;soluble formulations can be added to fertigation mix — check label.</td></tr>
+          <tr><td><strong>Epsom Salt</strong> <span class="chem-badge badge-buy">ADD — CHEAP &amp; USEFUL</span></td><td>MgSO₄ (~10% Mg)</td><td>Synthetic, fully water&#8209;soluble</td><td>Fast magnesium correction for tomatoes and peppers showing yellowing between veins on older leaves. Extremely cheap. Dissolves completely — safe for drip tape. NJ's acidic soils commonly leach magnesium, making this a useful routine addition.</td><td>1 tbsp per gallon as foliar spray or soil drench monthly. Add to fertigation concentrate at 1 tsp per gallon.</td></tr>
+          <tr><td><strong>Jack's Classic 20-20-20</strong> <span class="chem-badge badge-buy">ADD — FERTIGATION/POTS</span></td><td>20-20-20</td><td>Synthetic, fully water&#8209;soluble</td><td>General&#8209;purpose water&#8209;soluble for fertigation early season and for pots. Dissolves completely — zero clog risk in 0.25 GPH emitters. Best for Bed 1 drip fertigation May–June before flower set. Also excellent for hand&#8209;watering pots.</td><td>Early season through flower set. Mix at label rate in concentrate bucket for Venturi injector.</td></tr>
+          <tr><td><strong>Jack's Classic 12-15-30 Tomato Feed</strong> <span class="chem-badge badge-buy">ADD — FERTIGATION</span></td><td>12-15-30</td><td>Synthetic, fully water&#8209;soluble</td><td>Best fertigation fertilizer once tomatoes begin flowering. Lower nitrogen, higher potassium supports fruit set and flavor. Switch to this from 20-20-20 at flower set and run it through the drip tape all season. Also use for potted tomatoes.</td><td>Once first flowers appear (typically June) through August weekly; every 2 weeks in September.</td></tr>
+          <tr><td><strong>Calcium Nitrate</strong> <span class="chem-badge badge-buy">ADD — FERTIGATION/BER</span></td><td>15.5-0-0 + 19% Ca</td><td>Synthetic, fully water&#8209;soluble</td><td>Best water&#8209;soluble calcium for drip systems — prevents blossom end rot far more effectively than eggshells or lime. Pairs with Jack's Tomato Feed: calcium nitrate provides calcium + nitrogen, Jack's covers phosphorus and potassium. Dissolves completely. <strong>Mix each separately in water before combining</strong> — they can precipitate if mixed as dry concentrates.</td><td>Weekly through drip system alongside Jack's Tomato Feed, June–August.</td></tr>
+          <tr><td><strong>MasterBlend 4-18-38</strong> <span class="chem-badge badge-good">OPTIONAL — ADVANCED</span></td><td>4-18-38</td><td>Synthetic, fully water&#8209;soluble</td><td>Professional 3-part tomato fertigation formula (MasterBlend + calcium nitrate + Epsom salt). Very cost-effective per gallon mixed; popular with serious drip irrigators. Steeper learning curve than Jack's system. Worth exploring if you want to go deep — but Jack's + calcium nitrate + Epsom salt covers the same bases more simply.</td><td>Standard mix: 12g MasterBlend + 12g calcium nitrate + 6g Epsom salt per gallon. Full guides widely available online.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="ref-section">
+    <div class="ref-header"><h3>Fertilizer Calendar by Bed</h3></div>
+    <div class="ref-body">
+      <table class="data-table">
+        <thead><tr><th>Bed</th><th>Spring (Apr–May)</th><th>Early Summer (Jun)</th><th>Mid-Summer (Jul–Aug)</th><th>Fall (Sep–Oct)</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Bed 1</strong><br>Tomatoes, Peppers, Eggplant</td><td>Compost + Plant‑Tone or 10-10-10 pre-plant; bone meal in holes</td><td>Plant‑Tone monthly (switch low-N at flower set on tomatoes)</td><td>Light side-dress Plant‑Tone; liquid feed pots</td><td>Compost; eggshells; lime if needed</td></tr>
+          <tr><td><strong>Bed 2</strong><br>Berries, Currants</td><td>Holly‑Tone at drip line of all plants; Plant‑Tone for strawberries after mulch removal</td><td>No additional unless plants look yellow (possible N deficiency)</td><td>Post-harvest: final Holly‑Tone</td><td>Compost around root zone; Jobe's spikes optional</td></tr>
+          <tr><td><strong>Bed 3</strong><br>Garlic, Cucumbers, Peonies, Roses</td><td>Blood meal for garlic; bone meal at planting for cucumbers; bone meal ring for peonies; Plant‑Tone for roses</td><td>Stop garlic N; Plant‑Tone for cucumbers and roses</td><td>Roses: stop after Aug 1; cucumbers: light feed pots</td><td>Compost all areas; bone meal for garlic planting holes</td></tr>
+          <tr><td><strong>Bed 4</strong><br>Lettuce, Onions, Chard</td><td>Compost + light Plant‑Tone pre-plant</td><td>Light liquid feed if pale/slow</td><td>Fall crop: same as spring</td><td>Compost</td></tr>
+          <tr><td><strong>Melon Patch</strong><br>Cantaloupes, Watermelons</td><td>Compost + Plant&#8209;Tone pre-plant; bone meal in holes; black plastic mulch to warm soil</td><td>Balanced feed; switch to lower-N as vines run; consistent watering critical</td><td>Low N, higher K as fruits size; reduce water 2 weeks before harvest to concentrate sugars</td><td>Pull vines; add compost; let rest</td></tr>
+          <tr><td><strong>Pots</strong><br>All potted plants</td><td>Quality potting mix + slow‑release at planting</td><td>Liquid feed every 10–14 days (critical for pots)</td><td>Continue liquid feed; reduce Sept 1</td><td>Replenish potting mix; compost old mix into beds</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CHEMICAL NOTES ===== -->
+<div class="month-panel" id="panel-chem">
+  <div class="section-title">⚗️ Chemical Notes & Recommendations</div>
+  <div class="section-sub">Overlaps, upgrades, cautions, and what to buy next</div>
+
+  <div class="alert alert-warn">
+    <div class="alert-icon">⚠️</div>
+    <div><div class="alert-title">IMPORTANT: You Have Two Products with the Same Active Ingredient</div><strong>Fungonil/Daconil AND Ortho Max Chlorothalonil</strong> are both chlorothalonil fungicides — the same active ingredient. There is NO benefit to having both. Pick one and use it. The generic Ortho Max is typically cheaper per ounce. Note: Chlorothalonil has significant pre‑harvest interval restrictions and is not labeled for all edible crops — check labels carefully before use on vegetables near harvest.</div>
+  </div>
+
+  <div class="ref-section">
+    <div class="ref-header"><h3>Your Full Chemical Inventory — Analysis & Best Role</h3></div>
+    <div class="ref-body">
+      <table class="data-table">
+        <thead><tr><th>Product</th><th>Active Ingredient</th><th>Type</th><th>Rating</th><th>Best Role in Your Garden</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Myclobutanil (Immunox)</strong></td><td>Myclobutanil</td><td>Systemic fungicide</td><td><span class="chem-badge badge-best">BEST — ROSES</span></td><td>Your #1 rose fungicide. Systemic — absorbed into plant tissue, protects from inside. Best for black spot, powdery mildew. Also use on cucumbers when powdery mildew is ahead of you. Do NOT overuse — resistance can develop. Alternate with copper on other crops.</td></tr>
+          <tr><td><strong>Captain Jack's Copper Concentrate</strong></td><td>Copper octanoate</td><td>Contact fungicide + bactericide</td><td><span class="chem-badge badge-best">BEST — EDIBLES</span></td><td>Your workhorse fungicide for edibles. OMRI-listed organic. Excellent for early blight, anthracnose, leaf spot, angular leaf spot, botrytis prevention. 0-day PHI on most crops. Use as preventive biweekly spray on Beds 1, 2, 3.</td></tr>
+          <tr><td><strong>Mancozeb</strong></td><td>Mancozeb (EBDC)</td><td>Contact fungicide</td><td><span class="chem-badge badge-best">BEST — LATE BLIGHT</span></td><td>Your strongest contact tool for tomato late blight and early blight. More effective than copper against late blight. 5-day pre‑harvest interval. Rotate with copper — don't use exclusively. Not labeled for all crops; check label.</td></tr>
+          <tr><td><strong>Bifenthrin 7.9%</strong></td><td>Bifenthrin (pyrethroid)</td><td>Broad-spectrum insecticide</td><td><span class="chem-badge badge-best">BEST — BEETLES</span></td><td>Most persistent pyrethroid you have. Best for Japanese beetles, cucumber beetles, strawberry weevil, heavy infestations. 1–3 day PHI on vegetables. Avoid spraying open flowers (bee toxicity). Do NOT use on spider mites — resistance issue.</td></tr>
+          <tr><td><strong>Insecticidal Soap</strong></td><td>Potassium salts of fatty acids</td><td>Contact insecticide</td><td><span class="chem-badge badge-best">SAFEST — SOFT INSECTS</span></td><td>Your go-to for aphids, mites, whiteflies, thrips on herbs and edibles near harvest. 0-day PHI. Must make contact with pest. Not effective on hard-bodied beetles. Reapply every 5–7 days as needed.</td></tr>
+          <tr><td><strong>Neem Oil</strong></td><td>Azadirachtin + fatty acids</td><td>Insecticide + fungicide</td><td><span class="chem-badge badge-good">VERSATILE</span></td><td>Dual-action: repels/disrupts insects AND has antifungal properties. Best as preventive spray, not curative. Good for powdery mildew (preventive), aphids, mites. Works slowly. Use at dusk — sunlight can degrade and cause phytotoxicity in heat. OMRI organic.</td></tr>
+          <tr><td><strong>Bonide All Seasons Spray Oil</strong></td><td>Mineral/paraffinic oil</td><td>Dormant + summer insecticide</td><td><span class="chem-badge badge-best">BEST — DORMANT</span></td><td>Best dormant spray for Bed 2 berries and roses. Also effective at summer rate for mites and scale. Do NOT apply when temps exceed 90°F or below 40°F. Do NOT apply when plants are drought-stressed (phytotoxicity risk).</td></tr>
+          <tr><td><strong>Sevin (modern formulation)</strong></td><td>Lambda-cyhalothrin OR zeta-cypermethrin <em>(check your label — it varies by product)</em></td><td>Pyrethroid insecticide</td><td><span class="chem-badge badge-good">BROAD SPECTRUM</span></td><td>Modern Sevin no longer contains carbaryl in most products. Lambda-cyhalothrin formulations are effective on hornworms, beetles, caterpillars. Note: still toxic to bees — avoid spraying open flowers. Similar efficacy to bifenthrin; bifenthrin is slightly more persistent. Have one or the other.</td></tr>
+          <tr><td><strong>Malathion</strong></td><td>Malathion (organophosphate)</td><td>Broad-spectrum insecticide</td><td><span class="chem-badge badge-caution">LIMITED USE</span></td><td>Broad-spectrum and effective on aphids, scale, thrips. However, with bifenthrin, Sevin, and insecticidal soap already in your arsenal, malathion is largely redundant. Reserve for scale insects or situations where other options fail. Shorter residual than bifenthrin. More toxic to beneficial insects and bees.</td></tr>
+          <tr><td><strong>Fungonil/Daconil</strong></td><td>Chlorothalonil</td><td>Contact fungicide</td><td><span class="chem-badge badge-dupe">DUPLICATE ⚠️</span></td><td>Same active ingredient as Ortho Max Chlorothalonil. Keep one; discard the other (proper chemical disposal). Use on ornamentals and some vegetables — check label. Long PHIs on many edibles. Effective but less food-friendly than copper. Works well on roses as a rotation partner with Immunox.</td></tr>
+          <tr><td><strong>Ortho Max Chlorothalonil</strong></td><td>Chlorothalonil</td><td>Contact fungicide</td><td><span class="chem-badge badge-dupe">DUPLICATE ⚠️</span></td><td>Same as Daconil. Keep this one if it has more product remaining — typically better value per ounce. Use on ornamentals (roses, peonies, perennials) where you need a contact fungicide that's not copper. Check pre‑harvest intervals strictly on vegetables.</td></tr>
+          <tr><td><strong>Slug Magic Granules</strong> <span class="chem-badge badge-best">BEST — SLUGS</span></td><td>Iron phosphate (ferric phosphate)</td><td>Molluscicide (slug/snail bait)</td><td><span class="chem-badge badge-best">SAFEST OPTION</span></td><td>Your slug bait of choice — and the right one. Iron phosphate is OMRI-listed organic, completely safe around pets, birds, and wildlife (unlike metaldehyde baits which are toxic to dogs and birds). Breaks down into iron and phosphate in the soil — essentially fertilizer. Zero pre-harvest interval; safe to scatter right around strawberries, tomatoes, and any edible. Slugs eat the bait, stop feeding, and die underground. Apply in the evening (slugs feed at night). Reapply every 7–14 days and after any significant rain — iron phosphate dissolves in heavy rain. Peak application windows: early April (first emergence), May (transplant vulnerability), June (strawberry fruit ripening), and September–October (fall resurgence). Bed 3 near woods will be your chronic pressure zone — keep granules active there throughout the season.</td></tr>
+          <tr><td><strong>Preen</strong></td><td>Trifluralin</td><td>Pre‑emergent herbicide</td><td><span class="chem-badge badge-good">USEFUL — WEEDS</span></td><td>Prevents weed seed germination. Apply to bare soil between established plants after transplanting. Do NOT apply where you'll direct-sow seeds (kills yours too). Useful in Beds 1, 2 (around berry bases), 3. Reapply per label (typically every 9–12 weeks).</td></tr>
+          <tr><td><strong>Roundup</strong></td><td>Glyphosate</td><td>Non-selective herbicide</td><td><span class="chem-badge badge-caution">PERIMETER ONLY</span></td><td>Use ONLY as a path/perimeter weed killer — never spray near Bed 3 (shaded/wet bed with rhizomes and roots that could absorb translocation). Any drift can kill or damage garden plants. Keep well away from the garden beds.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="ref-section">
+    <div class="ref-header"><h3>🛒 Recommended Additions to Your Arsenal</h3></div>
+    <div class="ref-body">
+      <table class="data-table">
+        <thead><tr><th>Product</th><th>Why You Need It</th><th>Priority</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Osmocote 14-14-14</strong></td><td>✅ Already on hand — see Fertilizer Guide for usage details. Best pot foundation fertilizer you own.</td><td><span class="chem-badge badge-best">HAVE IT</span></td></tr>
+          <tr><td><strong>Jack's Classic 20-20-20</strong></td><td>Water-soluble general purpose fertilizer for drip fertigation (early season) and pots. Dissolves completely — no clogging risk in drip tape. Cheap per application when bought in quantity.</td><td><span class="chem-badge badge-buy">ADD — FERTIGATION</span></td></tr>
+          <tr><td><strong>Jack's Classic 12-15-30 Tomato Feed</strong></td><td>Best fertigation fertilizer once tomatoes begin flowering. Lower N, higher K supports fruit set over leaf growth. Switch from 20-20-20 to this at flower set; run it through the drip tape through end of season.</td><td><span class="chem-badge badge-buy">ADD — HIGH PRIORITY</span></td></tr>
+          <tr><td><strong>Calcium Nitrate</strong></td><td>Best water-soluble calcium for drip fertigation. Prevents blossom end rot far more reliably than eggshells or lime. Pair with Jack's Tomato Feed (mix each separately before combining — they precipitate if combined as dry concentrates).</td><td><span class="chem-badge badge-buy">ADD — HIGH PRIORITY</span></td></tr>
+          <tr><td><strong>Epsom Salt (magnesium sulfate)</strong></td><td>Extremely cheap magnesium supplement for tomatoes and peppers. Dissolves completely — safe for drip tape. NJ's acidic soils commonly leach magnesium; interveinal yellowing on older leaves is the tell. 1 tbsp/gallon monthly as a drench or add to fertigation mix.</td><td><span class="chem-badge badge-buy">ADD — CHEAP WIN</span></td></tr>
+          <tr><td><strong>Captain Jack's Deadbug Brew (Spinosad)</strong></td><td>The best control for spotted wing drosophila (SWD) — a fly that lays eggs in ripening blackberries, wineberries, and raspberries, causing mushy/wormy fruit. OMRI organic. Zero-day PHI on berries. Nothing in your current inventory addresses SWD well.</td><td><span class="chem-badge badge-buy">HIGH PRIORITY</span></td></tr>
+          <tr><td><strong>Floating Row Cover (Agribon AG-19)</strong></td><td>Your #1 priority purchase given the cucumber beetle/bacterial wilt history. Also provides season extension and protects seedlings. Physical barrier that eliminates the need for multiple insecticide applications. Reusable for many seasons.</td><td><span class="chem-badge badge-buy">HIGHEST PRIORITY</span></td></tr>
+          <tr><td><strong>Surround WP (Kaolin Clay)</strong></td><td>Physical barrier spray coating leaves with white clay film — confuses and irritates cucumber beetles, flea beetles, and Japanese beetles. No PHI, no resistance, safe on anything. Labor-intensive to apply but excellent where row cover isn't practical.</td><td><span class="chem-badge badge-buy">NICE TO HAVE</span></td></tr>
+          <tr><td><strong>Copper Tape / Copper Mesh</strong></td><td>Wrap around the rim of all pots — slugs get a mild electric-like irritation from copper and won't cross it. Extremely effective for container plants, which are otherwise unprotected by ground-scattered granules. A one-time purchase that lasts for years.</td><td><span class="chem-badge badge-buy">ADD — POTS</span></td></tr>
+          <tr><td><strong>Diatomaceous Earth (food grade)</strong></td><td>Sprinkle a barrier ring around transplants or bed edges — the microscopic sharp edges damage slug bodies. Works when dry only (ineffective after rain). Useful supplement to Slug Magic in dry spells, especially around individual transplants.</td><td><span class="chem-badge badge-buy">NICE TO HAVE</span></td></tr>
+          <tr><td><strong>Calcium Chloride Spray</strong></td><td>Foliar calcium for mid-season blossom end rot correction — absorbs far faster than soil amendments. Ground eggshells are too slow for in-season BER.</td><td><span class="chem-badge badge-buy">SITUATIONAL</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="ref-section">
+    <div class="ref-header"><h3>🐝 Bee Safety — Critical Rules</h3></div>
+    <div class="ref-body">
+      <div class="note"><strong>All pyrethroids (bifenthrin, lambda-cyhalothrin/Sevin), malathion, and neem oil are toxic to bees to varying degrees.</strong> Always follow these rules:<br><br>
+      → Spray in the <strong>early morning</strong> or <strong>late evening</strong> when bees are not actively foraging.<br>
+      → <strong>Never spray open flowers</strong> on any plant. If a plant is in bloom, skip it or hand-remove pests.<br>
+      → Insecticidal soap and copper spray have the lowest bee toxicity — prefer these when pollinators are active.<br>
+      → Captain Jack's Deadbug (Spinosad) is moderately toxic when wet but safe once dry — spray at dusk.<br>
+      → Neem oil is low to moderate toxicity but can disrupt bee reproduction — minimize during heavy bloom periods.
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end main-container -->
+
+<div class="footer">
+  Zone 6b / Central-Northern NJ Garden Guide — Last Frost April 15 · First Frost Oct 15–20<br>
+  Always read and follow all pesticide and fertilizer label directions before use.
+</div>
+
+<script>
+  function showMonth(id, btn) {
+    // Hide all panels
+    document.querySelectorAll('.month-panel').forEach(p => p.classList.remove('active'));
+    // Show target
+    document.getElementById('panel-' + id).classList.add('active');
+    // Update nav buttons
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    // Find the button that was clicked
+    event.target.classList.add('active');
+    // Scroll to top of main content
+    document.querySelector('.main-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+</script>
+</body>
+</html>

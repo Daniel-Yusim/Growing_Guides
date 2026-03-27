@@ -1,0 +1,1808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fruit Spray & Management Guide — Northern/Central New Jersey (USDA Zone 6b)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green-dark: #1e3a1e;
+    --green-mid: #2e5c2e;
+    --green-light: #4a8a4a;
+    --green-pale: #e8f4e8;
+    --green-tint: #f2faf2;
+    --amber: #c47a1a;
+    --amber-pale: #fdf3e1;
+    --amber-mid: #e8a030;
+    --red: #962020;
+    --red-pale: #fde8e8;
+    --red-mid: #c94040;
+    --blue-dark: #1a3a5c;
+    --blue-pale: #e6f0fa;
+    --blue-mid: #2a6699;
+    --purple-dark: #3a1f5c;
+    --purple-pale: #f0eaff;
+    --cream: #faf8f4;
+    --offwhite: #f5f3ee;
+    --border: #d8d4cc;
+    --text: #1a1a16;
+    --text-mid: #4a4a40;
+    --text-light: #7a7a6a;
+    --font-head: 'Playfair Display', Georgia, serif;
+    --font-body: 'Source Sans 3', system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--cream);
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    background: var(--green-dark);
+    color: white;
+    padding: 2.5rem 2rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .site-header::before {
+    content: '';
+    position: absolute;
+    right: -60px; top: -60px;
+    width: 280px; height: 280px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+    pointer-events: none;
+  }
+  .site-header::after {
+    content: '';
+    position: absolute;
+    right: 60px; bottom: -80px;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.03);
+    pointer-events: none;
+  }
+  .header-eyebrow {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #9cd49c;
+    margin-bottom: 0.5rem;
+  }
+  .site-header h1 {
+    font-family: var(--font-head);
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 1.25;
+    margin-bottom: 0.5rem;
+    color: #fff;
+  }
+  .site-header .subtitle {
+    font-size: 15px;
+    color: #b8d4b8;
+    max-width: 560px;
+    line-height: 1.6;
+  }
+
+  /* ── NAV ── */
+  .section-nav {
+    background: var(--green-mid);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid var(--green-dark);
+  }
+  .section-nav a {
+    color: #d4ecd4;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 16px;
+    white-space: nowrap;
+    transition: background 0.15s, color 0.15s;
+    letter-spacing: 0.02em;
+  }
+  .section-nav a:hover { background: var(--green-dark); color: white; }
+
+  /* ── MAIN LAYOUT ── */
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
+
+  section { padding: 2.5rem 0 1.5rem; }
+  section + section { border-top: 1px solid var(--border); }
+
+  .section-title {
+    font-family: var(--font-head);
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--green-dark);
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-title .icon {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  /* ── ALERT BOXES ── */
+  .alert {
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 1rem;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .alert-red { background: var(--red-pale); border-left: 4px solid var(--red); color: #5a1010; }
+  .alert-amber { background: var(--amber-pale); border-left: 4px solid var(--amber); color: #5a3010; }
+  .alert-green { background: var(--green-pale); border-left: 4px solid var(--green-mid); color: var(--green-dark); }
+  .alert-blue { background: var(--blue-pale); border-left: 4px solid var(--blue-mid); color: var(--blue-dark); }
+  .alert-purple { background: var(--purple-pale); border-left: 4px solid var(--purple-dark); color: var(--purple-dark); }
+  .alert strong { font-weight: 600; display: block; margin-bottom: 4px; font-size: 15px; }
+  .alert ul { padding-left: 1.3rem; margin-top: 6px; }
+  .alert ul li { margin-bottom: 4px; }
+
+  /* ── URGENT BANNER ── */
+  .urgent-strip {
+    background: var(--red);
+    color: white;
+    padding: 10px 1.5rem;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .urgent-strip .dot { width: 8px; height: 8px; border-radius: 50%; background: #ffc; flex-shrink: 0; animation: blink 1.2s ease-in-out infinite; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+  /* ── TAGS / BADGES ── */
+  .tag {
+    display: inline-block;
+    padding: 3px 9px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    letter-spacing: 0.03em;
+  }
+  .tag-f { background: #d8f0d8; color: #1e4a1e; }
+  .tag-i { background: #fde0d0; color: #6a2a10; }
+  .tag-c { background: #e8e0fa; color: #3a1a6a; }
+  .tag-u { background: var(--red); color: white; }
+  .tag-stop { background: #2a2a2a; color: #ffd; }
+  .tag-phi { background: #e0e8f0; color: #1a3a5c; }
+
+  .badge {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .badge-have { background: var(--green-mid); color: white; }
+  .badge-buy { background: var(--red-mid); color: white; }
+  .badge-optional { background: var(--amber); color: white; }
+
+  /* ── TABLES ── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+    margin-bottom: 1rem;
+  }
+  th {
+    background: var(--green-dark);
+    color: #d4ecd4;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 10px 14px;
+    text-align: left;
+  }
+  td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.6;
+    font-size: 15px;
+  }
+  tr:nth-child(even) td { background: var(--offwhite); }
+  tr:last-child td { border-bottom: none; }
+  .td-crop { font-weight: 600; color: var(--green-dark); white-space: nowrap; }
+
+  /* ── PRODUCT CARDS ── */
+  .prod-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 14px;
+    margin-bottom: 1.5rem;
+  }
+  .prod-card {
+    background: white;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    position: relative;
+  }
+  .prod-card.have { border-top: 4px solid var(--green-mid); }
+  .prod-card.buy { border-top: 4px solid var(--red-mid); }
+  .prod-card.optional { border-top: 4px solid var(--amber); }
+  .prod-card h4 {
+    font-family: var(--font-head);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .prod-card p { font-size: 14px; color: var(--text-mid); line-height: 1.6; }
+  .prod-card .prod-detail { margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-light); }
+
+  /* ── GRAPE SULFUR CALLOUT ── */
+  .grape-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 1.25rem 0;
+  }
+  @media (max-width: 640px) { .grape-split { grid-template-columns: 1fr; } }
+  .grape-card {
+    border-radius: 10px;
+    padding: 18px 20px;
+  }
+  .grape-card.european {
+    background: var(--green-pale);
+    border: 1.5px solid #9cd49c;
+  }
+  .grape-card.american {
+    background: var(--red-pale);
+    border: 1.5px solid #f0a0a0;
+  }
+  .grape-card h3 {
+    font-family: var(--font-head);
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .grape-card.european h3 { color: var(--green-dark); }
+  .grape-card.american h3 { color: var(--red); }
+  .grape-card p { font-size: 14px; line-height: 1.65; }
+  .grape-card ul { padding-left: 1.2rem; font-size: 14px; margin-top: 8px; }
+  .grape-card ul li { margin-bottom: 4px; }
+  .grape-card.european p, .grape-card.european li { color: #1e4a1e; }
+  .grape-card.american p, .grape-card.american li { color: #5a1010; }
+  .sulfur-verdict {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .sv-ok { background: var(--green-mid); color: white; }
+  .sv-no { background: var(--red); color: white; }
+
+  /* ── SEASON SCHEDULE ── */
+  .month-block {
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1.5px solid var(--border);
+  }
+  .month-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 18px;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.15s;
+  }
+  .month-header:hover { filter: brightness(0.96); }
+  .month-header .month-name {
+    font-family: var(--font-head);
+    font-size: 1.1rem;
+    font-weight: 600;
+    flex: 1;
+  }
+  .month-header .phase-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    opacity: 0.75;
+  }
+  .month-header .chevron {
+    font-size: 14px;
+    transition: transform 0.2s;
+    flex-shrink: 0;
+  }
+  .month-block.open .chevron { transform: rotate(180deg); }
+  .month-content { display: none; }
+  .month-block.open .month-content { display: block; }
+  .month-content table { margin: 0; }
+  .month-content td.td-crop { white-space: nowrap; }
+  .month-content th { border-radius: 0; }
+
+  /* Month color themes */
+  .m-winter .month-header { background: #eef2f8; color: #1a2a4a; }
+  .m-early-spring .month-header { background: #e8f5e8; color: var(--green-dark); }
+  .m-spring .month-header { background: #f0f8e8; color: #2a4a1a; }
+  .m-bloom .month-header { background: #fff4e8; color: #5a3010; }
+  .m-early-summer .month-header { background: #e8f8f0; color: #1a4a3a; }
+  .m-summer .month-header { background: #f8f4e0; color: #4a3a10; }
+  .m-late-summer .month-header { background: #f8e8e8; color: #5a1a1a; }
+  .m-harvest .month-header { background: #f0e8d8; color: #4a2a10; }
+  .m-dormant .month-header { background: #e8e8f0; color: #2a2a4a; }
+
+  /* ── ROTATION CARDS ── */
+  .rotation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 14px;
+    margin-bottom: 1.5rem;
+  }
+  .rot-card {
+    background: white;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+  }
+  .rot-card h4 {
+    font-family: var(--font-head);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--green-dark);
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1.5px solid var(--green-pale);
+  }
+  .rot-step {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .rot-arrow {
+    color: var(--green-mid);
+    font-weight: 700;
+    font-size: 16px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .rot-note { font-size: 12px; color: var(--text-light); margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--border); }
+
+  /* ── PHI TABLE ── */
+  .phi-table th { background: var(--blue-dark); color: #ddeeff; }
+  .phi-table td:first-child { font-weight: 600; color: var(--text); }
+  .phi-table td:last-child { font-size: 13px; color: var(--text-light); }
+
+  /* ── PEST PROFILES ── */
+  .pest-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 14px;
+    margin-bottom: 1.5rem;
+  }
+  .pest-card {
+    background: white;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .pest-card-header {
+    padding: 12px 16px 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  .pest-card-header h4 {
+    font-family: var(--font-head);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 3px;
+  }
+  .pest-card-header .crops-affected {
+    font-size: 12px;
+    color: var(--text-light);
+    font-style: italic;
+  }
+  .pest-card-body { padding: 12px 16px; font-size: 14px; line-height: 1.6; color: var(--text-mid); }
+  .pest-card-body strong { color: var(--text); font-weight: 600; display: block; margin-top: 8px; margin-bottom: 2px; }
+  .pest-card-body strong:first-child { margin-top: 0; }
+  .pest-symptom { background: var(--offwhite); border-left: 3px solid var(--amber); padding: 6px 10px; border-radius: 0 4px 4px 0; font-size: 13px; color: var(--text); margin-bottom: 8px; font-style: italic; }
+  .pest-window { background: var(--green-pale); border-left: 3px solid var(--green-mid); padding: 6px 10px; border-radius: 0 4px 4px 0; font-size: 13px; color: var(--green-dark); margin-top: 6px; }
+
+  /* ── RULES BOX ── */
+  .rules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 12px;
+  }
+  .rule-card {
+    background: white;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-mid);
+  }
+  .rule-card strong { display: block; font-weight: 600; color: var(--text); margin-bottom: 4px; font-size: 14px; }
+
+  /* ── BLACK KNOT BOX ── */
+  .knot-emergency {
+    background: var(--red-pale);
+    border: 2px solid var(--red-mid);
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin-bottom: 1.5rem;
+  }
+  .knot-emergency h3 {
+    font-family: var(--font-head);
+    color: var(--red);
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+  }
+  .knot-emergency p { font-size: 15px; color: #5a1010; line-height: 1.65; margin-bottom: 8px; }
+  .knot-emergency ul { padding-left: 1.3rem; color: #5a1010; font-size: 15px; }
+  .knot-emergency ul li { margin-bottom: 6px; }
+
+  /* ── LEGEND ── */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 1.25rem;
+    align-items: center;
+    font-size: 13px;
+    color: var(--text-mid);
+  }
+  .legend span { margin-right: 4px; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--green-dark);
+    color: #9cd49c;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 13px;
+    margin-top: 3rem;
+  }
+  footer strong { color: white; }
+
+  /* ── PRINT ── */
+  @media print {
+    .section-nav, .urgent-strip { display: none; }
+    .month-content { display: block !important; }
+    .month-header .chevron { display: none; }
+    .site-header { color: black; background: white; }
+    body { font-size: 13px; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 700px) {
+    .site-header h1 { font-size: 1.6rem; }
+    .prod-grid { grid-template-columns: 1fr; }
+    .rotation-grid { grid-template-columns: 1fr; }
+    table { font-size: 13px; }
+    td, th { padding: 8px 10px; }
+  }
+
+  .divider { border: none; border-top: 2px solid var(--border); margin: 1.5rem 0; }
+  .flex-wrap { display: flex; flex-wrap: wrap; gap: 8px; margin: 0.5rem 0 1rem; }
+</style>
+</head>
+<body>
+
+<!-- URGENT STRIP -->
+<div class="urgent-strip">
+  <div class="dot"></div>
+  <strong>Act now (March):</strong> Apply copper to peaches before bud break &nbsp;·&nbsp; Check Ribes (currants/gooseberries) — leaves may already be emerging &nbsp;·&nbsp; Scrape Spotted Lanternfly egg masses &nbsp;·&nbsp; Assess black knot on plum trunk &nbsp;·&nbsp; Start apple rust sprays at green tip
+</div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container">
+    <div class="header-eyebrow">Northern/Central New Jersey · USDA Hardiness Zone 6b · Home Orchard Guide</div>
+    <h1>Fruit Spray &amp; Pest Management Schedule</h1>
+    <p class="subtitle">
+      Grapes (European &amp; American) · Sour Cherry · Peach / Nectarine · Apple · Plum · Ribes (Currants &amp; Gooseberries)<br>
+      A complete season guide including disease and pest diagnoses, product selection, spray rotations, and PHI reference — written for Zone 6b growing conditions
+    </p>
+  </div>
+</header>
+
+<!-- STICKY NAV -->
+<nav class="section-nav">
+  <div class="container" style="display:flex;flex-wrap:wrap;">
+    <a href="#diagnoses">Diagnoses</a>
+    <a href="#blackknot">Black Knot ⚠</a>
+    <a href="#products">Products</a>
+    <a href="#grapes">Grape Sulfur Guide</a>
+    <a href="#insects">Insect Profiles</a>
+    <a href="#schedule">Season Schedule</a>
+    <a href="#rotations">Rotations</a>
+    <a href="#ribes">Ribes Guide</a>
+    <a href="#phi">PHI Reference</a>
+    <a href="#rules">Key Rules</a>
+  </div>
+</nav>
+
+<div class="container">
+
+<!-- ════════════════════ DIAGNOSES ════════════════════ -->
+<section id="diagnoses">
+  <h2 class="section-title">
+    <span class="icon" style="background:var(--green-pale)">🔬</span>
+    Confirmed Diagnoses
+  </h2>
+
+  <table>
+    <thead>
+      <tr><th>Crop</th><th>Reported Problem</th><th>Diagnosis</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="td-crop">Grapes</td>
+        <td>Black rot, mildew, Japanese beetles, SLF</td>
+        <td><em>Guignardia bidwellii</em> (black rot); <em>Plasmopara viticola</em> (downy mildew); <em>Erysiphe necator</em> (powdery mildew)</td>
+        <td>SLF (<em>Lycorma delicatula</em>) is a critical threat in NJ; see separate grape sulfur section for European vs. American type differences</td>
+      </tr>
+      <tr>
+        <td class="td-crop">Sour Cherry</td>
+        <td>Brown rot, crescent-shaped lesions on fruit, insects eating leaves</td>
+        <td>Brown rot (<em>Monilinia</em> spp.); cherry leaf spot (<em>Blumeriella jaapii</em>); <strong>Plum Curculio</strong> (<em>Conotrachelus nenuphar</em>) — crescent-shaped scars are the diagnostic egg-laying wound; Eastern tent caterpillar or cherry slug (sawfly larva)</td>
+        <td>Defoliation from leaf spot in May–June significantly weakens trees. Plum curculio is the almost certain cause of crescent-shaped scars — a major stone fruit weevil controlled at petal fall. Also susceptible to black knot; see that section.</td>
+      </tr>
+      <tr>
+        <td class="td-crop">Peach / Nectarine</td>
+        <td>Brown rot, leaf curl, clear ooze/gummosis on fruit (small fruit, fruit drop), occasional gummosis on trunk/bark</td>
+        <td>Brown rot (<em>Monilinia fructicola</em>); Peach leaf curl (<em>Taphrina deformans</em>); <strong>Plum Curculio</strong> (<em>Conotrachelus nenuphar</em>) — the primary cause of clear ooze/gummosis on fruit, stunted fruit, and premature drop; the female's egg-laying puncture triggers sap exudation at the wound site; Oriental Fruit Moth (<em>Grapholita molesta</em>) — also causes entry-point ooze near the stem end; Peachtree Borer (<em>Synanthedon exitiosa</em>) — minor/occasional; responsible for the rarer bark gummosis at trunk base</td>
+        <td>Leaf curl can ONLY be controlled before bud break. The fruit gummosis, small fruit, and early drop are plum curculio damage — the same pest as on the cherry (crescent scars). Bifenthrin at petal fall is the primary intervention for both. Peachtree borer is a secondary concern given bark symptoms are rare; preventive trunk sprays still recommended.</td>
+      </tr>
+      <tr>
+        <td class="td-crop">Apple</td>
+        <td>Round brown spots on leaves with tube-like structures on undersides; scab lesions on fruit</td>
+        <td><strong>Cedar-Apple Rust</strong> (<em>Gymnosporangium juniperi-virginianae</em>) — tubes are aecia releasing spores; <strong>Apple Scab</strong> (<em>Venturia inaequalis</em>) — olive-green to brown velvety spots on leaves and corky/cracked lesions on fruit surface</td>
+        <td>Daconil has essentially NO efficacy against rust — myclobutanil is essential. Fruit scab infections peak from petal fall through June; cracked scab lesions on fruit invite brown rot entry later in the season. Same spray program addresses both diseases.</td>
+      </tr>
+      <tr>
+        <td class="td-crop">Ribes (currants &amp; gooseberries)</td>
+        <td>To be monitored — anthracnose, leaf spot, powdery mildew, currant aphid, spotted wing drosophila</td>
+        <td>Anthracnose (<em>Drepanopeziza ribis</em>); Currant leaf spot; Powdery mildew (<em>Sphaerotheca mors-uvae</em>); Currant aphid (<em>Cryptomyzus ribis</em>); Spotted Wing Drosophila (<em>Drosophila suzukii</em>) near harvest on soft-fruited types</td>
+        <td>Ribes break dormancy very early in NJ — leaves may be emerging by mid-March in warm springs. White Pine Blister Rust (<em>Cronartium ribicola</em>) risk if white pines are nearby; see Ribes section. See dedicated Ribes guide section below.</td>
+      </tr>
+      <tr>
+        <td class="td-crop">Plum</td>
+        <td>Black knot — severe, affecting trunk</td>
+        <td><em>Apiosporina morbosa</em></td>
+        <td>Trunk involvement is critical — see emergency section immediately below</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ════════════════════ BLACK KNOT ════════════════════ -->
+<section id="blackknot">
+  <h2 class="section-title">
+    <span class="icon" style="background:var(--red-pale)">⚠️</span>
+    Black Knot Emergency — Plum Trunk
+  </h2>
+
+  <div class="knot-emergency">
+    <h3>Trunk infection is the most critical situation in this guide. Assess before anything else.</h3>
+    <p><strong>Step 1 — Assess girdling:</strong> Examine each knot on the trunk. Estimate what percentage of the trunk circumference is encircled by active knotted tissue.</p>
+    <ul>
+      <li><strong>More than 50% girdled:</strong> The tree is almost certainly doomed. Remove the entire tree including as many roots as possible. A dying, infected trunk is an inoculum factory spreading spores to neighboring plums and cherries every season. Destroy all removed material — bag it and send to trash, or burn if permitted. Do not compost.</li>
+      <li><strong>Less than 50% girdled:</strong> Surgical removal may save the tree. Cut 4–6 inches below the visible margin of each knot, well into clean white wood. Sterilize pruning tools with 70% isopropyl alcohol between every single cut. Paint wounds immediately with copper fungicide paste or wound sealant.</li>
+      <li><strong>All removed material</strong> — branches, chips, sawdust — must be bagged and discarded in trash or burned. Never compost.</li>
+      <li><strong>After surgery:</strong> Spray copper + myclobutanil throughout the season. The critical infection window for new black knot is from bud swell through 3–4 weeks post-bloom. Do not miss sprays during this period.</li>
+      <li><strong>Monitor closely:</strong> If new knots appear on the trunk next season, remove the tree. Sprays suppress new infections on branches but do not kill established knots.</li>
+    </ul>
+  </div>
+
+  <div class="alert alert-amber">
+    <strong>Cultural note on cherries</strong>
+    Black knot (<em>Apiosporina morbosa</em>) also affects sour cherries — it shares the same host range as plum. With a heavily infected plum tree in close proximity, the cherry tree is at meaningfully elevated risk from airborne spores. Inspect all cherry branches carefully now while dormant and remove any black knots found, using the same 4–6 inch margin cut-below-visible-knot rule. Cherry is generally less severely affected than plum, but infections will worsen year over year without management. Include cherry in the copper + myclobutanil black knot spray program from bud swell through 3–4 weeks post-bloom.
+  </div>
+</section>
+
+<!-- ════════════════════ PRODUCTS ════════════════════ -->
+<section id="products">
+  <h2 class="section-title">
+    <span class="icon" style="background:var(--amber-pale)">🛒</span>
+    Products — What You Have &amp; What to Buy
+  </h2>
+
+  <h3 style="font-family:var(--font-head);font-size:1.1rem;color:var(--green-mid);margin-bottom:12px;margin-top:4px;">On hand</h3>
+  <div class="prod-grid">
+    <div class="prod-card have">
+      <h4>Sevin Insect Killer <span class="badge badge-have">On Hand</span></h4>
+      <p>Modern Sevin contains <strong>zeta-cypermethrin</strong> (pyrethroid), not carbaryl. Effective against Japanese beetles, Spotted Lanternfly, Eastern tent caterpillar, cherry slug/sawfly.</p>
+      <div class="prod-detail">⚑ Never apply during bloom — kills pollinators. PHI: 3 days on most fruits; check label for your formulation. <strong style="color:var(--red);">Health &amp; safety:</strong> Toxic to bees and aquatic invertebrates — never spray near water or during bloom. Toxic to cats (pyrethroid). Wear gloves and avoid skin contact with concentrate. Wash hands and any exposed skin thoroughly after use.</div>
+    </div>
+    <div class="prod-card have">
+      <h4>Bifenthrin 7.9% <span class="badge badge-have">On Hand</span></h4>
+      <p>Pyrethroid with longer residual activity than Sevin. <strong>A versatile and important tool across your entire orchard</strong>: Spotted Lanternfly adults on grapes; Plum Curculio at petal fall (all stone fruits + apple); Codling moth and Apple maggot on apple; Peachtree Borer trunk spray (July–August); Brown Marmorated Stink Bug; Japanese beetles.</p>
+      <div class="prod-detail">⚑ PHI: 7 days on most fruits — verify on the label. Never during bloom. For peachtree borer, saturate lower 18 inches of trunk + root flare. Rotate with Sevin. Caution: pyrethroids at petal fall can harm predatory mites — scout and treat with oil if needed. <strong style="color:var(--red);">Health &amp; safety:</strong> Bifenthrin is extremely toxic to fish, aquatic invertebrates, and bees — never apply near water, storm drains, or during bloom. It is also toxic to cats, who lack the liver enzymes to metabolize pyrethroids. Keep cats out of treated areas until sprays are fully dry. Wear gloves and eye protection; avoid skin contact with concentrate.</div>
+    </div>
+    <div class="prod-card have">
+      <h4>Insecticidal Soap <span class="badge badge-have">On Hand</span></h4>
+      <p>Contact kill of soft-bodied insects and mites. Primary uses: <strong>currant aphid</strong> on Ribes; <strong>spider mite flare-ups</strong> after pyrethroid use; scale crawlers. Much gentler on beneficial insects than pyrethroids.</p>
+      <div class="prod-detail">⚑ Must hit pest directly — cover leaf undersides. Typically 2–3 fl oz/gallon. No PHI on edibles. Do not apply above 90°F. No residual protection.</div>
+    </div>
+    <div class="prod-card have">
+      <h4>Malathion <span class="badge badge-have">On Hand — Backup / Ribes</span></h4>
+      <p>Organophosphate insecticide. Most relevant use: <strong>Spotted Wing Drosophila (SWD)</strong> on cherries and Ribes near harvest (SWD lays eggs in soft, ripe fruit). Also backup for currant aphid and leafhoppers.</p>
+      <div class="prod-detail">⚑ PHI: 1 day on Ribes (key SWD use), 3–7 days on tree fruits — check label. Do not use near water. More toxic to beneficials than soap. <strong style="color:var(--red);">Health:</strong> Malathion is an organophosphate that inhibits cholinesterase — the enzyme that controls nerve signaling. Skin absorption is significant. Always wear chemical-resistant gloves, long sleeves, eye protection, and a respirator. If you experience headache, nausea, excessive sweating, or blurred vision after application, seek medical attention immediately. Do not spray near water sources — malathion is highly toxic to fish and aquatic invertebrates.</div>
+    </div>
+    <div class="prod-card have">
+      <h4>Daconil / Fungonil <span class="badge badge-have">On Hand</span></h4>
+      <p>Active ingredient: <strong>chlorothalonil</strong>. Broad-spectrum protectant for brown rot, cherry leaf spot, grape diseases, apple scab, Ribes leaf diseases. Good backbone product for cover spray rotations.</p>
+      <div class="prod-detail">⚑ NOT effective against Cedar-Apple Rust or powdery mildew. Avoid spraying open flowers. 7-day PHI on stone fruits, apples, grapes. <strong style="color:var(--red);">Health:</strong> Chlorothalonil is classified by the EPA as a probable human carcinogen with repeated exposure. Always wear a properly fitted respirator (N95 minimum; P100 preferred), chemical-resistant gloves, and eye protection when mixing and applying. Do not breathe spray mist. Wash all exposed skin thoroughly after use.</div>
+    </div>
+    <div class="prod-card have">
+      <h4>Mancozeb <span class="badge badge-have">On Hand</span></h4>
+      <p>EBDC protectant. Excellent for grape black rot, apple scab, stone fruit diseases, Ribes anthracnose. Rotate with other fungicides to manage resistance.</p>
+      <div class="prod-detail">⚑ CRITICAL: 66-day PHI on grapes. 7-day PHI on stone fruits and Ribes. Cannot be used alone against powdery mildew or rust. <strong style="color:var(--red);">Health:</strong> Mancozeb (an EBDC fungicide) has been linked to potential thyroid and reproductive effects with prolonged or repeated exposure. Wear a dust/mist respirator, gloves, and eye protection when mixing the wettable powder — the dry powder is the highest exposure risk. Avoid breathing dust or spray mist.</div>
+    </div>
+    <div class="prod-card have">
+      <h4>Copper Fungicide — Captain Jack's <span class="badge badge-have">On Hand</span></h4>
+      <p>Contains <strong>copper octanoate (copper soap) at 10%</strong> — gentler than copper hydroxide. Critical for peach leaf curl (dormant only), plum and cherry black knot suppression, Ribes leaf diseases at emergence, and fall dormant sprays on all stone fruits and grapes.</p>
+      <div class="prod-detail">⚑ Dormant rate: 2 fl oz/gallon. Reduce to 1 fl oz/gallon once living tissue is exposed. Never mix with lime sulfur — wait at least 2 weeks between them. Shake before measuring; copper settles. Use within 24 hours of mixing. <strong style="color:var(--red);">Health:</strong> Copper is an eye and skin irritant — wear splash-proof goggles and gloves. The liquid concentrate stains clothing, skin, and surfaces blue-green permanently. Repeated ingestion of copper is toxic; wash hands before eating or drinking after handling.</div>
+    </div>
+    <div class="prod-card have">
+      <h4>Myclobutanil — Spectracide Immunox <span class="badge badge-have">On Hand</span></h4>
+      <p>The <strong>only product in this guide that controls Cedar-Apple Rust</strong>. Also excellent for grape black rot and powdery mildew, brown rot on stone fruits, black knot suppression on plum and cherry, and anthracnose / powdery mildew on Ribes. Systemic with ~72-hour curative window.</p>
+      <div class="prod-detail">⚑ Typical rate: 1 fl oz/gallon (check the label). 7-day PHI on fruits. Replaces sulfur as primary PM tool on American-type grapes. Rotate with other modes of action to prevent resistance. <strong style="color:var(--red);">Health:</strong> Myclobutanil is a sterol-synthesis inhibitor with potential endocrine-disrupting properties at high exposure levels. Wear gloves and eye protection. Avoid inhaling spray mist. The Immunox home formulation is relatively low concentration, but routine precautions still apply.</div>
+    </div>
+    <div class="prod-card have">
+      <h4>Bonide All Seasons Horticultural Oil <span class="badge badge-have">On Hand</span></h4>
+      <p>Dormant use: smothers overwintering scale, mite eggs, and aphid eggs on all crops. Growing-season use: powdery mildew suppression on American-type grapes and Ribes. <strong>No fungicidal activity against disease spores</strong> — cannot substitute for lime sulfur.</p>
+      <div class="prod-detail">⚑ Do NOT apply within 2 weeks of captan or sulfur — phytotoxicity both directions. Do not use above 90°F. Growing-season rate ~1–2%; dormant rate ~3–4% — check label.</div>
+    </div>
+    <div class="prod-card have">
+      <h4>Neem Oil <span class="badge badge-have">On Hand — Limited Use</span></h4>
+      <p>Some fungicidal activity against powdery mildew and soft-bodied insect repellence. Useful as a mild supplement on Ribes. Less effective than myclobutanil for mildew, less effective than insecticidal soap for aphids — treat as a secondary tool only.</p>
+      <div class="prod-detail">⚑ Apply to actively growing foliage only — no benefit on dormant wood. Do not apply in full sun or above 85°F. 0-day PHI (check label). Do not mix with captan. Strong odor.</div>
+    </div>
+  </div>
+
+  <h3 style="font-family:var(--font-head);font-size:1.1rem;color:var(--red-mid);margin-bottom:12px;margin-top:1.5rem;">Still needed — purchase before the season progresses</h3>
+  <div class="prod-grid">
+    <div class="prod-card buy">
+      <h4>Lime Sulfur <span class="badge badge-buy">Buy Soon — Must Order Online or in Bulk</span></h4>
+      <p>Highly effective dormant spray for overwintering disease inoculum on stone fruits and grapes. Apply before bud swell in late winter. Separate from copper by at least 2 weeks.</p>
+      <div class="prod-detail">
+        <span style="color:var(--red);font-weight:600;">⚠ Serious eye hazard: lime sulfur can cause permanent blindness on contact.</span> Full goggles (not just safety glasses) and a face shield are mandatory — do not spray in windy conditions. Also causes severe skin burns; wear long sleeves, gloves, and cover all exposed skin. The hydrogen sulfide odor is extremely pungent — wear a respirator rated for acid gases.<br><br>
+        ⚑ <strong>Retail stores typically do not carry lime sulfur</strong> — it has been discontinued from most garden center shelves. Purchase from agricultural supply companies (Tractor Supply, AG stores) or online in quart/gallon quantities. Bonide Lime Sulfur Spray is the most widely available home-use formulation. Never mix with copper — apply at least 2 weeks apart. Lime sulfur as a dormant spray (before leaf emergence) is generally safe on American-type grapes; avoid once leaves emerge.
+      </div>
+    </div>
+    <div class="prod-card buy">
+      <h4>Wettable Sulfur <span class="badge badge-buy">Buy — European Grapes Only</span></h4>
+      <p>e.g., <em>Bonide Sulfur Plant Fungicide</em>. For powdery mildew on European (vinifera) grapes during the growing season. Do not use on American-type grapes or peaches.</p>
+      <div class="prod-detail">⚑ Do not apply above 85–90°F. Keep away from peaches and nectarines. Do not apply within 2 weeks of any oil spray. <strong style="color:var(--red);">Health:</strong> Sulfur dust and spray mist are respiratory irritants — wear a dust/mist respirator, eye protection, and gloves. People with sulfur sensitivity or asthma should take extra precautions. Avoid breathing any sulfur dust when measuring the wettable powder.</div>
+    </div>
+    <div class="prod-card buy">
+      <h4>Captan 50WP <span class="badge badge-buy">Recommended</span></h4>
+      <p>Excellent broad-spectrum protectant for stone fruits (brown rot) and apple. Complements mancozeb well in resistance management rotations. Good pre-harvest fungicide for peaches and cherries.</p>
+      <div class="prod-detail">⚑ 7-day PHI on stone fruits and apple. Do not mix with horticultural oil — wait 2 weeks in either direction. Do not mix with alkaline products. <strong style="color:var(--red);">Health:</strong> Captan 50WP is classified as a probable human carcinogen (EPA Group B2) based on animal studies. The wettable powder form poses the highest inhalation risk — always wear a properly fitted respirator when measuring and mixing the dry powder, along with gloves and eye protection. Do not breathe dust or spray mist.</div>
+    </div>
+    <div class="prod-card buy">
+      <h4>Permethrin Concentrate <span class="badge badge-buy">Recommended — Peachtree Borer</span></h4>
+      <p>e.g., <em>Hi-Yield 38 Plus</em> or <em>Bonide Eight Insect Control</em>. Your bifenthrin 7.9% can serve this role, but a dedicated higher-concentration permethrin product is useful for thorough peachtree borer trunk drenches on peach, nectarine, cherry, and plum in July–August.</p>
+      <div class="prod-detail">⚑ Apply as a directed trunk spray saturating the lower 18 inches + root flare. Two applications 2–3 weeks apart starting mid-July. PHI = 14 days on stone fruits. Label must specifically mention "peach tree borer" and "trunk application." <strong style="color:var(--red);">Health &amp; safety:</strong> Permethrin is extremely toxic to cats — cats exposed to wet permethrin or who groom fur contaminated with it can suffer severe neurological toxicity and death. Keep cats away from treated areas until sprays are completely dry. Also highly toxic to fish and aquatic life — do not apply near water. Wear gloves and eye protection.</div>
+    </div>
+    <div class="prod-card optional">
+      <h4>Dinotefuran <span class="badge badge-optional">Optional — Heavy SLF</span></h4>
+      <p>e.g., <em>Gordon's Zylam</em>. Systemic insecticide applied as a bark spray on grape trunks for systemic SLF control. Reserve for seasons of very heavy SLF pressure when the bifenthrin + Sevin rotation is not providing adequate knockdown.</p>
+      <div class="prod-detail">⚑ Check label for grape PHI. More expensive and harder to find than bifenthrin; treat as a backup escalation tool only.</div>
+    </div>
+    <div class="prod-card optional">
+      <h4>Thiophanate-Methyl <span class="badge badge-optional">Optional — Black Knot</span></h4>
+      <p>e.g., <em>Bonide Fung-onil Systemic</em> (different from Fungonil contact). Systemic fungicide with efficacy against black knot on plum and cherry. Use in combination with copper during the bud swell–post-bloom suppression window.</p>
+      <div class="prod-detail">⚑ Rotate with copper and myclobutanil; do not rely on it alone. Check the label for specific PHI on the crop being treated.</div>
+    </div>
+  </div>
+
+
+  <div class="alert alert-blue" style="margin-top:0.5rem;">
+    <strong>Mixing rules — never violate these</strong>
+    Never mix copper + lime sulfur in the same application (toxic reaction, severe phytotoxicity). Apply them at least 2 weeks apart. Never apply wettable sulfur or lime sulfur within 2 weeks of any oil spray. Mancozeb + myclobutanil is a good tank mix (protectant + systemic). Sevin is generally compatible with most fungicides, but always read both labels before mixing anything.
+  </div>
+</section>
+
+<!-- ════════════════════ GRAPE SULFUR SECTION ════════════════════ -->
+<section id="grapes">
+  <h2 class="section-title">
+    <span class="icon" style="background:var(--purple-pale)">🍇</span>
+    Grape Sulfur Guide: European vs. American Types
+  </h2>
+
+  <div class="alert alert-purple" style="margin-bottom:1.25rem;">
+    <strong>Why this matters</strong>
+    American-type grapes (<em>Vitis labrusca</em>: Concord, Niagara, Catawba, and labrusca hybrids) are more susceptible to sulfur phytotoxicity than European (<em>V. vinifera</em>) grapes. Spraying wettable sulfur on American types causes interveinal leaf scorch and can damage berries. The good news: American grapes are also naturally more resistant to powdery mildew — so they need less intensive management anyway. Use myclobutanil and/or horticultural oil instead of sulfur on your American vines.
+  </div>
+
+  <div class="grape-split">
+    <div class="grape-card european">
+      <span class="sulfur-verdict sv-ok">✓ Sulfur OK</span>
+      <h3>European Grapes (V. vinifera)</h3>
+      <p>e.g., Chardonnay, Cabernet, Riesling, Pinot Noir, Merlot, Muscat, etc.</p>
+      <ul>
+        <li>Wettable sulfur is the primary powdery mildew tool — apply every 10–14 days during shoot growth</li>
+        <li>Do not apply sulfur when temperatures exceed 85–90°F (phytotoxic at high heat even on vinifera)</li>
+        <li>Apply in early morning or late evening on hot days</li>
+        <li>Stop sulfur at least 3 weeks before harvest (affects wine flavor/fermentation)</li>
+        <li>Do not apply within 2 weeks of any oil spray</li>
+        <li>Vinifera are highly susceptible to both downy and powdery mildew — do not skip sprays</li>
+        <li>Lime sulfur dormant spray: OK</li>
+      </ul>
+    </div>
+    <div class="grape-card american">
+      <span class="sulfur-verdict sv-no">✗ No Sulfur</span>
+      <h3>American Grapes (V. labrusca &amp; hybrids)</h3>
+      <p>e.g., Concord, Niagara, Catawba, Delaware, and many French-American hybrids</p>
+      <ul>
+        <li><strong>Do not use wettable sulfur during the growing season</strong> — causes interveinal scorch on leaves and can crack berries</li>
+        <li>Use <strong>myclobutanil (Immunox)</strong> as your primary powdery mildew fungicide instead</li>
+        <li>Use <strong>horticultural / stylet oil</strong> as a complement to myclobutanil for mildew (not within 2 weeks of captan)</li>
+        <li>American types have natural resistance to powdery mildew — spray intervals can be slightly extended vs. European types in low-pressure years</li>
+        <li>They remain susceptible to black rot and downy mildew — maintain mancozeb + myclobutanil program</li>
+        <li>Lime sulfur as a <em>dormant</em> spray (before leaf emergence) is generally acceptable — but switch to copper for any applications once growth begins</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="alert alert-amber">
+    <strong>If you have hybrid grapes (French-American crosses)</strong>
+    Hybrids vary widely in sulfur sensitivity — there is no single answer for all cultivars. Conservative approach: treat them like American types and avoid sulfur. If you know a specific hybrid is tolerant, test a small area first before full application. Varieties like Vidal, Cayuga, Seyval, and Chambourcin tend to be less sensitive than pure labrusca, but sensitivity still varies. When in doubt, use myclobutanil + oil as your powdery mildew program.
+  </div>
+</section>
+
+<!-- ════════════════════ INSECT PEST PROFILES ════════════════════ -->
+<section id="insects">
+  <h2 class="section-title">
+    <span class="icon" style="background:var(--red-pale)">🪲</span>
+    Insect Pest Profiles
+  </h2>
+
+  <div class="alert alert-amber" style="margin-bottom:1.25rem;">
+    <strong>Why Sevin alone has been insufficient</strong>
+    Modern Sevin (zeta-cypermethrin) is a pyrethroid — effective for many pests but with a shorter residual and somewhat lower knockdown on plum curculio than older carbaryl-based Sevin. Your bifenthrin 7.9% is a longer-residual pyrethroid and covers nearly all the pests below. Adding timed, targeted sprays beyond your general cover spray schedule is the key to protecting fruit.
+  </div>
+
+  <div class="pest-grid">
+
+    <div class="pest-card">
+      <div class="pest-card-header" style="border-top:4px solid var(--amber);">
+        <h4>Plum Curculio</h4>
+        <div class="crops-affected">Affects: sour cherry, peach/nectarine, plum, apple (all stone fruits + pome)</div>
+      </div>
+      <div class="pest-card-body">
+        <div class="pest-symptom">Crescent-shaped scars on young fruit = female egg-laying wound. On peaches: clear to amber gummy ooze at puncture sites on fruit, small stunted fruit, heavy premature fruit drop — this is the primary cause of the peach gummosis symptoms you've observed. Cat-facing distortions. Internal larvae in fallen fruit.</div>
+        <strong>Biology</strong>
+        Small brown snout weevil. Overwinters in leaf litter and woodland edges. Adults emerge at petal fall, migrate into the orchard, and immediately begin feeding and laying eggs in newly set fruit. One primary generation per year in NJ; activity concentrated in the first 3–4 weeks after petal fall.
+        <strong>Why control failed with Sevin alone</strong>
+        Plum curculio requires a well-timed petal-fall spray as the primary intervention. Missing or delaying this spray by even a few days results in significant damage. Bifenthrin has longer residual than modern Sevin and is a better primary tool for this pest.
+        <strong>Management</strong>
+        <ul style="padding-left:1.2rem;margin-top:4px;">
+          <li><strong>Petal fall spray:</strong> Apply bifenthrin immediately at petal fall on all stone fruits and apple — this is the single most critical insecticide timing of the year for fruit protection. A second application 10–14 days later provides an important second layer.</li>
+          <li>Apply in the evening (PC adults are most active at night when temps exceed 70°F).</li>
+          <li>Remove and destroy fallen fruit throughout the season — larvae in dropped fruit complete development in the soil, adding to next year's population.</li>
+          <li>Clean up woodland-edge brush, rock walls, and leaf piles near the orchard — these are overwintering habitat.</li>
+        </ul>
+        <div class="pest-window">⏱ Critical spray window: petal fall → 3–4 weeks after petal fall (approximately mid-May through early June in NJ)</div>
+      </div>
+    </div>
+
+    <div class="pest-card">
+      <div class="pest-card-header" style="border-top:4px solid var(--red-mid);">
+        <h4>Peachtree Borer <span style="font-size:12px;font-weight:400;color:var(--text-light);"> — preventive management; secondary concern</span></h4>
+        <div class="crops-affected">Affects: peach, nectarine, cherry, plum (all stone fruits)</div>
+      </div>
+      <div class="pest-card-body">
+        <div class="pest-symptom">Gummy sap mixed with granular frass (sawdust-like material) at the base of the trunk near or below the soil line — not on fruit. Note: ooze appearing on the <em>fruit</em> surface is typically caused by plum curculio, not this pest. Bark gummosis at the trunk base, yellowing foliage, or reduced vigor are borer signs.</div>
+        <strong>Biology</strong>
+        Day-flying clearwing moth resembling a wasp. Adults emerge June–September; peak egg-laying in NJ is late July through August. Larvae bore under bark at the base of the trunk and root flare, tunneling through the cambium. One or two borers can harm growth and fruiting; several can kill a young tree in a single season. They are essentially unreachable by insecticide once inside the bark — prevention is everything.
+        <strong>Two species</strong>
+        Greater peachtree borer (attacks trunk base / crown, most damaging) and lesser peachtree borer (attacks higher on trunk and scaffold limbs). Treat for both with the same program.
+        <strong>Management</strong>
+        <ul style="padding-left:1.2rem;margin-top:4px;">
+          <li><strong>Trunk spray — bifenthrin:</strong> Apply bifenthrin 7.9% as a directed trunk spray soaking the lower 18 inches of trunk and the root flare area down to and slightly below soil level. Repeat in 2–3 weeks. Two applications starting mid-July through late August covers the peak egg-laying window.</li>
+          <li>A dedicated permethrin product (if purchased) can supplement bifenthrin for trunk treatments with slightly better labeled residual on bark.</li>
+          <li>Existing borer infestations (larvae already inside) can be manually removed: scratch away gum and frass, probe tunnels with thin flexible wire to kill larvae.</li>
+          <li>Trees with trunk injury, previous borer attacks, or canker damage are more attractive to egg-laying moths — keep trunks healthy and avoid mechanical damage.</li>
+        </ul>
+        <div class="pest-window">⏱ Critical spray window: mid-July → late August (2 trunk spray applications, 2–3 weeks apart)</div>
+      </div>
+    </div>
+
+    <div class="pest-card">
+      <div class="pest-card-header" style="border-top:4px solid var(--blue-mid);">
+        <h4>Codling Moth</h4>
+        <div class="crops-affected">Affects: apple primarily; also pear, plum (minor)</div>
+      </div>
+      <div class="pest-card-body">
+        <div class="pest-symptom">"Wormy apple" — larvae tunnel into fruit, often entering through the calyx end or side, feeding toward the core and leaving a frass-filled tunnel. Reddish-brown entry holes. Fruit may rot around the entry point.</div>
+        <strong>Biology</strong>
+        Overwinters as larvae under bark or in ground litter. Adults emerge in May, lay eggs on small fruit and nearby leaves. Two generations in NJ: first generation larvae in fruit June–July, second generation August–September. Once larvae bore into fruit they are protected from insecticides — sprays must target eggs and newly-hatched larvae before entry.
+        <strong>Management</strong>
+        <ul style="padding-left:1.2rem;margin-top:4px;">
+          <li>Your bifenthrin + Sevin cover spray program on apples starting at petal fall provides significant codling moth suppression — these are the correct products and timing.</li>
+          <li>Maintain 10–14 day cover spray intervals through July. Shorten to 7–10 days during second generation (August).</li>
+          <li>Pheromone monitoring traps (delta-shaped sticky traps with codling moth lure) help you confirm presence and time sprays — hang in the upper canopy at pink stage/bloom and check weekly.</li>
+          <li>Remove and destroy all fallen and damaged fruit promptly — larvae exiting fruit pupate nearby and contribute to second generation.</li>
+          <li>Remove loose bark from trunks in winter — larvae overwinter in cocoons under bark.</li>
+        </ul>
+        <div class="pest-window">⏱ Two pressure periods: 1st generation May–July, 2nd generation August–September. Maintain cover sprays through both.</div>
+      </div>
+    </div>
+
+    <div class="pest-card">
+      <div class="pest-card-header" style="border-top:4px solid var(--blue-mid);">
+        <h4>Apple Maggot</h4>
+        <div class="crops-affected">Affects: apple primarily; also some stone fruits</div>
+      </div>
+      <div class="pest-card-body">
+        <div class="pest-symptom">Small dimples on fruit surface (egg-laying stings). Internal brown winding tunnels through flesh at harvest. Fruit appears normal externally but is internally ruined. Heavy infestation causes misshapen, russeted fruit.</div>
+        <strong>Biology</strong>
+        Adult fly emerges from soil late June–early July in NJ. Females lay eggs just under apple skin; larvae feed inside fruit creating tunnels. One generation per year, but adult flight continues through September. Adults are most active in warm, humid conditions.
+        <strong>Management</strong>
+        <ul style="padding-left:1.2rem;margin-top:4px;">
+          <li>Your bifenthrin cover sprays from late June through harvest provide good suppression. Maintain every 10–14 days.</li>
+          <li><strong>Red sphere sticky traps</strong> (available online and at garden centers) are highly effective monitoring and partial control tools — hang 1–2 per tree in late June, coated with Tanglefoot adhesive. They attract and catch adult flies. Replace or re-coat monthly.</li>
+          <li>Do not allow dropped apples to remain on the ground — larvae exit fallen fruit and pupate in the soil.</li>
+        </ul>
+        <div class="pest-window">⏱ Active July through September. Overlap well with your existing cover spray schedule — no special separate timing needed if bifenthrin/Sevin rotation is maintained.</div>
+      </div>
+    </div>
+
+    <div class="pest-card">
+      <div class="pest-card-header" style="border-top:4px solid var(--green-light);">
+        <h4>Oriental Fruit Moth</h4>
+        <div class="crops-affected">Affects: peach, nectarine primarily; also apple, cherry</div>
+      </div>
+      <div class="pest-card-body">
+        <div class="pest-symptom">Early season: wilting, dying shoot tips ("flagging") — larvae bore into new shoot growth. Late season: larvae enter fruit, often near the stem end, creating internal tunnels with frass. Ooze at entry point.</div>
+        <strong>Biology</strong>
+        Multiple generations per year in NJ (3–4). First generation larvae attack shoot tips in May; later generations increasingly target fruit as the season progresses. Adults fly at dusk.
+        <strong>Management</strong>
+        <ul style="padding-left:1.2rem;margin-top:4px;">
+          <li>Your existing bifenthrin + Sevin petal-fall and cover spray program on peaches provides significant OFM suppression alongside its other targets.</li>
+          <li>Prune out wilted shoot tips showing flagging damage in May–June — this removes larvae before they complete development.</li>
+          <li>Increase spray frequency to 7-day intervals on peaches during the 4 weeks before harvest, when later-generation fruit attacks peak.</li>
+        </ul>
+        <div class="pest-window">⏱ Shoot tip damage May–June; fruit damage most serious in July–August. Cover sprays address both generations.</div>
+      </div>
+    </div>
+
+    <div class="pest-card">
+      <div class="pest-card-header" style="border-top:4px solid var(--text-mid);">
+        <h4>Brown Marmorated Stink Bug (BMSB)</h4>
+        <div class="crops-affected">Affects: apple, peach, cherry, plum — puncture and feeding damage to fruit</div>
+      </div>
+      <div class="pest-card-body">
+        <div class="pest-symptom">Corky, spongy brown spots just under the skin of apple (cat-facing). Stone fruit shows surface dimpling and internal breakdown near puncture sites. Distinctive "stink bug" odor when disturbed. Shield-shaped brown insects with banded antennae.</div>
+        <strong>Biology</strong>
+        Invasive pest, established throughout NJ. Overwinters in buildings and woodland edges. Adults migrate into orchards in late summer; second generation adults peak August–September and actively feed on maturing fruit. BMSB is a particularly severe pest in NJ given its regional establishment.
+        <strong>Management</strong>
+        <ul style="padding-left:1.2rem;margin-top:4px;">
+          <li><strong>Bifenthrin is one of the most effective home-use insecticides for BMSB.</strong> Your August–September cover sprays with bifenthrin on apples and stone fruits directly address BMSB.</li>
+          <li>BMSB tend to attack from orchard edges first — pay extra attention to trees on the perimeter closest to woods or buildings.</li>
+          <li>Exclusion netting over individual trees is highly effective but labor-intensive.</li>
+          <li>No single insecticide provides complete control — combining bifenthrin sprays with removal of overwintering habitat (seal gaps in structures near the orchard) helps reduce populations.</li>
+        </ul>
+        <div class="pest-window">⏱ Peak damage: August–September. Overlap with your SLF/Japanese beetle bifenthrin program — no additional spray timing needed.</div>
+      </div>
+    </div>
+
+    <div class="pest-card">
+      <div class="pest-card-header" style="border-top:4px solid var(--green-mid);">
+        <h4>Apple Scab — Fruit Infection</h4>
+        <div class="crops-affected">Affects: apple (leaves and fruit)</div>
+      </div>
+      <div class="pest-card-body">
+        <div class="pest-symptom">On fruit: olive-green to brown velvety or corky spots on the surface. As fruit grows, lesions become raised and cracked/scabby. Heavily infected fruit is deformed, cracked, and small. Cracks in the fruit skin are open entry points for brown rot (<em>Monilinia</em>) later in the season, causing a compounding disease problem at harvest.</div>
+        <strong>Biology and infection timing</strong>
+        Apple scab overwinters in infected fallen leaves. Spores are released during wet spring weather beginning at silver tip/green tip and continuing through June. Young, rapidly expanding tissue (leaves and fruitlets) is most susceptible. Fruit infections from petal fall through June are the most damaging economically — early-infected fruit stays small, cracks as it grows, and frequently drops. Later-season leaf infections continue but are less damaging to the crop.
+        <strong>Why this matters for the spray schedule</strong>
+        Knowing you have fruit scab confirms that your petal fall through June spray window is the highest-priority period of the entire apple season. A gap in coverage during this stretch — even one missed spray during a wet week — can result in widespread fruit infection. The same protectant fungicides that handle scab (mancozeb, captan, Daconil) also prevent the brown rot secondary infections that follow scab cracks.
+        <strong>Management</strong>
+        <ul style="padding-left:1.2rem;margin-top:4px;">
+          <li>No change in products — mancozeb, captan, myclobutanil, and Daconil are all active against scab. Maintain these in rotation.</li>
+          <li>Shorten spray intervals to 7 days during prolonged wet periods from petal fall through June. Rain washes off protectants — each significant rain event resets your coverage window.</li>
+          <li>Rake and remove fallen leaves in autumn — this is the primary overwintering reservoir for scab inoculum. Destroying leaves reduces next season's infection pressure.</li>
+          <li>Myclobutanil has curative activity up to about 72 hours after an infection event (use it after a missed spray during rain); mancozeb, captan, and Daconil are protectants only.</li>
+        </ul>
+        <div class="pest-window">⏱ Fruit infection window: petal fall → late June (most critical). Leaf infections continue through summer. The petal fall cover spray is the single most important spray for fruit quality on apple.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════ SEASON SCHEDULE ════════════════════ -->
+<section id="schedule">
+  <h2 class="section-title">
+    <span class="icon" style="background:var(--green-pale)">📅</span>
+    Full Season Spray Schedule
+  </h2>
+
+  <div class="legend">
+    <span>Tags:</span>
+    <span class="tag tag-f">Fungicide</span>
+    <span class="tag tag-i">Insecticide</span>
+    <span class="tag tag-c">Cultural / Mechanical</span>
+    <span class="tag tag-u">Urgent</span>
+    <span class="tag tag-stop">No spray (bloom)</span>
+    <span class="tag tag-phi">PHI Note</span>
+  </div>
+  <div style="margin-bottom:1rem;display:flex;gap:10px;align-items:center;">
+    <button onclick="document.querySelectorAll('.month-block').forEach(b=>b.classList.add('open'));this.textContent='▼ All expanded'" style="font-size:13px;padding:6px 14px;cursor:pointer;">▼ Expand all months</button>
+    <button onclick="document.querySelectorAll('.month-block').forEach(b=>b.classList.remove('open'));this.textContent='All collapsed'" style="font-size:13px;padding:6px 14px;cursor:pointer;">▲ Collapse all months</button>
+    <span style="font-size:12px;color:var(--text-light)">Click any month header to expand or collapse it</span>
+  </div>
+
+  <!-- MARCH -->
+  <div class="month-block m-early-spring open">
+    <div class="month-header" onclick="toggleMonth(this)">
+      <span class="month-name">March — NOW</span>
+      <span class="phase-label">Dormant → Bud Swell — NJ Springs Are Running Early</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="month-content">
+      <table>
+        <thead><tr><th style="width:16%">Crop</th><th style="width:18%">Action Type</th><th>Details</th></tr></thead>
+        <tbody>
+          <tr>
+            <td colspan="3" style="background:var(--amber-pale);border-left:4px solid var(--amber);color:#5a3010;font-size:14px;padding:10px 14px;">
+              <strong style="display:block;margin-bottom:4px;">⚑ NJ springs are consistently running 1–2 weeks ahead of historical averages</strong>
+              Rutgers NJAES data shows NJ fruit tree phenology advancing earlier each year — apples have reached ¼" green tip as early as March 18 in recent seasons (14 days ahead of median). Do not rely on calendar dates alone. Check trees every 2–3 days in March. By mid-to-late March you may already find: cherries at green tip or beyond, Ribes (currants &amp; gooseberries) with leaves beginning to emerge, peaches at bud swell, and apples at silver tip. Adjust all spray timings to what is actually observed on the trees, not what the calendar suggests.
+            </td>
+          </tr>
+          <tr>
+            <td class="td-crop">All crops</td>
+            <td><span class="tag tag-c">Cultural</span></td>
+            <td>Prune all dead and diseased wood. Remove and destroy mummified fruit hanging on trees (major disease source). Rake and remove fallen leaves and debris from around plant bases. These harbor overwintering spores.</td>
+          </tr>
+          <tr>
+            <td class="td-crop">Plum</td>
+            <td><span class="tag tag-c">Cultural</span> <span class="tag tag-u">Urgent</span></td>
+            <td>Perform black knot surgery while fully dormant — see emergency section above. Cut 4–6 inches below every visible knot into clean white wood. Sterilize tools with 70% isopropyl between every cut. Bag and dispose all removed material. Do not compost.</td>
+          </tr>
+          <tr>
+            <td class="td-crop">Peach / Nectarine</td>
+            <td><span class="tag tag-f">Fungicide</span> <span class="tag tag-u">Urgent</span></td>
+            <td>Apply <strong>copper fungicide now</strong>, while fully dormant, before any bud swell. This is your primary window for leaf curl prevention — once buds open and leaves emerge curled, the window is closed and the season is lost. If buds are beginning to swell, apply now and again in 7–10 days. Use full labeled rate for dormant application.<br><br><strong style="color:var(--red)">⚑ Do not use Daconil (chlorothalonil) for leaf curl.</strong> Daconil has essentially zero efficacy against <em>Taphrina deformans</em> — the organism that causes leaf curl is not in the class of fungi that chlorothalonil controls. Copper and lime sulfur are the only products with established efficacy for this disease, and only during this dormant window. Daconil and copper can safely be applied on consecutive days (copper + lime sulfur is the dangerous combination to avoid, not copper + Daconil).</td>
+          </tr>
+          <tr>
+            <td class="td-crop">Grapes</td>
+            <td><span class="tag tag-f">Fungicide</span> <span class="tag tag-c">Cultural</span></td>
+            <td>Apply <strong>lime sulfur</strong> to dormant canes (after pruning) for overwintering disease suppression — OK on both European and American types at this dormant stage. If lime sulfur is not yet on hand, copper fungicide applied to dormant canes provides meaningful interim protection. Remove all mummified berries (primary black rot inoculum source). Begin scouting for SLF egg masses on canes, trellises, and nearby hard surfaces.</td>
+          </tr>
+          <tr>
+            <td class="td-crop">Sour Cherry</td>
+            <td><span class="tag tag-f">Fungicide</span> <span class="tag tag-u">Urgent</span></td>
+            <td>In a typical NJ season, cherries are dormant in early March and receive a copper spray in late dormancy. <strong>In early or warm seasons (increasingly common), cherries may already be at green tip or beyond by mid-March</strong> — check the trees. If still dormant or at bud swell: apply copper at full rate (2 fl oz/gallon Captain Jack's). If already at green tip with visible emerging tissue: apply copper at the reduced rate (1 fl oz/gallon) only when overnight temps will stay above 32°F — copper freezing on exposed green tissue causes burn. Begin Daconil for brown rot and leaf spot protection at green tip. The black knot suppression window (copper + myclobutanil) opens at bud swell and runs through 4 weeks post-bloom.</td>
+          </tr>
+          <tr>
+            <td class="td-crop">Ribes (currants &amp; gooseberries)</td>
+            <td><span class="tag tag-f">Fungicide</span> <span class="tag tag-u">Urgent</span></td>
+            <td>Ribes break dormancy <strong>very early</strong> — among the first plants in the garden to wake up, often with leaves beginning to emerge in mid-March in NJ during warm springs. <strong>Check Ribes plants now.</strong> If leaves are beginning to emerge (common by mid-March in warm years), apply copper at the reduced rate — 1 fl oz/gallon — when overnight temps will be above freezing. This protects against anthracnose, currant leaf spot, and other overwintering fungal diseases. Do not use the full dormant rate once leaves are showing — copper at high rates on open foliage causes burn.</td>
+          </tr>
+          <tr>
+            <td class="td-crop">All stone fruits</td>
+            <td><span class="tag tag-f">Fungicide</span></td>
+            <td>Apply copper fungicide to cherries and plums in late dormancy. If you applied lime sulfur to grapes, wait at least 2 weeks before applying copper to anything.</td>
+          </tr>
+          <tr>
+            <td class="td-crop">SLF — all</td>
+            <td><span class="tag tag-c">Cultural</span> <span class="tag tag-u">Urgent</span></td>
+            <td>Inspect every flat hard surface near grapes: tree bark, fencing, stone walls, outdoor furniture, vehicles. SLF egg masses resemble dried gray/brown putty smeared in a 1-inch strip. Scrape with a card into a bag with hand sanitizer and dispose. This is the single highest-impact SLF action you can take. Report sightings to NJ Dept. of Agriculture at 1-833-4BADBUG.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- EARLY APRIL -->
+  <div class="month-block m-spring open">
+    <div class="month-header" onclick="toggleMonth(this)">
+      <span class="month-name">Early April</span>
+      <span class="phase-label">Green Tip / Bud Swell</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="month-content">
+      <table>
+        <thead><tr><th style="width:16%">Crop</th><th style="width:18%">Action Type</th><th>Details</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="td-crop">Apple</td>
+            <td><span class="tag tag-f">Fungicide</span> <span class="tag tag-u">Urgent</span></td>
+            <td><strong>Begin myclobutanil (Immunox) at first green tissue</strong>. Cedar-Apple Rust spore release begins now — early applications are critical, as infection occurs during the first 2–4 weeks of shoot growth. Spray every 10–14 days through early May. Add mancozeb to the same spray for apple scab protection. Inspect nearby eastern red cedar / ornamental juniper for orange gelatinous galls (telial horns) — these are the primary inoculum source.<br><br><strong>Codling moth prep:</strong> At the pink stage (tight cluster just before bloom), hang a codling moth pheromone delta trap in the upper canopy of the apple tree. Check weekly from now through harvest. If you see 5+ moths caught per week, shorten your insecticide intervals. These traps are inexpensive and widely available online.</td>
+          </tr>
+          <tr>
+            <td class="td-crop">Grapes — European</td>
+            <td><span class="tag tag-f">Fungicide</span></td>
+            <td>Begin mancozeb at 3–5 inch shoot growth. Critical protective period for black rot and downy mildew. Spray every 7–10 days during wet weather.</td>
+          </tr>
+          <tr>
+            <td class="td-crop">Grapes — American</td>
+            <td><span class="tag tag-f">Fungicide</span></td>
+            <td>Begin mancozeb at 3–5 inch shoot growth for black rot and downy mildew protection. American types are more naturally resistant to mildew but remain fully susceptible to black rot.</td>
+          </tr>
+          <tr>
+            <td class="td-crop">Peach / Nectarine</td>
+            <td><span class="tag tag-f">Fungicide</span></td>
+            <td>If bud swell has begun, apply a second copper application if not done. Once leaves emerge, switch to Daconil or myclobutanil — copper can cause phytotoxicity on open foliage at high rates.</td>
+          </tr>
+          <tr>
+            <td class="td-crop">Cherry</td>
+            <td><span class="tag tag-f">Fungicide</span></td>
+            <td>Apply captan or chlorothalonil (Daconil) at bud swell. These protect against cherry leaf spot and brown rot as the season begins. Also apply copper at late dormancy for black knot suppression — cherry shares the same copper + myclobutanil program as plum from bud swell through post-bloom. Inspect all branches now while dormant for any existing black knot galls and remove.</td>
+          </tr>
+          <tr>
+            <td class="td-crop">Plum</td>
+            <td><span class="tag tag-f">Fungicide</span></td>
+            <td>Apply copper + myclobutanil at bud swell for black knot suppression. The critical spray timing for preventing new infections is from bud swell through 3–4 weeks post-bloom. Do not skip these applications.</td>
+          </tr>
+          <tr>
+            <td class="td-crop">Ribes (currants &amp; gooseberries)</td>
+            <td><span class="tag tag-f">Fungicide</span> <span class="tag tag-i">Insecticide</span></td>
+            <td>By early April, Ribes will have fully emerged leaves in most NJ seasons. Continue myclobutanil + Daconil every 10–14 days for anthracnose and leaf spot — the disease protection window that started at leaf emergence in March runs continuously through bloom. <strong>Ribes bloom is typically early–mid April in NJ</strong> — watch carefully and stop all insecticide applications the moment flowers open. Begin scouting leaf undersides for the first currant aphid colonies from mid-April onward; populations build rapidly in warm weather.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- LATE APRIL / PRE-BLOOM -->
+  <div class="month-block m-spring open">
+    <div class="month-header" onclick="toggleMonth(this)">
+      <span class="month-name">Late April / Early May</span>
+      <span class="phase-label">Pre-Bloom / Pink Stage</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="month-content">
+      <table>
+        <thead><tr><th style="width:16%">Crop</th><th style="width:18%">Action Type</th><th>Details</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="td-crop">Apple</td>
+            <td><span class="tag tag-f">Fungicide</span></td>
+            <td>Continue myclobutanil every 10–14 days. Cedar-Apple Rust spore release peaks during wet weather in April–May. This is the most important spray window for rust. Add mancozeb or captan for scab coverage in rotation. <strong>Apple fruit scab note:</strong> once petal fall begins, young fruitlets are highly susceptible to scab infection — any spray gap from petal fall through late June can result in corky, cracked scab lesions on the fruit surface. These cracks also serve as entry points for brown rot later in the season, compounding the damage. Prioritize not missing sprays during this window.</td>
+          </tr>
+          <tr>
+            <td class="td-crop">Grapes — European</td>
+            <td><span class="tag tag-f">Fungicide</span></td>
+            <td>Mancozeb + myclobutanil pre-bloom. Add wettable sulfur now for powdery mildew protection — this is a primary spray timing just before cluster caps fall. Spray timing is critical at pre-bloom.</td>
+          </tr>
+          <tr>
+            <td class="td-crop">Grapes — American</td>
+            <td><span class="tag tag-f">Fungicide</span></td>
+            <td>Mancozeb + myclobutanil pre-bloom. <strong>No sulfur</strong> — use myclobutanil as the powdery mildew component. Horticultural oil can be used for additional PM control if not within 2 weeks of captan application.</td>
+          </tr>
+          <tr>
+            <td class="td-crop">Stone fruits</td>
+            <td><span class="tag tag-f">Fungicide</span></td>
+            <td>Continue Daconil + myclobutanil on peach, cherry, and plum. Apply a good pre-bloom spray 10–14 days before expected bloom to protect developing flowers from brown rot.</td>
+          </tr>
+          <tr>
+            <td class="td-crop">ALL CROPS — during bloom</td>
+            <td><span class="tag tag-stop">No insecticides during bloom</span></td>
+            <td>Once flowers are open on any crop — including Ribes — stop all insecticide applications (Sevin, bifenthrin, etc.) until petal fall. You will kill pollinators and severely reduce fruit set. Fungicides may continue carefully, applied in early morning or late evening. Avoid Daconil directly on open flowers (may cause russeting on fruit).</td>
+          </tr>
+          <tr>
+            <td class="td-crop">Ribes (currants &amp; gooseberries)</td>
+            <td><span class="tag tag-f">Fungicide</span> <span class="tag tag-stop">No insecticides</span></td>
+            <td>Ribes typically bloom in April in NJ — earlier than most tree fruits. Continue myclobutanil + Daconil for leaf diseases during bloom, but apply only in early morning or evening and avoid direct contact with open flowers. <strong>No insecticides at all while Ribes flowers are open</strong> — currants and gooseberries are heavily bee-pollinated and insecticide exposure during bloom directly reduces fruit set. Once petals fall and berries begin to set, insecticide use can resume. From late April, scout leaf undersides intensively for the first currant aphid colonies — populations can explode within days in warm weather.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- PETAL FALL -->
+  <div class="month-block m-early-summer open">
+    <div class="month-header" onclick="toggleMonth(this)">
+      <span class="month-name">Mid–Late May</span>
+      <span class="phase-label">Petal Fall — Cover Sprays Begin</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="month-content">
+      <table>
+        <thead><tr><th style="width:16%">Crop</th><th style="width:18%">Action Type</th><th>Details</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="td-crop">All crops</td>
+            <td><span class="tag tag-f">Fungicide</span> <span class="tag tag-i">Insecticide</span></td>
+            <td>Full spray program resumes at petal fall. <strong>Apply bifenthrin immediately at petal fall on ALL stone fruits (cherry, peach, plum) and apple</strong> — this is the single most critical insecticide timing of the year for plum curculio control. The crescent-shaped scars on your cherries are caused by plum curculio egg-laying and bifenthrin at petal fall is the primary intervention. Repeat 10–14 days later. Also begin Sevin for Eastern tent caterpillar/cherry slug on cherry. SLF nymphs begin hatching in May (tiny, black with white spots) — bifenthrin also covers these. Apply all insecticide sprays in the evening — plum curculio adults are most active at night. <strong>Caution:</strong> bifenthrin at petal fall can harm predatory mites; scout for spider mite flare-up in late May–June (stippled, bronzed foliage; fine webbing on leaf undersides) and treat with horticultural oil at 2% dilution if found — do not wait for a full infestation to develop.</td>
+          </tr>
+          <tr>
+            <td class="td-crop">Grapes — European</td>
+            <td><span class="tag tag-f">Fungicide</span></td>
+            <td>Spray every 7–10 days during wet periods. Rotate: mancozeb → wettable sulfur + myclobutanil → Daconil. This rotation reduces resistance and covers all three diseases (black rot, downy mildew, powdery mildew).</td>
+          </tr>
+          <tr>
+            <td class="td-crop">Grapes — American</td>
+            <td><span class="tag tag-f">Fungicide</span></td>
+            <td>Spray every 7–10 days. Rotate: mancozeb → myclobutanil → Daconil + myclobutanil. Supplement with horticultural oil every 2–3 sprays for powdery mildew (keeping 2-week separation from captan). <strong>No sulfur.</strong></td>
+          </tr>
+          <tr>
+            <td class="td-crop">Cherry</td>
+            <td><span class="tag tag-f">Fungicide</span></td>
+            <td>Watch closely for cherry leaf spot — yellowing leaves with brown spots, premature defoliation. Daconil and myclobutanil both effective. Defoliation in May–June weakens trees significantly going into next year.</td>
+          </tr>
+          <tr>
+            <td class="td-crop">Ribes (currants &amp; gooseberries)</td>
+            <td><span class="tag tag-f">Fungicide</span> <span class="tag tag-i">Insecticide</span></td>
+            <td>Continue myclobutanil + Daconil for anthracnose and leaf spot. <strong>Currant aphid first generation peaks now</strong> — inspect leaf undersides carefully for pale aphid colonies causing leaf curling and blistering. Spray insecticidal soap directly onto affected leaf undersides at first sign; repeat every 5–7 days. Bifenthrin or Sevin if colonies are heavy and soap is insufficient. Check leaf undersides along main veins for imported currantworm egg masses — if hatching larvae found, hand-pick or treat with Sevin. Ribes bloom occurs in April–May — no insecticides during bloom.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- JUNE -->
+  <div class="month-block m-summer open">
+    <div class="month-header" onclick="toggleMonth(this)">
+      <span class="month-name">June</span>
+      <span class="phase-label">Active Growing Season — Peak Disease Pressure</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="month-content">
+      <table>
+        <thead><tr><th style="width:16%">Crop</th><th style="width:18%">Action Type</th><th>Details</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="td-crop">All crops</td>
+            <td><span class="tag tag-f">Fungicide</span> <span class="tag tag-i">Insecticide</span></td>
+            <td>Maintain 10–14 day spray intervals for fungicides. Rotate active ingredients. Japanese beetle adults begin emerging late June — spray Sevin in the morning when beetles are most active. On apple, bifenthrin cover sprays are now also working against first-generation codling moth (the "worm in the apple") and any apple maggot early arrivals — maintain coverage without gaps. Consider hanging a codling moth pheromone trap in the apple canopy to monitor population levels. Watch peach shoot tips for "flagging" (wilted tips) caused by Oriental fruit moth larvae — prune out and destroy affected tips.</td>
+          </tr>
+          <tr>
+            <td class="td-crop">Grapes — European <span class="tag tag-phi">PHI</span></td>
+            <td><span class="tag tag-f">Fungicide</span></td>
+            <td><strong>Mancozeb cutoff approaching:</strong> 66-day PHI. Calculate your last Mancozeb spray date. Example: late September harvest → last spray ~July 24. October harvest → ~August 1. Be conservative. After cutoff, rotate Daconil + myclobutanil + wettable sulfur. Continue wettable sulfur when temps stay below 85°F.</td>
+          </tr>
+          <tr>
+            <td class="td-crop">Grapes — American <span class="tag tag-phi">PHI</span></td>
+            <td><span class="tag tag-f">Fungicide</span></td>
+            <td>Same Mancozeb 66-day PHI applies. After cutoff: rotate Daconil + myclobutanil. Continue horticultural oil every 2–3 sprays for powdery mildew if pressure warrants. <strong>No sulfur.</strong></td>
+          </tr>
+          <tr>
+            <td class="td-crop">Grapes — all <span class="tag tag-c">Cultural</span></td>
+            <td><span class="tag tag-c">Cultural</span></td>
+            <td><strong>Shoot positioning — June through July:</strong> For Modified Munson or similar divided-canopy training, tuck actively growing shoots downward between the two inner catch wires; remove lateral shoots crowding the fruiting zone. This is not optional — without adequate shoot positioning and lateral removal, the canopy becomes a dense wall that traps humidity and blocks spray penetration, and black rot / downy mildew pressure spikes even with a solid fungicide program. Good airflow through the canopy is one of the most effective disease-reduction tools available. Cornell's bulletin <em>Shoot Positioning Native American Grapevines</em> covers this in detail for Concord-type vines. Aim to complete the main positioning by early July before shoots harden off.</td>
+          </tr>
+          <tr>
+            <td class="td-crop">Plum</td>
+            <td><span class="tag tag-f">Fungicide</span> <span class="tag tag-c">Cultural</span></td>
+            <td>Inspect current-year shoots weekly for new small olive-green swellings (earliest stage of black knot). Cut these out immediately — early removal of new knots dramatically reduces next year's inoculum load. Continue copper + myclobutanil through 4 weeks post-bloom for suppression.</td>
+          </tr>
+          <tr>
+            <td class="td-crop">Peach / Nectarine</td>
+            <td><span class="tag tag-f">Fungicide</span></td>
+            <td>Brown rot pressure increases as fruit develops. Myclobutanil every 10–14 days, or captan + Daconil. Frequency increases to every 7 days in the 4 weeks before harvest. Watch for Oriental fruit moth (larvae tunnel into shoot tips).</td>
+          </tr>
+          <tr>
+            <td class="td-crop">Ribes (currants &amp; gooseberries)</td>
+            <td><span class="tag tag-f">Fungicide</span> <span class="tag tag-i">Insecticide</span></td>
+            <td>Continue myclobutanil / Daconil for leaf diseases. Black currants and gooseberries — increase spray frequency if powdery mildew is visible (white coating on young shoots and leaves). Second-generation imported currantworm may appear — scout and treat with Sevin or bifenthrin if needed. Most Ribes types will be forming fruit now — fruit is not yet susceptible to SWD but begin monitoring. Remove any canes showing hollow or discolored pith at pruning cuts (currant borer) and destroy.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- JULY -->
+  <div class="month-block m-late-summer open">
+    <div class="month-header" onclick="toggleMonth(this)">
+      <span class="month-name">July</span>
+      <span class="phase-label">Peak Japanese Beetles · Approach to Stone Fruit Harvest</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="month-content">
+      <table>
+        <thead><tr><th style="width:16%">Crop</th><th style="width:18%">Action Type</th><th>Details</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="td-crop">All crops</td>
+            <td><span class="tag tag-i">Insecticide</span></td>
+            <td>Japanese beetle peak typically July 1–25 in NJ. Apply Sevin every 7–10 days under heavy pressure. Treat in the morning. <strong>Do not use beetle bag traps near your fruit plants</strong> — they attract more beetles from a wide area than they catch, increasing damage.<br><br><strong>Peachtree borer trunk spray (mid-July start):</strong> Apply bifenthrin 7.9% as a directed trunk drench to peach, nectarine, cherry, and plum — thoroughly saturate the lower 18 inches of trunk and root flare. This is the primary intervention window for the season's worst peach pest. Repeat in 2–3 weeks (early–mid August).<br><br><strong>Apple maggot:</strong> Hang red sphere sticky traps (coated with Tanglefoot) in apple trees now if not already done. Adult fly flight begins late June–July. Your bifenthrin cover sprays provide suppression; maintain 10–14 day intervals through harvest.<br><br>SLF adults begin appearing (large red/black wings) — begin aggressive insecticide applications on grape foliage, stems, and clusters. <strong>Rotate Sevin and bifenthrin</strong> (e.g., alternate applications) rather than using one product exclusively — bifenthrin's longer residual makes it particularly useful here, and rotation reduces resistance risk.</td>
+          </tr>
+          <tr>
+            <td class="td-crop">Sour Cherry <span class="tag tag-phi">PHI</span></td>
+            <td><span class="tag tag-f">Fungicide</span></td>
+            <td>Cherries typically ripen late June–July in NJ. Respect PHI: Daconil = 7 days, myclobutanil = 7 days, captan = 7 days, Sevin = 3 days. Stop all sprays accordingly before harvest. Harvest promptly when ripe — brown rot can destroy ripe cherries within days in warm weather.</td>
+          </tr>
+          <tr>
+            <td class="td-crop">Apple</td>
+            <td><span class="tag tag-f">Fungicide</span></td>
+            <td>Continue cover sprays. Rotate myclobutanil and captan or Daconil. Cedar-Apple Rust primary infection period is largely over by mid-July, but continue protecting new tissue.</td>
+          </tr>
+          <tr>
+            <td class="td-crop">Grapes — European</td>
+            <td><span class="tag tag-f">Fungicide</span> <span class="tag tag-i">Insecticide</span></td>
+            <td>After Mancozeb PHI cutoff: rotate Daconil + myclobutanil + wettable sulfur (if temps below 85°F; stop sulfur 3 weeks before harvest). SLF adults increasingly aggressive — rotate Sevin and bifenthrin every 7 days focused on clusters and canes. Bifenthrin's longer residual makes it the preferred choice when adults are aggregating heavily.</td>
+          </tr>
+          <tr>
+            <td class="td-crop">Grapes — American</td>
+            <td><span class="tag tag-f">Fungicide</span> <span class="tag tag-i">Insecticide</span></td>
+            <td>After Mancozeb cutoff: Daconil + myclobutanil rotation. Horticultural oil can continue if needed for powdery mildew. <strong>No sulfur.</strong> Aggressive SLF management: rotate Sevin and bifenthrin every 7 days.</td>
+          </tr>
+          <tr>
+            <td class="td-crop">Ribes — harvest <span class="tag tag-phi">PHI</span></td>
+            <td><span class="tag tag-f">Fungicide</span> <span class="tag tag-i">Insecticide</span></td>
+            <td>Most Ribes ripen June–July in NJ. Harvest frequently and promptly — ripe fruit left on bushes rapidly attracts SWD and Botrytis. <strong>Respect PHIs:</strong> Daconil = 7 days, myclobutanil = 7 days, Sevin = 3 days, malathion = 1 day (check label). If SWD adults are present (tiny flies with red eyes; spotted wings on males), malathion applied 1 day before harvest is your primary tool. Discard any soft or larvae-containing berries — do not compost. After harvest, apply fall copper spray to canes and crown, then prune out all canes 3+ years old and destroy fallen leaves.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- AUGUST -->
+  <div class="month-block m-harvest open">
+    <div class="month-header" onclick="toggleMonth(this)">
+      <span class="month-name">August</span>
+      <span class="phase-label">SLF Adults at Peak · Harvest Approaches</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="month-content">
+      <table>
+        <thead><tr><th style="width:16%">Crop</th><th style="width:18%">Action Type</th><th>Details</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="td-crop">Grapes</td>
+            <td><span class="tag tag-i">Insecticide</span> <span class="tag tag-f">Fungicide</span> <span class="tag tag-u">Critical</span></td>
+            <td>August–October is when SLF adults cause the most damage to grapes. Large adults feed in enormous aggregations. <strong>Rotate bifenthrin and Sevin every 7 days</strong> — bifenthrin (7-day PHI) is the preferred tool at this stage due to its longer residual, with Sevin alternating in rotation. Apply to foliage, clusters, and canes. If pressure remains severe despite rotation, dinotefuran bark spray can be added as an escalation. Continue Daconil or myclobutanil for bunch rot as harvest approaches. <strong>European types:</strong> Stop wettable sulfur 3 weeks before harvest. <strong>American types:</strong> No sulfur at any point.<br><br><strong>Second peachtree borer trunk spray:</strong> Apply bifenthrin trunk spray on all stone fruits 2–3 weeks after the first July application (early–mid August). This second application is important for adequate residual coverage through peak adult flight.<br><br><strong>Apple:</strong> Second-generation codling moth and apple maggot peak in August — shorten bifenthrin/Sevin apple cover sprays to 7–10 day intervals. Brown Marmorated Stink Bug adults begin aggregating on fruit from woodland edges — bifenthrin cover sprays directly address BMSB. Check edge trees closest to woods first for stink bug feeding damage (corky spots under apple skin, dimpled stone fruit).</td>
+          </tr>
+          <tr>
+            <td class="td-crop">Peach / Nectarine <span class="tag tag-phi">PHI</span></td>
+            <td><span class="tag tag-f">Fungicide</span></td>
+            <td>Harvest typically August in NJ. Increase brown rot spray frequency to every 7 days in the final 4 weeks before picking. Myclobutanil and captan are the most effective near-harvest choices. Daconil PHI on peaches = 7 days. Sevin = 3 days. Harvest slightly before peak ripeness if brown rot pressure is severe.</td>
+          </tr>
+          <tr>
+            <td class="td-crop">All</td>
+            <td><span class="tag tag-c">Cultural</span></td>
+            <td>Remove dropped and damaged fruit from the ground immediately — fallen fruit is a major brown rot amplification site in late summer heat.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- SEPT - OCT -->
+  <div class="month-block m-harvest open">
+    <div class="month-header" onclick="toggleMonth(this)">
+      <span class="month-name">September – October</span>
+      <span class="phase-label">Apple &amp; Grape Harvest</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="month-content">
+      <table>
+        <thead><tr><th style="width:16%">Crop</th><th style="width:18%">Action Type</th><th>Details</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="td-crop">Apple <span class="tag tag-phi">PHI</span></td>
+            <td><span class="tag tag-f">Fungicide</span> <span class="tag tag-i">Insecticide</span></td>
+            <td>Continue Daconil + myclobutanil through cover spray period. Daconil PHI = 7 days, myclobutanil = 7 days. Sooty blotch and flyspeck (cosmetic surface fungi) are controlled by captan and Daconil. If SLF adults present on apple, Sevin still permitted to 3 days pre-harvest.</td>
+          </tr>
+          <tr>
+            <td class="td-crop">Grapes <span class="tag tag-phi">PHI</span></td>
+            <td><span class="tag tag-i">Insecticide</span></td>
+            <td>SLF adults remain active and aggressive through October. Continue rotating bifenthrin and Sevin — both have 7-day PHI on grapes, so calculate harvest timing carefully and stop applications accordingly. After harvest, continue SLF management to protect vine health going into dormancy — feeding stress causes winter dieback. Grape harvest typically September–October depending on variety.</td>
+          </tr>
+          <tr>
+            <td class="td-crop">All stone fruits, grapes &amp; Ribes</td>
+            <td><span class="tag tag-f">Fungicide</span> <span class="tag tag-c">Cultural</span></td>
+            <td>After harvest: apply copper fungicide to all stone fruits (peach, cherry, plum) and grape canes. This fall copper application significantly reduces overwintering disease inoculum for next year. Remove and destroy all mummies, fallen fruit, and raked leaves. Do not compost any diseased material.<br><br><strong>Ribes note:</strong> Currants and gooseberries will have been harvested in June–July — their post-harvest work belongs in that window. By September, the primary task is raking and destroying fallen Ribes leaves (major anthracnose reservoir) and completing any post-harvest pruning of old canes that wasn't done at harvest time.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- DORMANT -->
+  <div class="month-block m-dormant open">
+    <div class="month-header" onclick="toggleMonth(this)">
+      <span class="month-name">November – February</span>
+      <span class="phase-label">Dormant Season</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="month-content">
+      <table>
+        <thead><tr><th style="width:16%">Crop</th><th style="width:18%">Action Type</th><th>Details</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="td-crop">All</td>
+            <td><span class="tag tag-c">Cultural</span> <span class="tag tag-f">Fungicide</span></td>
+            <td>Prune plum black knot again — much easier to see without leaves. Inspect all stone fruit trees for new knots and remove. Apply dormant horticultural oil to all fruit trees before bud swell to smother overwintering scale insects and mites. Do not mix oil with sulfur; wait at least 2 weeks after any sulfur spray.<br><br><strong>Ribes (currants &amp; gooseberries) dormant management:</strong> After hard frost, prune out all canes 3 years old or older at ground level — these harbor currant borer and are most disease-susceptible. Aim to leave 6–8 vigorous young canes per plant. Apply dormant copper + dormant horticultural oil to remaining canes and crown — but be ready: Ribes break dormancy very early, so this window can close by mid-to-late February in a warm year. Check plants from late February onward and spray before any leaf tissue emerges. Rake and destroy all fallen leaves around Ribes — primary overwintering site for anthracnose and leaf spot inoculum.<br><br><strong>Codling moth overwintering management:</strong> Scrape loose, flaking bark from apple and pear trunks and major scaffold limbs with a stiff brush — codling moth larvae overwinter in cocoons under loose bark and in ground debris. Removing loose bark eliminates these refuges. Wrap trunks with corrugated cardboard in summer (July–August) as a trap for larvae seeking pupation sites, then remove and destroy the bands in fall.<br><br>In late February, begin scouting for SLF egg masses again. Plan copper + lime sulfur dormant sprays for late February / early March timing — before bud swell begins. This restarts the full cycle.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ ROTATIONS ════════════════════ -->
+<section id="rotations">
+  <h2 class="section-title">
+    <span class="icon" style="background:var(--green-pale)">🔄</span>
+    Fungicide Rotation Quick Reference
+  </h2>
+
+  <p style="color:var(--text-mid);margin-bottom:1.25rem;font-size:15px;">Rotate between different active ingredients (different modes of action) to reduce the risk of fungicide resistance developing in disease populations. Never use the same product exclusively all season. Separate rotation cards are provided for each crop group including Ribes (currants &amp; gooseberries).</p>
+
+  <div class="rotation-grid">
+    <div class="rot-card">
+      <h4>🍎 Apple — Fungicide + Insecticide</h4>
+      <div class="rot-step"><span class="rot-arrow">→</span><span><strong>Pink stage (pre-bloom):</strong> Hang codling moth pheromone trap in canopy; begin myclobutanil + mancozeb for rust and scab</span></div>
+      <div class="rot-step"><span class="rot-arrow">→</span><span><strong>Petal fall (critical insect timing):</strong> Bifenthrin — primary plum curculio spray; also targets codling moth 1st gen. Repeat 10–14 days later. Apply in the evening.</span></div>
+      <div class="rot-step"><span class="rot-arrow">→</span><span><strong>Cover sprays (June–July):</strong> Rotate bifenthrin / Sevin every 10–14 days for codling moth 1st gen and apple maggot (begins July). Hang red sphere sticky traps late June.</span></div>
+      <div class="rot-step"><span class="rot-arrow">→</span><span><strong>August–September:</strong> Shorten to 7–10 day intervals — codling moth 2nd gen, apple maggot peak, and BMSB all overlap. Bifenthrin preferred (longer residual).</span></div>
+      <div class="rot-step"><span class="rot-arrow">→</span><span><strong>Fungicide rotation throughout:</strong> Myclobutanil + Mancozeb (early) → Daconil + Mancozeb → Captan + myclobutanil. Stop Mancozeb per PHI.</span></div>
+      <div class="rot-note">Scout for spider mite flare-up in late June after petal fall pyrethroid use — treat with horticultural oil if needed. Check codling moth trap weekly; increase spray frequency if catches exceed 5 moths/week.</div>
+    </div>
+
+    <div class="rot-card">
+      <h4>🍇 Grapes — European (vinifera)</h4>
+      <div class="rot-step"><span class="rot-arrow">→</span><span><strong>Early (shoot growth–pre-bloom):</strong> Mancozeb + Myclobutanil + Wettable Sulfur</span></div>
+      <div class="rot-step"><span class="rot-arrow">→</span><span><strong>Mid season:</strong> Daconil + Myclobutanil + Wettable Sulfur (below 85°F)</span></div>
+      <div class="rot-step"><span class="rot-arrow">→</span><span><strong>Near harvest:</strong> Daconil + Myclobutanil only. Stop sulfur 3 weeks before harvest, Mancozeb per 66-day PHI.</span></div>
+      <div class="rot-note">7–10 day intervals during wet periods. Mancozeb PHI = 66 days — calculate cutoff from harvest date</div>
+    </div>
+
+    <div class="rot-card">
+      <h4>🍇 Grapes — American (labrusca &amp; hybrids)</h4>
+      <div class="rot-step"><span class="rot-arrow">→</span><span><strong>Early:</strong> Mancozeb + Myclobutanil — no sulfur at any point in the season</span></div>
+      <div class="rot-step"><span class="rot-arrow">→</span><span><strong>Mid season:</strong> Daconil + Myclobutanil; add horticultural oil every 2–3 sprays for PM (not within 2 weeks of captan)</span></div>
+      <div class="rot-step"><span class="rot-arrow">→</span><span><strong>Near harvest:</strong> Daconil + Myclobutanil. Stop Mancozeb per 66-day PHI.</span></div>
+      <div class="rot-note">American types have more natural PM resistance — oil + myclobutanil is generally sufficient. No sulfur.</div>
+    </div>
+
+    <div class="rot-card">
+      <h4>🍑 Peach / Nectarine — Fungicide + Insecticide</h4>
+      <div class="rot-step"><span class="rot-arrow">→</span><span><strong>Dormant / bud swell:</strong> Copper fungicide (leaf curl — most critical spray; do NOT use Daconil for this)</span></div>
+      <div class="rot-step"><span class="rot-arrow">→</span><span><strong>Petal fall (critical insect timing):</strong> Bifenthrin for plum curculio — apply in the evening. Repeat 10–14 days later. Also covers Oriental fruit moth 1st gen.</span></div>
+      <div class="rot-step"><span class="rot-arrow">→</span><span><strong>Post-leaf emergence / cover sprays:</strong> Daconil + Myclobutanil fungicide rotation every 10–14 days. Rotate bifenthrin / Sevin for insect cover.</span></div>
+      <div class="rot-step"><span class="rot-arrow">→</span><span><strong>Mid-July (peachtree borer — urgent):</strong> Bifenthrin trunk drench, lower 18" of trunk + root flare. Repeat 2–3 weeks later (early August). This is the primary defense against the pest causing gummosis.</span></div>
+      <div class="rot-step"><span class="rot-arrow">→</span><span><strong>Final 4 weeks before harvest:</strong> Myclobutanil or Captan every 7 days for brown rot. Prune out any Oriental fruit moth flagged shoot tips as found.</span></div>
+      <div class="rot-note">Avoid sulfur on peaches entirely. Copper only as dormant spray — switch to Daconil / myclobutanil once leaves emerge.</div>
+    </div>
+
+    <div class="rot-card">
+      <h4>🍒 Sour Cherry — Fungicide + Insecticide</h4>
+      <div class="rot-step"><span class="rot-arrow">→</span><span><strong>Dormant:</strong> Copper — brown rot / leaf spot suppression AND black knot prevention</span></div>
+      <div class="rot-step"><span class="rot-arrow">→</span><span><strong>Bud swell → 4 weeks post-bloom (black knot window):</strong> Copper + Myclobutanil — do not skip</span></div>
+      <div class="rot-step"><span class="rot-arrow">→</span><span><strong>Pre-bloom:</strong> Captan + Daconil for brown rot and leaf spot</span></div>
+      <div class="rot-step"><span class="rot-arrow">→</span><span><strong>Petal fall (critical insect timing):</strong> Bifenthrin — primary plum curculio spray (the cause of your crescent-shaped lesions). Apply in the evening. Repeat in 10–14 days.</span></div>
+      <div class="rot-step"><span class="rot-arrow">→</span><span><strong>Cover sprays:</strong> Myclobutanil + Daconil every 10–14 days (leaf spot, brown rot). Rotate bifenthrin / Sevin for insect cover. Watch for cherry slug / tent caterpillar.</span></div>
+      <div class="rot-step"><span class="rot-arrow">→</span><span><strong>Mid-July:</strong> Bifenthrin trunk drench for peachtree borer (lower 18" trunk + root flare). Repeat 2–3 weeks later.</span></div>
+      <div class="rot-step"><span class="rot-arrow">→</span><span><strong>Near harvest:</strong> Myclobutanil or Captan (7-day PHI); Sevin (3-day PHI); inspect for new black knot swellings</span></div>
+      <div class="rot-note">With a heavily infected plum nearby, black knot pressure on cherry is elevated — do not skip the bud swell–post-bloom copper + myclobutanil window.</div>
+    </div>
+
+    <div class="rot-card">
+      <h4>🟣 Plum — Fungicide + Insecticide</h4>
+      <div class="rot-step"><span class="rot-arrow">→</span><span><strong>Dormant → post-bloom (black knot critical window):</strong> Copper + Myclobutanil from bud swell through 4 weeks post-bloom</span></div>
+      <div class="rot-step"><span class="rot-arrow">→</span><span><strong>Petal fall (critical insect timing):</strong> Bifenthrin for plum curculio — plum is a primary host. Apply in the evening. Repeat 10–14 days later.</span></div>
+      <div class="rot-step"><span class="rot-arrow">→</span><span><strong>Summer covers:</strong> Daconil + Myclobutanil fungicide rotation; bifenthrin / Sevin insecticide rotation every 10–14 days</span></div>
+      <div class="rot-step"><span class="rot-arrow">→</span><span><strong>Mid-July:</strong> Bifenthrin trunk drench for peachtree borer (lower 18" trunk + root flare). Repeat 2–3 weeks later.</span></div>
+      <div class="rot-step"><span class="rot-arrow">→</span><span><strong>Cultural — always:</strong> Inspect weekly in-season; remove new knots immediately when found. Remove all dropped fruit.</span></div>
+      <div class="rot-note">Surgical removal of black knot is always more effective than sprays. Fungicides suppress new infections but do not kill existing knots.</div>
+    </div>
+
+    <div class="rot-card">
+      <h4>🫐 Ribes (currants &amp; gooseberries)</h4>
+      <div class="rot-step"><span class="rot-arrow">→</span><span><strong>Late winter / early March (before leaves):</strong> Dormant copper at full rate + dormant horticultural oil. In NJ this window may be as short as 1–2 weeks — check plants frequently from late February onward.</span></div>
+      <div class="rot-step"><span class="rot-arrow">→</span><span><strong>Leaf emergence (often mid-March in warm years):</strong> Copper at reduced rate (1 fl oz/gallon) when overnight temps above 32°F. Primary anthracnose / leaf spot protection.</span></div>
+      <div class="rot-step"><span class="rot-arrow">→</span><span><strong>Pre-bloom → petal fall (no insecticides during bloom):</strong> Myclobutanil + Daconil every 10–14 days for leaf diseases. Scout leaf undersides for currant aphid colonies and imported currantworm egg masses from late April.</span></div>
+      <div class="rot-step"><span class="rot-arrow">→</span><span><strong>Post-bloom / May–June:</strong> Insecticidal soap for currant aphid (spray leaf undersides thoroughly; repeat every 5–7 days). Bifenthrin or Sevin for imported currantworm if heavy. Continue Myclobutanil / Daconil for leaf diseases and powdery mildew — increase frequency on black currants and gooseberries (most mildew-susceptible).</span></div>
+      <div class="rot-step"><span class="rot-arrow">→</span><span><strong>July — second pest generation + harvest:</strong> Second-generation imported currantworm. SWD risk on ripening fruit — harvest frequently. Malathion if SWD present (1-day PHI on Ribes). Stop Daconil / myclobutanil at 7-day PHI before harvest.</span></div>
+      <div class="rot-step"><span class="rot-arrow">→</span><span><strong>After harvest / fall:</strong> Prune out all canes 3+ years old. Rake and destroy fallen leaves. Fall copper spray on remaining canes and crown.</span></div>
+      <div class="rot-note">Black currants and gooseberries need more frequent powdery mildew attention than red/white/champagne types. Watch for currant borer dieback — prune affected canes to ground immediately.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════ RIBES ════════════════════ -->
+<section id="ribes">
+  <h2 class="section-title">
+    <span class="icon" style="background:#f0e8fa">🫐</span>
+    Ribes Guide — Currants &amp; Gooseberries
+  </h2>
+
+  <p style="color:var(--text-mid);font-size:15px;margin-bottom:1.25rem;">Ribes is the collective term for currants (red, black, white, champagne/pink) and gooseberries. They share similar disease and pest profiles and are managed as a group, with some differences noted below for black currants specifically.</p>
+
+  <div class="alert alert-amber" style="margin-bottom:1.25rem;">
+    <strong>Ribes break dormancy very early — check them now</strong>
+    Among the earliest plants in the NJ garden to emerge in spring, Ribes can have leaves beginning to open by mid-March in a warm year. This means your dormant spray window is shorter than for most fruit trees. If you see leaves emerging, switch to the reduced copper rate immediately (1 fl oz/gallon) and time applications to avoid overnight freezes on open foliage.
+  </div>
+
+  <div class="alert alert-red" style="margin-bottom:1.25rem;">
+    <strong>White Pine Blister Rust — know your surroundings</strong>
+    Ribes (especially black currants) are the alternate host for White Pine Blister Rust (<em>Cronartium ribicola</em>), a fungal disease that requires both a five-needled white pine and a Ribes plant to complete its life cycle. It is devastating to white pines. If you have eastern white pines (<em>Pinus strobus</em>) — or neighbors do — within a few hundred feet, be aware of this relationship. Some NJ municipalities have historically restricted or banned black currant cultivation near white pine stands. Copper sprays do not eliminate this risk. This does not mean Ribes cannot be grown in the area; growers should simply be aware of this relationship.
+  </div>
+
+  <h3 style="font-family:var(--font-head);font-size:1.1rem;color:var(--green-dark);margin-bottom:12px;">Key Diseases</h3>
+  <table style="margin-bottom:1.5rem;">
+    <thead><tr><th>Disease</th><th>Symptoms</th><th>Primary Control</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Anthracnose</strong><br><em>Drepanopeziza ribis</em></td>
+        <td>Small brown spots on leaves, often with yellow halos; premature defoliation in severe cases; spots may also appear on fruit</td>
+        <td>Copper at early leaf emergence; myclobutanil or Daconil during the season; rake and destroy fallen leaves</td>
+      </tr>
+      <tr>
+        <td><strong>Currant leaf spot</strong><br><em>Cercospora angulata</em></td>
+        <td>Angular brown spots on leaves; yellowing and early drop; can seriously weaken plants by midsummer</td>
+        <td>Same as anthracnose — copper early, Daconil or myclobutanil during season</td>
+      </tr>
+      <tr>
+        <td><strong>Powdery mildew</strong><br><em>Sphaerotheca mors-uvae</em></td>
+        <td>White powdery coating on young leaves, shoot tips, and berries; most severe on gooseberries and black currants; causes stunted, distorted growth</td>
+        <td>Myclobutanil is the most effective home-use control; wettable sulfur also effective (Ribes are generally tolerant — test a small area first on gooseberries); horticultural oil as a supplement</td>
+      </tr>
+      <tr>
+        <td><strong>Botrytis / gray mold</strong><br><em>Botrytis cinerea</em></td>
+        <td>Gray fuzzy mold on fruit, especially in cool wet conditions near harvest; berries collapse and shrivel</td>
+        <td>Good air circulation through pruning is the primary defense; Daconil provides some suppression; harvest promptly when ripe</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 style="font-family:var(--font-head);font-size:1.1rem;color:var(--green-dark);margin-bottom:12px;">Key Pests</h3>
+  <table style="margin-bottom:1.5rem;">
+    <thead><tr><th>Pest</th><th>Symptoms</th><th>Control</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Currant aphid</strong><br><em>Cryptomyzus ribis</em></td>
+        <td>Severe curling and blistering of young leaves, often with reddish or yellow discoloration on upper surface; dense colonies of pale aphids visible on leaf undersides. Can be extremely destructive in May–June if untreated.</td>
+        <td><strong>Insecticidal soap</strong> is the primary tool — spray leaf undersides thoroughly at first sign of curling (early May). Repeat every 5–7 days until colonies are gone. Bifenthrin or Sevin if colonies are heavy and soap is not controlling them. Predatory insects (ladybugs, lacewings) are important natural enemies — avoid broad-spectrum sprays earlier in the season that kill beneficials.</td>
+      </tr>
+      <tr>
+        <td><strong>Imported Currantworm</strong><br>(sawfly larva, <em>Nematus ribesii</em>)</td>
+        <td>Larvae (green with black spots) skeletonize leaves rapidly — a small infestation can defoliate a bush in days. Two generations in NJ: first in late April/May, second in July.</td>
+        <td>Hand-pick larvae at first appearance. Sevin or bifenthrin for larger infestations. Insecticidal soap works on small larvae. Check undersides of leaves for egg masses along main leaf veins in late April.</td>
+      </tr>
+      <tr>
+        <td><strong>Spotted Wing Drosophila (SWD)</strong><br><em>Drosophila suzukii</em></td>
+        <td>Adults lay eggs in soft, ripening fruit (unlike regular fruit flies that use damaged fruit). Larvae inside fruit at harvest. Particularly problematic on soft-fruited Ribes — red currants, white currants, and gooseberries are highly susceptible.</td>
+        <td>Malathion is effective near harvest (check PHI — typically 1 day on soft fruits). Kaolin clay sprays can deter egg-laying. Harvest promptly and frequently — do not leave ripe fruit on the bush. Remove and destroy any soft or oozing fruit immediately.</td>
+      </tr>
+      <tr>
+        <td><strong>Currant borer moth</strong><br><em>Synanthedon tipuliformis</em></td>
+        <td>Larvae bore into the pith of canes, causing wilting and dieback of individual canes. Cut canes show discolored or hollow pith.</td>
+        <td>Primarily cultural: prune out all affected canes at or below ground level and destroy. Maintaining vigorous new cane growth each year by pruning old wood reduces habitat. No spray is effective once larvae are inside canes.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 style="font-family:var(--font-head);font-size:1.1rem;color:var(--green-dark);margin-bottom:12px;">Ribes Seasonal Spray Schedule</h3>
+  <table style="margin-bottom:1.5rem;">
+    <thead><tr><th style="width:20%">Timing</th><th>Action</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Late winter / early March (before leaves)</strong></td>
+        <td>Dormant copper at full rate (2 fl oz/gallon) while fully dormant. Horticultural oil at full dormant rate to smother scale and overwintering aphid eggs. Apply on a day above 40°F with no freeze forecast that night. In NJ's increasingly early springs, this window may only be a week or two wide — check plants frequently.</td>
+      </tr>
+      <tr>
+        <td><strong>Leaf emergence (often mid-March in NJ)</strong></td>
+        <td>Copper at reduced rate (1 fl oz/gallon) when overnight temps will stay above 32°F. This is your primary anthracnose and leaf spot protection application. Do not skip — the overwintering fungal inoculum is highest at this point.</td>
+      </tr>
+      <tr>
+        <td><strong>Pre-bloom through bloom</strong></td>
+        <td>Myclobutanil and/or Daconil every 10–14 days for leaf diseases and powdery mildew. <strong>No insecticides during bloom</strong> — Ribes are bee-pollinated. Begin checking leaf undersides for currant aphid colonies and imported currantworm egg masses from late April onward.</td>
+      </tr>
+      <tr>
+        <td><strong>Post-bloom through June</strong></td>
+        <td>Continue myclobutanil / Daconil for leaf diseases. <strong>Insecticidal soap for currant aphids</strong> — first generation peaks in May–June. Treat leaf undersides thoroughly. Imported currantworm first generation: hand-pick or treat with Sevin / bifenthrin if heavy. Scout weekly.</td>
+      </tr>
+      <tr>
+        <td><strong>July — second pest generation</strong></td>
+        <td>Second generation imported currantworm in July. Continue fungicide coverage in wet periods. SWD populations begin building as fruit ripens — harvest promptly. Malathion if SWD damage is apparent in ripening fruit.</td>
+      </tr>
+      <tr>
+        <td><strong>Harvest</strong></td>
+        <td>Red, white, and champagne/pink currants: typically July in NJ. Black currants: late June–July. Gooseberries: June–July. Harvest frequently and promptly. Any overripe or cracked fruit left on bush invites SWD and Botrytis rapidly in warm weather. PHI reminders: Daconil = 7 days, Myclobutanil = 7 days, Malathion = 1 day (check the label).</td>
+      </tr>
+      <tr>
+        <td><strong>After harvest / fall</strong></td>
+        <td>Prune out old (3+ year) canes at ground level — these are most susceptible to currant borer and diseases. Leave 6–8 of the most vigorous young canes per plant. Rake and destroy all fallen leaves. Apply fall copper spray to remaining canes and crown for disease suppression going into winter.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="alert alert-blue">
+    <strong>Black currant vs. red/white/gooseberry differences</strong>
+    Black currants are more susceptible to powdery mildew than red or white types — increase myclobutanil frequency on black currants during warm, dry periods. Black currants are also the more significant White Pine Blister Rust alternate host. Gooseberries are highly susceptible to powdery mildew, particularly American varieties — European gooseberry varieties have better resistance. On gooseberries, test wettable sulfur on a small area first before full application; most are tolerant but sensitivity varies by variety.
+  </div>
+</section>
+
+<!-- ════════════════════ PHI ════════════════════ -->
+<section id="phi">
+  <h2 class="section-title">
+    <span class="icon" style="background:var(--blue-pale)">⏱</span>
+    Pre-Harvest Interval (PHI) Reference
+  </h2>
+
+  <div class="alert alert-blue" style="margin-bottom:1.25rem;">
+    <strong>PHI is legally binding and safety-critical</strong>
+    The PHI printed on the product label is the minimum number of days that must elapse between the last application and harvest. When in doubt, add extra buffer days. Always read the label of the specific product you are using — formulations of the same active ingredient can have different PHIs.
+  </div>
+
+  <table class="phi-table">
+    <thead>
+      <tr><th>Product / Active Ingredient</th><th>Apple</th><th>Peach / Nectarine</th><th>Cherry</th><th>Plum</th><th>Grapes</th><th>Ribes</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Daconil / Fungonil (chlorothalonil)</td>
+        <td>7 days</td>
+        <td>7 days</td>
+        <td>7 days</td>
+        <td>7 days</td>
+        <td>7 days</td>
+        <td>7 days</td>
+        <td>Good near-harvest protectant</td>
+      </tr>
+      <tr>
+        <td>Immunox / Myclobutanil</td>
+        <td>7 days</td>
+        <td>7 days</td>
+        <td>7 days</td>
+        <td>7 days</td>
+        <td>7 days</td>
+        <td>7 days</td>
+        <td>Check label — formulations vary</td>
+      </tr>
+      <tr>
+        <td>Mancozeb</td>
+        <td>7 days</td>
+        <td>7 days</td>
+        <td>7 days</td>
+        <td>7 days</td>
+        <td>66 days ⚑</td>
+        <td>7 days</td>
+        <td>Grape PHI is unusually long — plan carefully</td>
+      </tr>
+      <tr>
+        <td>Captan 50WP</td>
+        <td>7 days</td>
+        <td>7 days</td>
+        <td>7 days</td>
+        <td>7 days</td>
+        <td>—</td>
+        <td>—</td>
+        <td>Not labeled for grapes or Ribes in most home formulations</td>
+      </tr>
+      <tr>
+        <td>Permethrin (trunk spray)</td>
+        <td>7 days</td>
+        <td>14 days</td>
+        <td>14 days</td>
+        <td>14 days</td>
+        <td>—</td>
+        <td>—</td>
+        <td>Used for peachtree borer trunk spray only. Longer PHI on stone fruits. Check the product label.</td>
+      </tr>
+      <tr>
+        <td>Bifenthrin 7.9%</td>
+        <td>7 days</td>
+        <td>7 days</td>
+        <td>7 days</td>
+        <td>7 days</td>
+        <td>7 days</td>
+        <td>7 days</td>
+        <td>Preferred SLF tool on grapes — longer residual than Sevin. Always verify PHI on the product label.</td>
+      </tr>
+      <tr>
+        <td>Sevin (zeta-cypermethrin)</td>
+        <td>3 days</td>
+        <td>3 days</td>
+        <td>3 days</td>
+        <td>3 days</td>
+        <td>1–3 days</td>
+        <td>3 days</td>
+        <td>Check specific label — modern Sevin formulations vary</td>
+      </tr>
+      <tr>
+        <td>Insecticidal Soap</td>
+        <td>0 days</td>
+        <td>0 days</td>
+        <td>0 days</td>
+        <td>0 days</td>
+        <td>0 days</td>
+        <td>0 days</td>
+        <td>No PHI — contact kill only, no residual. Primary tool for currant aphid on Ribes.</td>
+      </tr>
+      <tr>
+        <td>Malathion</td>
+        <td>7 days</td>
+        <td>3 days</td>
+        <td>3 days</td>
+        <td>7 days</td>
+        <td>5 days</td>
+        <td>1 day ⚑</td>
+        <td>Short PHI on Ribes makes it the primary SWD tool near harvest on soft fruits. Check the label — formulations vary.</td>
+      </tr>
+      <tr>
+        <td>Copper fungicide</td>
+        <td>—</td>
+        <td>—</td>
+        <td>—</td>
+        <td>—</td>
+        <td>—</td>
+        <td>—</td>
+        <td>Primarily dormant/early leaf emergence use; reduce rate once leaves are open</td>
+      </tr>
+      <tr>
+        <td>Wettable Sulfur</td>
+        <td>—</td>
+        <td>Do not use</td>
+        <td>—</td>
+        <td>—</td>
+        <td>Stop 3 weeks before harvest (flavor)</td>
+        <td>Test first; most tolerant</td>
+        <td>European grapes only for season-long use. Ribes generally tolerant but test gooseberry varieties first.</td>
+      </tr>
+      <tr>
+        <td>Horticultural Oil</td>
+        <td>Dormant only</td>
+        <td>Dormant only</td>
+        <td>Dormant only</td>
+        <td>Dormant only</td>
+        <td>Growing season OK for American grapes</td>
+        <td>Dormant + growing season (aphid/mildew)</td>
+        <td>Keep 2 weeks from captan or sulfur — both directions</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="alert alert-amber" style="margin-top:1rem;">
+    <strong>Mancozeb grape PHI — how to calculate your cutoff date</strong>
+    Determine the expected grape harvest date. Count back 66 days — that is the last permitted Mancozeb application. Example: harvest September 25 → last Mancozeb spray = July 21. Mark this date and stop by then regardless of disease pressure. Switch to Daconil + myclobutanil rotation after the cutoff.
+  </div>
+  <div class="alert alert-red" style="margin-top:0.75rem;">
+    <strong>Re-entry after spraying — stay out for 24 hours</strong>
+    After applying any pesticide or fungicide in this guide, keep yourself, children, and pets out of the treated area for at least 24 hours or until the spray has fully dried and the area has been ventilated. This is a conservative but safe default that covers all products listed here. Some products technically allow re-entry sooner once dry, but 24 hours is a practical, safe rule to follow across the board.
+  </div>
+</section>
+
+<!-- ════════════════════ RULES ════════════════════ -->
+<section id="rules">
+  <h2 class="section-title">
+    <span class="icon" style="background:var(--amber-pale)">📋</span>
+    Key Rules &amp; Safety Guidelines
+  </h2>
+
+  <div class="rules-grid">
+    <div class="rule-card">
+      <strong>Never mix copper + lime sulfur</strong>
+      These two react to form copper sulfate at concentrations that cause severe phytotoxicity. Always wait at least 2 full weeks between a copper application and a lime sulfur application (and vice versa).
+    </div>
+    <div class="rule-card">
+      <strong>No insecticides during bloom</strong>
+      Once flowers are open on any crop, stop all insecticide applications until petal fall. This protects bees and other pollinators. Without pollination, there is no fruit. This applies to Sevin, bifenthrin, and all other insecticides.
+    </div>
+    <div class="rule-card">
+      <strong>Oil + captan / sulfur = phytotoxicity</strong>
+      Never apply horticultural or stylet oil within 2 weeks of a captan or sulfur application — in either direction. If you sprayed captan last week, wait another week before using oil, and vice versa.
+    </div>
+    <div class="rule-card">
+      <strong>No sulfur on American grapes — ever</strong>
+      American-type grapes (Concord, Niagara, Catawba, labrusca, many French-American hybrids) are susceptible to sulfur phytotoxicity. Wettable sulfur causes interveinal leaf scorch and berry damage on these varieties. Use myclobutanil + horticultural oil instead.
+    </div>
+    <div class="rule-card">
+      <strong>No sulfur on peaches / nectarines</strong>
+      Peach and nectarine are sulfur-sensitive stone fruits. Do not apply wettable or dust sulfur during the growing season. Copper is the dormant-season protectant; switch to Daconil or myclobutanil once leaves emerge.
+    </div>
+    <div class="rule-card">
+      <strong>Spray timing, not just products</strong>
+      Most protectant fungicides (Daconil, mancozeb, captan, sulfur, copper) must be applied before infection occurs. They do not cure existing disease. Spray on a schedule — do not wait for symptoms to appear. Myclobutanil has some curative ability (up to 72 hours post-infection) but works best as a protectant.
+    </div>
+    <div class="rule-card">
+      <strong>Rotate modes of action</strong>
+      Never rely on a single fungicide all season. Rotate between mancozeb, chlorothalonil, myclobutanil, and captan to reduce the risk of resistance developing in fungal populations, particularly for grape black rot and powdery mildew.
+    </div>
+    <div class="rule-card">
+      <strong>Sulfur temperature limit</strong>
+      Even on tolerant crops (European grapes), do not apply wettable sulfur when temperatures exceed 85–90°F, or when high temps are forecast within 24–48 hours. Apply early morning or evening in warm weather. High temperatures dramatically increase phytotoxicity risk.
+    </div>
+    <div class="rule-card">
+      <strong>Spray interval in wet weather</strong>
+      During prolonged wet periods (multiple rain events per week), shorten spray intervals to every 7 days. Rain washes off contact protectants. Each inch of rain or two weeks of time is a rough guide to reapplication need.
+    </div>
+    <div class="rule-card">
+      <strong>Use NEWA for precise infection-event timing</strong>
+      For more accurate spray timing than a fixed calendar, use <a href="https://newa.cornell.edu" target="_blank">NEWA (newa.cornell.edu)</a> — Cornell's Network for Environment and Weather Applications. It links to local weather stations and models actual infection risk for apple scab, fire blight, grape diseases, and more based on real temperature and leaf wetness data. A fixed 10–14 day interval is a safe default; NEWA tells you when to tighten that window because conditions are right for infection.
+    </div>
+    <div class="rule-card">
+      <strong>Always read labels — they are the law</strong>
+      The label is the legal document governing pesticide use. PHI, application rates, personal protective equipment (PPE), and crop registrations are all specified on the label. When this guide conflicts with the product label, follow the label.
+    </div>
+    <div class="rule-card">
+      <strong>Apple scab cracks invite brown rot — protect fruit from petal fall</strong>
+      Scab lesions that crack the fruit skin are entry points for <em>Monilinia</em> brown rot later in the season. An apple that escapes scab damage but gets brown rot at harvest is frustrating; an apple that gets early fruit scab almost always ends up with brown rot too. The petal fall through late June window is where both problems are prevented simultaneously — do not let cover sprays lapse during wet weather in this period.
+    </div>
+    <div class="rule-card">
+      <strong>Apply insecticides in the evening for plum curculio</strong>
+      Plum curculio adults are nocturnal — they feed and lay eggs primarily at night, especially when temperatures exceed 70°F. Morning or midday applications are substantially less effective. For petal fall and cover sprays targeting plum curculio on stone fruits and apple, spray at dusk or in the evening hours.
+    </div>
+    <div class="rule-card">
+      <strong>Watch for spider mite flare-up after pyrethroid use</strong>
+      Repeated pyrethroid applications (bifenthrin, Sevin) kill predatory mites along with target pests, which can trigger spider mite (two-spotted mite) population explosions in June–July. Symptoms: stippled, bronzed or silvery foliage; fine webbing on leaf undersides; tiny moving specks. Treat immediately with horticultural oil at 2% dilution (not within 2 weeks of captan or sulfur). Do not use pyrethroids for mites — they make the problem worse.
+    </div>
+    <div class="rule-card">
+      <strong>Destroy dropped fruit promptly — all season</strong>
+      Fallen fruit harbors plum curculio larvae, codling moth larvae, Oriental fruit moth larvae, and brown rot spores — all of which complete development and amplify next year's pest and disease populations. Pick up and dispose of dropped fruit every 2–3 days. Do not compost.
+    </div>
+    <div class="rule-card">
+      <strong>Destroy diseased material — never compost</strong>
+      Mummified fruit, prunings with black knot, infected leaves, and other diseased plant material harbor fungal spores that survive composting. Always bag and send to trash, or burn where permitted. Composting spreads disease.
+    </div>
+    <div class="rule-card">
+      <strong>Ribes dormant window is very short — act in late February</strong>
+      Currants and gooseberries break dormancy earlier than almost any other plant in the NJ garden. In warm springs, leaves can begin emerging by mid-March, closing your dormant spray window. Mark late February as the target for dormant copper + oil on all Ribes — do not wait until March. Check plants every few days from late February onward and spray before any leaf tissue shows.
+    </div>
+    <div class="rule-card">
+      <strong>No insecticides during Ribes bloom — fruit set depends on it</strong>
+      Currants and gooseberries are highly dependent on bee pollination. Ribes bloom typically occurs in April in NJ — earlier than most tree fruits. Insecticide exposure during bloom directly reduces berry set. Stop all insecticides from the moment flowers open until all petals have fallen. This applies to Sevin, bifenthrin, and malathion.
+    </div>
+    <div class="rule-card">
+      <strong>Spotted Lanternfly is a regulated pest in NJ</strong>
+      SLF is subject to NJ state quarantine regulations. Report new infestations to NJ Dept. of Agriculture: 1-833-4BADBUG. Scraping egg masses in late winter is the most effective management action. SLF feeding in August–October can kill or severely damage grape vines — treat it as seriously as any disease.
+    </div>
+  </div>
+</section>
+
+</div><!-- /container -->
+
+<footer>
+  <strong>Fruit Spray &amp; Management Guide — Northern/Central New Jersey · USDA Zone 6b</strong><br>
+  A practical home orchard guide for growers of European &amp; American grapes, sour cherry, peach/nectarine, apple, plum, and Ribes (red, white, black &amp; champagne pink currants; gooseberries).<br>
+  Always read and follow product labels. This guide does not substitute for label instructions, which are legally binding.
+</footer>
+
+<script>
+  function toggleMonth(header) {
+    const block = header.parentElement;
+    block.classList.toggle('open');
+  }
+  // Open all on print
+  window.addEventListener('beforeprint', () => {
+    document.querySelectorAll('.month-block').forEach(b => b.classList.add('open'));
+  });
+</script>
+</body>
+</html>

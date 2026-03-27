@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daniel’s Growing Guides</title>
+  <style>
+    :root {
+      --bg: #f8f5eb;
+      --text: #1a1a14;
+      --accent: #3b6d11;
+      --warning-bg: #fdf6ee;
+      --warning-border: #8b4513;
+      --warning-text: #5a3010;
+      --note-bg: #e8f4e8;
+      --note-border: #3b6d11;
+      --note-text: #2e5c2e;
+    }
+
+    [data-theme="dark"] {
+      --bg: #1a1a14;
+      --text: #e8e0cc;
+      --accent: #6aaa2a;
+      --warning-bg: #3c2a1a;
+      --warning-border: #c8a050;
+      --warning-text: #f0d0a0;
+      --note-bg: #1e2d1e;
+      --note-border: #6aaa2a;
+      --note-text: #b0d0a0;
+    }
+
+    body { 
+      font-family: Arial, sans-serif; 
+      max-width: 800px; 
+      margin: 40px auto; 
+      padding: 20px; 
+      line-height: 1.6; 
+      background: var(--bg);
+      color: var(--text);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    h1 { color: var(--accent); }
+    
+    .warning { 
+      background: var(--warning-bg); 
+      border: 3px solid var(--warning-border); 
+      border-radius: 8px; 
+      padding: 20px; 
+      margin: 30px 0; 
+      color: var(--warning-text);
+    }
+    .warning strong { color: var(--warning-border); }
+
+    .note { 
+      background: var(--note-bg); 
+      border-left: 4px solid var(--note-border); 
+      padding: 16px; 
+      margin: 20px 0; 
+      color: var(--note-text);
+    }
+
+    a { color: var(--accent); text-decoration: underline; }
+
+    /* Toggle button */
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 8px 12px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      z-index: 100;
+    }
+    .theme-toggle:hover {
+      background: #2e5c2e;
+    }
+  </style>
+</head>
+<body data-theme="dark">
+
+<button class="theme-toggle" id="theme-toggle">☀️ Light Mode</button>
+
+<h1>Daniel’s Growing Guides</h1>
+<p style="font-size:1.1em;">Zone 6b</p>
+
+<div class="warning">
+  <strong>Important scope note:</strong><br>
+  These guides also do not cover soil amendment or preparation.<br><br>
+  They are narrow, practical references for my own established home orchard/vineyard/garden.<br><br>
+  <strong>They do NOT cover:</strong>
+  <ul>
+    <li>Variety selection</li>
+    <li>Rootstock selection or grafting</li>
+    <li>Initial tree structure / crotch-angle adjustment</li>
+    <li>General fruit-tree pruning (the grape guide only covers Concord renewal-zone management on Modified Munson)</li>
+    <li>Planting or long-term orchard establishment</li>
+  </ul>
+  <p style="margin-top:12px;">They assume you already have mature or semi-mature trees/vines in place and are looking for specific renewal, spray scheduling, and seasonal maintenance details for Concord grapes and the mixed fruit plantings listed inside.</p>
+</div>
+
+<div class="note">
+  <strong>Please note:</strong> These guides are highly specific to the crops I grow in my area (Zone 6b), the exact disease and pest pressures I’m dealing with, and the chemicals I currently have on hand or plan to acquire. Spray rotations, product recommendations, and timing are tailored to my personal inventory and local conditions. They may not be fully applicable to other locations, different varieties, or different pest/disease profiles.
+</div>
+
+<p><strong>Available guides:</strong></p>
+<ul>
+  <li><a href="concord_pruning_renewal_zone_guide.html">Concord Grape Renewal Zone Guide — Modified Munson</a></li>
+  <li><a href="fruit_spray_guide.html">Fruit Spray &amp; Management Guide (Grapes, Stone Fruit, Apple, Ribes, etc.)</a></li>
+  <li><a href="garden_guide.html">Gardening Guide (mainly vegetables)</a></li>
+</ul>
+
+<script>
+  const toggleButton = document.getElementById('theme-toggle');
+  const body = document.body;
+
+  // Load saved preference or respect system preference
+  function initTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      body.setAttribute('data-theme', savedTheme);
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      body.setAttribute('data-theme', 'dark');
+    } else {
+      body.setAttribute('data-theme', 'light');
+    }
+    updateButtonText();
+  }
+
+  function toggleTheme() {
+    const current = body.getAttribute('data-theme');
+    const newTheme = current === 'dark' ? 'light' : 'dark';
+    body.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateButtonText();
+  }
+
+  function updateButtonText() {
+    const isDark = body.getAttribute('data-theme') === 'dark';
+    toggleButton.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+  }
+
+  // Event listeners
+  toggleButton.addEventListener('click', toggleTheme);
+  initTheme();
+</script>
+
+</body>
+</html>
