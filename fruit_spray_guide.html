@@ -574,8 +574,11 @@
 
   /* Alerts */
   [data-theme="dark"] .alert-red { background: #200808; border-left-color: #d04040; color: #f0b8b8; }
+  [data-theme="dark"] .alert-red strong { color: #ffcccc; }
   [data-theme="dark"] .alert-amber { background: #1e1200; border-left-color: #d4920a; color: #f0d090; }
+  [data-theme="dark"] .alert-amber strong { color: #ffe0a0; }
   [data-theme="dark"] .alert-green { background: #081408; border-left-color: #4a8a4a; color: #a0d0a0; }
+  [data-theme="dark"] .alert-green strong { color: #c0eec0; }
   [data-theme="dark"] .alert-blue { background: #060e1a; border-left-color: #4090c8; color: #a0c8f0; }
   [data-theme="dark"] .alert-purple { background: #0e0818; border-left-color: #9060d0; color: #c8a0f0; }
   [data-theme="dark"] .alert strong { color: inherit; }
@@ -604,8 +607,8 @@
   /* Product cards */
   [data-theme="dark"] .prod-card { background: #221830; border-color: #3a2850; }
   [data-theme="dark"] .prod-card h4 { color: #e8e0f0; }
-  [data-theme="dark"] .prod-card p { color: #c0aad4; }
-  [data-theme="dark"] .prod-card .prod-detail { border-top-color: #3a2850; color: #8870a8; }
+  /* .prod-card p dark override — moved to contrast fixes block above */
+  /* .prod-card .prod-detail dark override — moved to contrast fixes block above */
   [data-theme="dark"] .prod-card.have { border-top-color: #4a8a4a; }
   [data-theme="dark"] .prod-card.buy { border-top-color: #d04040; }
   [data-theme="dark"] .prod-card.optional { border-top-color: #d4920a; }
@@ -636,20 +639,20 @@
   [data-theme="dark"] .rot-card { background: #221830; border-color: #3a2850; }
   [data-theme="dark"] .rot-card h4 { color: #a0d080; border-bottom-color: #0d2010; }
   [data-theme="dark"] .rot-arrow { color: #6aaa6a; }
-  [data-theme="dark"] .rot-note { color: #8870a8; border-top-color: #3a2850; }
+  [data-theme="dark"] .rot-note { border-top-color: #3a2850; }  /* color moved to contrast fixes block */
 
   /* Pest cards */
   [data-theme="dark"] .pest-card { background: #221830; border-color: #3a2850; }
   [data-theme="dark"] .pest-card-header { border-bottom-color: #3a2850; }
   [data-theme="dark"] .pest-card-header h4 { color: #e8e0f0; }
   [data-theme="dark"] .pest-card-header .crops-affected { color: #8870a8; }
-  [data-theme="dark"] .pest-card-body { color: #c0aad4; }
+  /* .pest-card-body dark override — moved to contrast fixes block above */
   [data-theme="dark"] .pest-card-body strong { color: #e8e0f0; }
   [data-theme="dark"] .pest-symptom { background: #1e1400; border-left-color: #d4920a; color: #f0d090; }
   [data-theme="dark"] .pest-window { background: #081408; border-left-color: #4a8a4a; color: #a0d0a0; }
 
   /* Rule cards */
-  [data-theme="dark"] .rule-card { background: #221830; border-color: #3a2850; color: #c0aad4; }
+  [data-theme="dark"] .rule-card { background: #221830; border-color: #3a2850; }  /* color moved to contrast fixes block */
   [data-theme="dark"] .rule-card strong { color: #e8e0f0; }
 
   /* Black knot emergency */
@@ -758,6 +761,44 @@
     .badge { font-size: 11px; }
   }
 
+  /* ── FIXES: Dark mode text contrast ── */
+
+  /* Inline amber schedule banner (hardcoded color, needs !important) */
+  [data-theme="dark"] .month-content td[colspan="3"] {
+    color: #f0d090 !important;
+    background: #1e1200 !important;
+  }
+
+  /* Alert purple — switch to sage green text for contrast on dark purple bg */
+  [data-theme="dark"] .alert-purple {
+    color: #90cc90;
+  }
+  [data-theme="dark"] .alert-purple strong {
+    color: #b0e0b0;
+  }
+
+  /* Product card body text — shift from purple/lavender to sage green */
+  [data-theme="dark"] .prod-card p { color: #b8d8b8; }
+  [data-theme="dark"] .prod-card .prod-detail {
+    border-top-color: #3a2850;
+    color: #7aaa7a;
+  }
+
+  /* Pest card body — same shift */
+  [data-theme="dark"] .pest-card-body { color: #b8d8b8; }
+
+  /* Rule card body — same */
+  [data-theme="dark"] .rule-card { color: #b8d8b8; }
+
+  /* Rotation note — dimmer sage */
+  [data-theme="dark"] .rot-note { color: #7aaa7a; }
+
+  /* Rotation step body text */
+  [data-theme="dark"] .rot-step { color: #b8d8b8; }
+
+  /* Grape section purple alert that wraps the why-this-matters note */
+  [data-theme="dark"] .alert-purple a { color: #90cc90; }
+
   /* ── THEME TOGGLE BUTTON ── */
   .theme-toggle {
     position: fixed;
@@ -835,7 +876,7 @@
 
   <table>
     <thead>
-      <tr><th>Crop</th><th>Symptom</th><th>Diagnosis</th><th>Notes</th></tr>
+      <tr><th>Crop</th><th>Symptoms</th><th>Diagnosis</th><th>Notes</th></tr>
     </thead>
     <tbody>
       <tr>
@@ -1989,7 +2030,7 @@
     </div>
     <div class="rule-card">
       <strong>No sulfur on American grapes — ever</strong>
-      American-type grapes (Concord, Niagara, Catawba, labrusca, many French-American hybrids) are susceptible to sulfur phytotoxicity. Wettable sulfur causes interveinal leaf scorch and berry damage on these varieties. Use myclobutanil + horticultural oil instead.
+      American/labrusca-type grapes (Concord, Mars, Diamond, Niagara, Catawba, many French-American hybrids) are susceptible to sulfur phytotoxicity. Wettable sulfur causes interveinal leaf scorch and berry damage on these varieties. Use myclobutanil + horticultural oil instead.
     </div>
     <div class="rule-card">
       <strong>No sulfur on peaches / nectarines</strong>
