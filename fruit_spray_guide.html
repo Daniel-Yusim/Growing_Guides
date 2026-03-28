@@ -543,8 +543,8 @@
     --offwhite:     #221830;
     --border:       #3a2850;
     --text:         #e8e0f0;
-    --text-mid:     #c0aad4;
-    --text-light:   #8870a8;
+    --text-mid:     #b8d8b8;
+    --text-light:   #7aaa7a;
   }
 
   /* Body & global */
@@ -580,7 +580,7 @@
   [data-theme="dark"] .alert-green { background: #081408; border-left-color: #4a8a4a; color: #a0d0a0; }
   [data-theme="dark"] .alert-green strong { color: #c0eec0; }
   [data-theme="dark"] .alert-blue { background: #060e1a; border-left-color: #4090c8; color: #a0c8f0; }
-  [data-theme="dark"] .alert-purple { background: #0e0818; border-left-color: #9060d0; color: #c8a0f0; }
+  [data-theme="dark"] .alert-purple { background: #0e0818; border-left-color: #9060d0; color: #90cc90; }
   [data-theme="dark"] .alert strong { color: inherit; }
 
   /* Tags */
@@ -602,7 +602,7 @@
   [data-theme="dark"] .td-crop { color: #8ad08a; }
   [data-theme="dark"] .phi-table th { background: #060e1a; color: #a0c8f0; }
   [data-theme="dark"] .phi-table td:first-child { color: #e8e0f0; }
-  [data-theme="dark"] .phi-table td:last-child { color: #8870a8; }
+  /* phi-table td:last-child uses --text-light (now sage dim) */
 
   /* Product cards */
   [data-theme="dark"] .prod-card { background: #221830; border-color: #3a2850; }
@@ -645,7 +645,7 @@
   [data-theme="dark"] .pest-card { background: #221830; border-color: #3a2850; }
   [data-theme="dark"] .pest-card-header { border-bottom-color: #3a2850; }
   [data-theme="dark"] .pest-card-header h4 { color: #e8e0f0; }
-  [data-theme="dark"] .pest-card-header .crops-affected { color: #8870a8; }
+  /* pest-card-header .crops-affected uses --text-light (now sage dim) */
   /* .pest-card-body dark override — moved to contrast fixes block above */
   [data-theme="dark"] .pest-card-body strong { color: #e8e0f0; }
   [data-theme="dark"] .pest-symptom { background: #1e1400; border-left-color: #d4920a; color: #f0d090; }
@@ -669,7 +669,7 @@
   [data-theme="dark"] .divider { border-top-color: #3a2850; }
 
   /* Expand/collapse buttons */
-  [data-theme="dark"] button { background: #221830; color: #c0aad4; border-color: #3a2850; }
+  [data-theme="dark"] button { background: #221830; color: #b8d8b8; border-color: #3a2850; }
   [data-theme="dark"] button:hover { background: #2e2040; }
 
   /* Ribes section tables */
@@ -778,23 +778,20 @@
   }
 
   /* Product card body text — shift from purple/lavender to sage green */
-  [data-theme="dark"] .prod-card p { color: #b8d8b8; }
-  [data-theme="dark"] .prod-card .prod-detail {
-    border-top-color: #3a2850;
-    color: #7aaa7a;
-  }
+  /* prod-card p uses --text-mid (now sage) */
+  [data-theme="dark"] .prod-card .prod-detail { border-top-color: #3a2850; }  /* color from --text-light */
 
   /* Pest card body — same shift */
-  [data-theme="dark"] .pest-card-body { color: #b8d8b8; }
+  /* pest-card-body uses --text-mid (now sage) */
 
   /* Rule card body — same */
-  [data-theme="dark"] .rule-card { color: #b8d8b8; }
+  /* rule-card color uses --text-mid (now sage) */
 
   /* Rotation note — dimmer sage */
-  [data-theme="dark"] .rot-note { color: #7aaa7a; }
+  /* rot-note uses --text-light (now sage dim) */
 
   /* Rotation step body text */
-  [data-theme="dark"] .rot-step { color: #b8d8b8; }
+  /* rot-step uses --text-mid (now sage) */
 
   /* Grape section purple alert that wraps the why-this-matters note */
   [data-theme="dark"] .alert-purple a { color: #90cc90; }
