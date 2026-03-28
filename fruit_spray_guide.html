@@ -518,9 +518,277 @@
 
   .divider { border: none; border-top: 2px solid var(--border); margin: 1.5rem 0; }
   .flex-wrap { display: flex; flex-wrap: wrap; gap: 8px; margin: 0.5rem 0 1rem; }
+
+  /* ═══════════════════════════════════════════
+     DARK MODE VARIABLES
+  ═══════════════════════════════════════════ */
+  [data-theme="dark"] {
+    --green-dark:   #2d4a2d;
+    --green-mid:    #4a8a4a;
+    --green-light:  #6aaa6a;
+    --green-pale:   #0d2010;
+    --green-tint:   #0a1a0d;
+    --amber:        #d4920a;
+    --amber-pale:   #221600;
+    --amber-mid:    #b87820;
+    --red:          #d04040;
+    --red-pale:     #1e0808;
+    --red-mid:      #c04040;
+    --blue-dark:    #4090c8;
+    --blue-pale:    #071525;
+    --blue-mid:     #4090c8;
+    --purple-dark:  #9060d0;
+    --purple-pale:  #140a20;
+    --cream:        #1a1020;
+    --offwhite:     #221830;
+    --border:       #3a2850;
+    --text:         #e8e0f0;
+    --text-mid:     #c0aad4;
+    --text-light:   #8870a8;
+  }
+
+  /* Body & global */
+  [data-theme="dark"] body {
+    background: #1a1020;
+    color: #e8e0f0;
+  }
+
+  /* Header */
+  [data-theme="dark"] .site-header {
+    background: #120c1c;
+  }
+  [data-theme="dark"] .header-eyebrow { color: #8ad08a; }
+  [data-theme="dark"] .site-header .subtitle { color: #9a88b8; }
+
+  /* Nav */
+  [data-theme="dark"] .section-nav {
+    background: #1e1430;
+    border-bottom-color: #120c1c;
+  }
+  [data-theme="dark"] .section-nav a { color: #c0a8e0; }
+  [data-theme="dark"] .section-nav a:hover { background: #120c1c; color: #e8e0f0; }
+
+  /* Section borders */
+  [data-theme="dark"] section + section { border-top-color: #3a2850; }
+  [data-theme="dark"] .section-title { color: #a0c880; }
+
+  /* Alerts */
+  [data-theme="dark"] .alert-red { background: #200808; border-left-color: #d04040; color: #f0b8b8; }
+  [data-theme="dark"] .alert-amber { background: #1e1200; border-left-color: #d4920a; color: #f0d090; }
+  [data-theme="dark"] .alert-green { background: #081408; border-left-color: #4a8a4a; color: #a0d0a0; }
+  [data-theme="dark"] .alert-blue { background: #060e1a; border-left-color: #4090c8; color: #a0c8f0; }
+  [data-theme="dark"] .alert-purple { background: #0e0818; border-left-color: #9060d0; color: #c8a0f0; }
+  [data-theme="dark"] .alert strong { color: inherit; }
+
+  /* Tags */
+  [data-theme="dark"] .tag-f { background: #0d2010; color: #8ad08a; }
+  [data-theme="dark"] .tag-i { background: #200808; color: #f0a080; }
+  [data-theme="dark"] .tag-c { background: #120a20; color: #c0a0e0; }
+  [data-theme="dark"] .tag-stop { background: #0a0a0a; color: #ffd080; }
+  [data-theme="dark"] .tag-phi { background: #060e1a; color: #80b0e0; }
+
+  /* Badges */
+  [data-theme="dark"] .badge-have { background: #3a6a3a; }
+  [data-theme="dark"] .badge-buy { background: #802020; }
+  [data-theme="dark"] .badge-optional { background: #7a5010; }
+
+  /* Tables */
+  [data-theme="dark"] th { background: #120c1c; color: #c0a8e0; }
+  [data-theme="dark"] td { border-bottom-color: #3a2850; }
+  [data-theme="dark"] tr:nth-child(even) td { background: #221830; }
+  [data-theme="dark"] .td-crop { color: #8ad08a; }
+  [data-theme="dark"] .phi-table th { background: #060e1a; color: #a0c8f0; }
+  [data-theme="dark"] .phi-table td:first-child { color: #e8e0f0; }
+  [data-theme="dark"] .phi-table td:last-child { color: #8870a8; }
+
+  /* Product cards */
+  [data-theme="dark"] .prod-card { background: #221830; border-color: #3a2850; }
+  [data-theme="dark"] .prod-card h4 { color: #e8e0f0; }
+  [data-theme="dark"] .prod-card p { color: #c0aad4; }
+  [data-theme="dark"] .prod-card .prod-detail { border-top-color: #3a2850; color: #8870a8; }
+  [data-theme="dark"] .prod-card.have { border-top-color: #4a8a4a; }
+  [data-theme="dark"] .prod-card.buy { border-top-color: #d04040; }
+  [data-theme="dark"] .prod-card.optional { border-top-color: #d4920a; }
+
+  /* Grape split cards */
+  [data-theme="dark"] .grape-card.european { background: #081408; border-color: #3a6a3a; }
+  [data-theme="dark"] .grape-card.european h3 { color: #8ad08a; }
+  [data-theme="dark"] .grape-card.european p,
+  [data-theme="dark"] .grape-card.european li { color: #a0d0a0; }
+  [data-theme="dark"] .grape-card.american { background: #200808; border-color: #7a3030; }
+  [data-theme="dark"] .grape-card.american h3 { color: #f08080; }
+  [data-theme="dark"] .grape-card.american p,
+  [data-theme="dark"] .grape-card.american li { color: #f0b0b0; }
+
+  /* Season schedule month headers */
+  [data-theme="dark"] .month-block { border-color: #3a2850; }
+  [data-theme="dark"] .m-winter .month-header { background: #0c1020; color: #a0b8e0; }
+  [data-theme="dark"] .m-early-spring .month-header { background: #081408; color: #a0d0a0; }
+  [data-theme="dark"] .m-spring .month-header { background: #0a1608; color: #b0d090; }
+  [data-theme="dark"] .m-bloom .month-header { background: #1c1000; color: #e0c080; }
+  [data-theme="dark"] .m-early-summer .month-header { background: #081410; color: #90d0c0; }
+  [data-theme="dark"] .m-summer .month-header { background: #1a1600; color: #d0c070; }
+  [data-theme="dark"] .m-late-summer .month-header { background: #1a0808; color: #e09090; }
+  [data-theme="dark"] .m-harvest .month-header { background: #1a1008; color: #d0a870; }
+  [data-theme="dark"] .m-dormant .month-header { background: #10101a; color: #a0a0c8; }
+
+  /* Rotation cards */
+  [data-theme="dark"] .rot-card { background: #221830; border-color: #3a2850; }
+  [data-theme="dark"] .rot-card h4 { color: #a0d080; border-bottom-color: #0d2010; }
+  [data-theme="dark"] .rot-arrow { color: #6aaa6a; }
+  [data-theme="dark"] .rot-note { color: #8870a8; border-top-color: #3a2850; }
+
+  /* Pest cards */
+  [data-theme="dark"] .pest-card { background: #221830; border-color: #3a2850; }
+  [data-theme="dark"] .pest-card-header { border-bottom-color: #3a2850; }
+  [data-theme="dark"] .pest-card-header h4 { color: #e8e0f0; }
+  [data-theme="dark"] .pest-card-header .crops-affected { color: #8870a8; }
+  [data-theme="dark"] .pest-card-body { color: #c0aad4; }
+  [data-theme="dark"] .pest-card-body strong { color: #e8e0f0; }
+  [data-theme="dark"] .pest-symptom { background: #1e1400; border-left-color: #d4920a; color: #f0d090; }
+  [data-theme="dark"] .pest-window { background: #081408; border-left-color: #4a8a4a; color: #a0d0a0; }
+
+  /* Rule cards */
+  [data-theme="dark"] .rule-card { background: #221830; border-color: #3a2850; color: #c0aad4; }
+  [data-theme="dark"] .rule-card strong { color: #e8e0f0; }
+
+  /* Black knot emergency */
+  [data-theme="dark"] .knot-emergency { background: #1e0606; border-color: #c04040; }
+  [data-theme="dark"] .knot-emergency h3 { color: #f08080; }
+  [data-theme="dark"] .knot-emergency p,
+  [data-theme="dark"] .knot-emergency ul { color: #f0b0b0; }
+
+  /* Footer */
+  [data-theme="dark"] footer { background: #120c1c; color: #9080b0; }
+  [data-theme="dark"] footer strong { color: #e8e0f0; }
+
+  /* Divider */
+  [data-theme="dark"] .divider { border-top-color: #3a2850; }
+
+  /* Expand/collapse buttons */
+  [data-theme="dark"] button { background: #221830; color: #c0aad4; border-color: #3a2850; }
+  [data-theme="dark"] button:hover { background: #2e2040; }
+
+  /* Ribes section tables */
+  [data-theme="dark"] .ribes-table th { background: #120c1c; }
+
+  /* ═══════════════════════════════════════════
+     MOBILE IMPROVEMENTS
+  ═══════════════════════════════════════════ */
+
+  /* Table overflow wrapper — added via JS */
+  .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .table-scroll table { min-width: 500px; }
+
+  /* Scrollable sticky nav on mobile */
+  @media (max-width: 700px) {
+    .section-nav {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      flex-wrap: nowrap;
+      scrollbar-width: none;
+    }
+    .section-nav::-webkit-scrollbar { display: none; }
+    .section-nav .container { flex-wrap: nowrap; min-width: max-content; }
+  }
+
+  @media (max-width: 700px) {
+    .site-header { padding: 1.5rem 1rem 1.25rem; }
+    .site-header h1 { font-size: 1.45rem; }
+    .site-header .subtitle { font-size: 13px; }
+    .header-eyebrow { font-size: 11px; }
+
+    .container { padding: 0 1rem; }
+
+    section { padding: 1.75rem 0 1rem; }
+
+    .section-title { font-size: 1.3rem; }
+    .section-title .icon { width: 30px; height: 30px; font-size: 15px; }
+
+    .prod-grid { grid-template-columns: 1fr; gap: 10px; }
+    .rotation-grid { grid-template-columns: 1fr; gap: 10px; }
+    .pest-grid { grid-template-columns: 1fr; gap: 10px; }
+    .rules-grid { grid-template-columns: 1fr; gap: 10px; }
+    .grape-split { grid-template-columns: 1fr; }
+
+    /* Month blocks — hide phase label on small screens */
+    .month-header .phase-label { display: none; }
+    .month-header { padding: 11px 14px; }
+    .month-header .month-name { font-size: 1rem; }
+
+    /* Schedule table cells — make details column readable */
+    .month-content td { font-size: 13px; padding: 8px 10px; }
+    .month-content .td-crop { font-size: 12px; white-space: normal; }
+    .month-content table { min-width: 480px; }
+
+    /* Alert boxes */
+    .alert { font-size: 14px; padding: 12px 14px; }
+
+    /* Product cards */
+    .prod-card { padding: 14px 14px; }
+    .prod-card h4 { font-size: 0.95rem; }
+
+    /* Knot emergency */
+    .knot-emergency { padding: 16px 16px; }
+
+    /* Urgent strip */
+    .urgent-strip { font-size: 13px; padding: 8px 1rem; gap: 8px; }
+
+    /* Legend */
+    .legend { gap: 6px; font-size: 12px; }
+
+    /* Expand/collapse buttons */
+    .expand-btns { flex-wrap: wrap; }
+    .expand-btns button { font-size: 12px; padding: 5px 10px; }
+
+    /* Grape split cards */
+    .grape-card { padding: 14px 16px; }
+
+    /* Rotation steps */
+    .rot-step { font-size: 13px; }
+
+    /* PHI table layout hint */
+    .phi-table { min-width: 600px; }
+  }
+
+  @media (max-width: 420px) {
+    .site-header h1 { font-size: 1.2rem; }
+    body { font-size: 15px; }
+    .tag { font-size: 11px; padding: 2px 7px; }
+    .badge { font-size: 11px; }
+  }
+
+  /* ── THEME TOGGLE BUTTON ── */
+  .theme-toggle {
+    position: fixed;
+    top: 14px;
+    right: 14px;
+    padding: 7px 13px;
+    background: rgba(30, 20, 50, 0.85);
+    color: #d4ecd4;
+    border: 1.5px solid rgba(74, 138, 74, 0.5);
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    font-family: var(--font-body);
+    font-weight: 500;
+    z-index: 200;
+    backdrop-filter: blur(6px);
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+    letter-spacing: 0.03em;
+  }
+  [data-theme="light"] .theme-toggle {
+    background: rgba(46, 92, 46, 0.9);
+    color: white;
+    border-color: rgba(255,255,255,0.2);
+  }
+  .theme-toggle:hover { filter: brightness(1.15); }
+
 </style>
 </head>
-<body>
+<body data-theme="light">
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙 Dark</button>
+
 
 <!-- URGENT STRIP -->
 <div class="urgent-strip">
@@ -1795,14 +2063,58 @@
 </footer>
 
 <script>
+  // ── Month collapse toggle ──
   function toggleMonth(header) {
     const block = header.parentElement;
     block.classList.toggle('open');
   }
-  // Open all on print
+
+  // ── Open all on print ──
   window.addEventListener('beforeprint', () => {
     document.querySelectorAll('.month-block').forEach(b => b.classList.add('open'));
   });
+
+  // ── Wrap tables in scroll containers for mobile ──
+  document.querySelectorAll('table').forEach(table => {
+    if (!table.parentElement.classList.contains('table-scroll')) {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'table-scroll';
+      table.parentNode.insertBefore(wrapper, table);
+      wrapper.appendChild(table);
+    }
+  });
+
+  // ── Dark mode toggle ──
+  const toggleBtn = document.getElementById('theme-toggle');
+  const body = document.body;
+
+  function initTheme() {
+    const saved = localStorage.getItem('spray-guide-theme');
+    if (saved) {
+      body.setAttribute('data-theme', saved);
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      body.setAttribute('data-theme', 'dark');
+    } else {
+      body.setAttribute('data-theme', 'light');
+    }
+    updateBtn();
+  }
+
+  function toggleTheme() {
+    const current = body.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    body.setAttribute('data-theme', next);
+    localStorage.setItem('spray-guide-theme', next);
+    updateBtn();
+  }
+
+  function updateBtn() {
+    const dark = body.getAttribute('data-theme') === 'dark';
+    toggleBtn.textContent = dark ? '☀️ Light' : '🌙 Dark';
+  }
+
+  toggleBtn.addEventListener('click', toggleTheme);
+  initTheme();
 </script>
 </body>
 </html>
